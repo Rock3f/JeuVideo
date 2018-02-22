@@ -13,7 +13,7 @@ public class Track : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void Update () {
 		if(!isCameraFix)
 		{
 			// Position vers laquelle la caméra doit tendre
