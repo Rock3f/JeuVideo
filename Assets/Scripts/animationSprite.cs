@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 
+
 [System.Serializable]
 public struct Animation {
     public string name;
