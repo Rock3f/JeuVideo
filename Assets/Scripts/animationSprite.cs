@@ -24,16 +24,34 @@ public class animationSprite : MonoBehaviour {
     // Use this for initialization
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer> ();
+        ChangeAnimation("normal");    
     }
 
-    public void SetSpeed (float v) {
+    public void SetAnimation (float v, string animName) {
         this.spriteRenderer.flipX = v < 0 || this.spriteRenderer.flipX && v == 0;
-        if (Mathf.Abs (v) > 0 && currentAnim.name != "run") {
-            ChangeAnimation ("run");
-        }
-        if (Mathf.Abs (v) == 0 && currentAnim.name != "normal") {
-            ChangeAnimation ("normal");
-        }
+       switch(animName){
+           case("run"):
+            if (Mathf.Abs (v) > 0){
+                ChangeAnimation(animName);
+            }
+            break;
+           case("normal"):
+            if (Mathf.Abs (v) == 0){
+                ChangeAnimation(animName);
+            }
+            break;
+            default:ChangeAnimation(animName);
+            break;
+
+       }
+       
+       
+        // if (Mathf.Abs (v) > 0 && currentAnim.name != "run") {
+        //     ChangeAnimation ("run");
+        // }
+        // if (Mathf.Abs (v) == 0 && currentAnim.name != "normal") {
+        //     ChangeAnimation ("normal");
+        // }
     }
 
     public void SetAction(string input)
@@ -46,6 +64,7 @@ public class animationSprite : MonoBehaviour {
 
         if(currentAnim.name != input)
         {
+            Debug.Log("fre" + currentAnim.name + "-" +input);
             ChangeAnimation(input);
         }   
         else
@@ -56,6 +75,7 @@ public class animationSprite : MonoBehaviour {
 
     public void ChangeAnimation (string anim) {
         this.currentAnim = GetAnim (anim);
+            Debug.Log("current:" + currentAnim.name + "-" +anim);        
         this.currentSpriteIdx = 0;
     }
 
@@ -85,12 +105,13 @@ public class animationSprite : MonoBehaviour {
 
     private void NextFrame () {
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
+        
         Debug.Log("currentSpriteIdx : " + currentSpriteIdx);
-        for (int i = 0; i < currentAnim.sprites.Length; i++)
-        {
-            Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
-        }
+        // for (int i = 0; i < currentAnim.sprites.Length; i++)
+        // {
+            // Debug.Log("currentAnim.sprite["+i+"] : " + currentAnim.sprites[i]);
+        // }
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
-        Debug.Log("spriteRenderer.sprite : " + spriteRenderer.sprite);
+        // Debug.Log("spriteRenderer.sprite : " + spriteRenderer.sprite);
     }
 }
