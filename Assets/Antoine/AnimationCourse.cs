@@ -4,12 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
-public struct Animation {
-    public string name;
-
-    public Sprite[] sprites;
-}
 public class AnimationCourse : MonoBehaviour {
 
     // liste des animations configurables

@@ -1,11 +1,4 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 23de31ee663617a4facddcbb34699025
-timeCreated: 1519289364
-licenseType: Free
-TextureImporter:
-  fileIDToRecycleName: {}
-=======
 guid: 6d840d1257176164e91ad8011465510a
 timeCreated: 1519283395
 licenseType: Free
@@ -71,7 +64,6 @@ TextureImporter:
     21300114: jaune_57
     21300116: jaune_58
     21300118: jaune_59
->>>>>>> da004474ded42dcdf7fe44c2e79c37f80e5ffe22
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
