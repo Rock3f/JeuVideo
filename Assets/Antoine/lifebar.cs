@@ -19,4 +19,8 @@ public class lifebar : MonoBehaviour {
 		background.transform.localScale = new Vector3(maxHp, 1,1);
 		foreground.transform.localScale = new Vector3(Mathf.Clamp(hp, 0, maxHp),1,1);
 	}
+
+	public void AddHp (float amount) {
+		hp += amount;
+	}
 }
