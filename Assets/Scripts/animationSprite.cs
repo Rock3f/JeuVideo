@@ -88,7 +88,7 @@ public class animationSprite : MonoBehaviour {
         Debug.Log("currentSpriteIdx : " + currentSpriteIdx);
         for (int i = 0; i < currentAnim.sprites.Length; i++)
         {
-            Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
+            //Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
         }
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
         Debug.Log("spriteRenderer.sprite : " + spriteRenderer.sprite);
