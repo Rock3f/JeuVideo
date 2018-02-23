@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Track : MonoBehaviour {
 
+	public Transform foregroundBarHealthP1;
+	public Transform backgroundBarHealthP1;
+
+	public Transform foregroundBarHealthP2;
+	public Transform backgroundBarHealthP2;
+	public Transform foregroundBarUlt;
+	public Transform backgroundBarUlt;
 	public Transform target;
 	public float trackingDistance = 1f;
 	public bool isCameraFix = false;
 	// Use this for initialization
 	void Start () {
-		
+		backgroundBarHealthP1.position = new Vector3(-2.5f,4.2f,2);
+		foregroundBarHealthP1.position = new Vector3(-2.5f,4.2f,1);	
+
+		backgroundBarHealthP2.position = new Vector3(-1.4f,4.2f,2);
+		foregroundBarHealthP2.position = new Vector3(-1.4f,4.2f,1);			
+
+		backgroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
+		foregroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
 	}
 	
 	// Update is called once per frame
@@ -49,7 +63,14 @@ public class Track : MonoBehaviour {
 		// Applique le déplacement à la position en additionnant les vecteurs
 		// équivalent de <code>this.transform.position = this.transform.position + moveOffset;</code>
 		this.transform.position += moveOffset;
-			//this.transform.position = Vector3.Lerp(this.transform.position, new Vector3(target.position.x, this.transform.position.y, this.transform.position.z),0.1f);
+		backgroundBarHealthP1.position += moveOffset;	
+		foregroundBarHealthP1.position += moveOffset;	
+
+		backgroundBarHealthP2.position += moveOffset;	
+		foregroundBarHealthP2.position += moveOffset;	
+
+		backgroundBarUlt.position += moveOffset;	
+		foregroundBarUlt.position += moveOffset;	
 		}		
 	}
 }
