@@ -49,7 +49,11 @@ public class MoveLion : MonoBehaviour {
 		// seulement "Time.deltaTime" secondes se sont écoulées. On applique donc la vitesse proportionellement 
 		// au temps écoulé.
 		this.transform.position += currentSpeed * Time.deltaTime;
-
+		this.transform.position = new Vector3(
+			transform.position.x,
+			transform.position.y,
+			transform.position.y
+		);
 		// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 		// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 		// action (bouger, ne plus bouger, changer de direction) est prise en compte.

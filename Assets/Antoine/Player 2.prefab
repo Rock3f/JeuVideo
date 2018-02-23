@@ -102,8 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 50
   maxSpeed: 8
-  Horizontal: Horizontal2
-  Vertical: Vertical2
+  Player: 2
   currentSpeed: {x: 0, y: 0, z: 0}
 --- !u!114 &114878274971139948
 MonoBehaviour:
