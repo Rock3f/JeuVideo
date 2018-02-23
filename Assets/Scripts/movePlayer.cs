@@ -36,7 +36,7 @@ public class movePlayer : MonoBehaviour {
 	void Update () {
 
 		IsUpdatedNow = false;
-		if(Input.GetAxis(Fire1)  == 1){
+		if(Input.GetButtonDown(Fire1)){
 			isAction = true;
 			IsUpdatedNow = true;
 			if(ac.currentAnim.name != "attack1")
@@ -52,7 +52,7 @@ public class movePlayer : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetAxis(Fire2)  == 1){
+		if(Input.GetButtonDown(Fire2)){
 			isAction = true;
 			IsUpdatedNow = true;
 			if(ac.currentAnim.name != "attack2")
@@ -69,10 +69,10 @@ public class movePlayer : MonoBehaviour {
 			
 		}
 		
-		if(Input.GetAxis(Fire3)  == 1){
+		if(Input.GetButtonDown(Fire3)) {
 			isAction = true;
 			IsUpdatedNow = true;
-			
+
 			if(ac.currentAnim.name != "attack3")
 			{
 				ac.ChangeAnimation("attack3", isAction);
