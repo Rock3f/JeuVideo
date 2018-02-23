@@ -86,10 +86,10 @@ public class animationSprite : MonoBehaviour {
     private void NextFrame () {
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
         Debug.Log("currentSpriteIdx : " + currentSpriteIdx);
-        for (int i = 0; i < currentAnim.sprites.Length; i++)
-        {
-            Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
-        }
+        //for (int i = 0; i < currentAnim.sprites.Length; i++)
+        //{
+        //    Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
+        //}
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
         Debug.Log("spriteRenderer.sprite : " + spriteRenderer.sprite);
     }
