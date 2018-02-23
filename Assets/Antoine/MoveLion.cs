@@ -13,7 +13,6 @@ public class MoveLion : MonoBehaviour {
 	private AnimationCourse ac;
 	private string Horizontal;
 	private string Vertical;
-
 	// Use this for initialization
 	void Start () {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
@@ -33,6 +32,8 @@ public class MoveLion : MonoBehaviour {
 			Input.GetAxis (Vertical) * acceleration,
 			0
 		);
+
+		
 
 		// Calcule la nouvelle vitesse à partir de l'accélération
 		// currentAcceleration retourne un changement de vitesse par seconde mais lors d'un update 
@@ -54,9 +55,12 @@ public class MoveLion : MonoBehaviour {
 			transform.position.y,
 			transform.position.y
 		);
+
+
 		// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 		// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 		// action (bouger, ne plus bouger, changer de direction) est prise en compte.
+		
 		ac.SetAnimationFromSpeed (Input.GetAxis (Horizontal) + 0.001f * currentAcceleration.magnitude);
 	}
 }
