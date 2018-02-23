@@ -107,17 +107,10 @@ public class animationSprite : MonoBehaviour {
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
         
         Debug.Log("currentSpriteIdx : " + currentSpriteIdx);
-<<<<<<< HEAD
-        //for (int i = 0; i < currentAnim.sprites.Length; i++)
-        //{
-        //    Debug.Log("currentAnim.sprite.Length["+i+"] : " + currentAnim.sprites.Length[i]);
-        //}
-=======
         // for (int i = 0; i < currentAnim.sprites.Length; i++)
         // {
             // Debug.Log("currentAnim.sprite["+i+"] : " + currentAnim.sprites[i]);
         // }
->>>>>>> af7f6b31407384154841b6df2915b86e01db5d28
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
         // Debug.Log("spriteRenderer.sprite : " + spriteRenderer.sprite);
     }
