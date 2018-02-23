@@ -97,7 +97,7 @@ public class explosion : MonoBehaviour
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
         spriteRenderer.sprite = anims[currentAnim].sprites[currentSpriteIdx];
 
-        if (currentSpriteIdx > anims[currentAnim].sprites.Length)
+        if (currentSpriteIdx == anims[currentAnim].sprites.Length)
             spriteRenderer.enabled = false;
 
     }
