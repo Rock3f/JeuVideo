@@ -48,6 +48,6 @@ public class movePlayer : MonoBehaviour {
 		// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 		// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 		// action (bouger, ne plus bouger, changer de direction) est prise en compte.
-		anim.SetSpeed (Input.GetAxis ("Horizontal"));
+		anim.SetAnimation (Input.GetAxis ("Horizontal"), "run");
 	}
 }

@@ -7,14 +7,19 @@ public class MoveLion : MonoBehaviour {
 	public float acceleration = 8f; // unit per second, per second
 	public float maxSpeed = 4f; // unit per second
 
+	public string Player;
 	public Vector3 currentSpeed;
 
 	private AnimationCourse ac;
+	private string Horizontal;
+	private string Vertical;
 
 	// Use this for initialization
 	void Start () {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<AnimationCourse> ();
+		Horizontal = "Horizontal" + Player;
+		Vertical = "Vertical" + Player;
 	}
 
 	// Update is called once per frame
@@ -24,8 +29,8 @@ public class MoveLion : MonoBehaviour {
 		// celà veut dire que chaque seconde, la vitesse augmente de cette valeur configurée.
 		// Ex: Chaque seconde, la vitesse augmente de 8 unités par seconde.
 		Vector3 currentAcceleration = new Vector3 (
-			Input.GetAxis ("Horizontal") * acceleration,
-			Input.GetAxis ("Vertical") * acceleration,
+			Input.GetAxis (Horizontal) * acceleration,
+			Input.GetAxis (Vertical) * acceleration,
 			0
 		);
 
@@ -48,6 +53,6 @@ public class MoveLion : MonoBehaviour {
 		// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 		// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 		// action (bouger, ne plus bouger, changer de direction) est prise en compte.
-		ac.SetAnimationFromSpeed (Input.GetAxis ("Horizontal") + 0.001f * currentAcceleration.magnitude);
+		ac.SetAnimationFromSpeed (Input.GetAxis (Horizontal) + 0.001f * currentAcceleration.magnitude);
 	}
 }
