@@ -303,6 +303,69 @@ Transform:
   m_Father: {fileID: 550706780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &683577433 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1551359416856536, guid: b16c2be42b5eb304391a42ec5603f0b5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1512884133}
+--- !u!114 &683577434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683577433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4eb6680fda59643ae94bf1a0a0cd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 8
+  maxSpeed: 4
+  Player: 2
+  currentSpeed: {x: 0, y: 0, z: 0}
+--- !u!114 &683577435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 683577433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fe10345a8b33945ac67b8611300bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anims:
+  - name: normal
+    sprites:
+    - {fileID: 21300000, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  - name: run
+    sprites:
+    - {fileID: 21300002, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300004, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300006, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300008, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300010, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300012, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  - name: attack1
+    sprites:
+    - {fileID: 21300072, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300074, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300076, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  - name: attack2
+    sprites:
+    - {fileID: 21300014, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300016, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300018, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300020, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  - name: attack3
+    sprites:
+    - {fileID: 21300036, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300038, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300040, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  imagesParSecondes: 12
+  currentAnim:
+    name: 
+    sprites: []
 --- !u!1 &701624819
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,11 +375,11 @@ GameObject:
   m_Component:
   - component: {fileID: 701624823}
   - component: {fileID: 701624822}
-  - component: {fileID: 701624821}
-  - component: {fileID: 701624820}
   - component: {fileID: 701624824}
   - component: {fileID: 701624825}
   - component: {fileID: 701624826}
+  - component: {fileID: 701624821}
+  - component: {fileID: 701624820}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -332,13 +395,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 701624819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2b33481d3aa77c4a8cf71162b9bce3b, type: 3}
+  m_Script: {fileID: 11500000, guid: b4fe10345a8b33945ac67b8611300bb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 50
-  maxSpeed: 8
-  Player: 
-  currentSpeed: {x: 0, y: 0, z: 0}
+  anims:
+  - name: normal
+    sprites:
+    - {fileID: 21300000, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  - name: run
+    sprites:
+    - {fileID: 21300002, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300004, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300006, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300008, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300010, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300012, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  - name: attack1
+    sprites:
+    - {fileID: 21300066, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300068, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300070, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  - name: attack2
+    sprites:
+    - {fileID: 21300014, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300016, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300018, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300020, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  - name: attack3
+    sprites:
+    - {fileID: 21300036, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300038, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300040, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  imagesParSecondes: 12
+  currentAnim:
+    name: 
+    sprites: []
 --- !u!114 &701624821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,22 +438,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 701624819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29660ad5909f869439a6d665d4a9d330, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b4eb6680fda59643ae94bf1a0a0cd81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anims:
-  - name: Run
-    sprites:
-    - {fileID: 21300412, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300414, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300416, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300418, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300420, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300422, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-  - name: Iddle
-    sprites:
-    - {fileID: 21300000, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-  imagesParSecondes: 6
+  acceleration: 8
+  maxSpeed: 4
+  Player: 
+  currentSpeed: {x: 0, y: 0, z: 0}
 --- !u!212 &701624822
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -673,7 +755,9 @@ Prefab:
       propertyPath: Player
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114878274971139948, guid: b16c2be42b5eb304391a42ec5603f0b5, type: 2}
+    - {fileID: 114757847587388130, guid: b16c2be42b5eb304391a42ec5603f0b5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b16c2be42b5eb304391a42ec5603f0b5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2032146425

@@ -1,98 +1,105 @@
 fileFormatVersion: 2
-guid: 6784110d7a3771047b600e252417f589
-timeCreated: 1519319102
+guid: 62e5a3370aa4f4048bd2b3fb6ad0e0be
+timeCreated: 1519373799
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Black_mamba_0
-    21300002: Black_mamba_1
-    21300004: Black_mamba_2
-    21300006: Black_mamba_3
-    21300008: Black_mamba_4
-    21300010: Black_mamba_5
-    21300012: Black_mamba_6
-    21300014: Black_mamba_7
-    21300016: Black_mamba_8
-    21300018: Black_mamba_9
-    21300020: Black_mamba_10
-    21300022: Black_mamba_11
-    21300024: Black_mamba_12
-    21300026: Black_mamba_13
-    21300028: Black_mamba_14
-    21300030: Black_mamba_15
-    21300032: Black_mamba_16
-    21300034: Black_mamba_17
-    21300036: Black_mamba_18
-    21300038: Black_mamba_19
-    21300040: Black_mamba_20
-    21300042: Black_mamba_21
-    21300044: Black_mamba_22
-    21300046: Black_mamba_23
-    21300048: Black_mamba_24
-    21300050: Black_mamba_25
-    21300052: Black_mamba_26
-    21300054: Black_mamba_27
-    21300056: Black_mamba_28
-    21300058: Black_mamba_29
-    21300060: Black_mamba_30
-    21300062: Black_mamba_31
-    21300064: Black_mamba_32
-    21300066: Black_mamba_33
-    21300068: Black_mamba_34
-    21300070: Black_mamba_35
-    21300072: Black_mamba_36
-    21300074: Black_mamba_37
-    21300076: Black_mamba_38
-    21300078: Black_mamba_39
-    21300080: Black_mamba_40
-    21300082: Black_mamba_41
-    21300084: Black_mamba_42
-    21300086: Black_mamba_43
-    21300088: Black_mamba_44
-    21300090: Black_mamba_45
-    21300092: Black_mamba_46
-    21300094: Black_mamba_47
-    21300096: Black_mamba_48
-    21300098: Black_mamba_49
-    21300100: Black_mamba_50
-    21300102: Black_mamba_51
-    21300104: Black_mamba_52
-    21300106: Black_mamba_53
-    21300108: Black_mamba_54
-    21300110: Black_mamba_55
-    21300112: Black_mamba_56
-    21300114: Black_mamba_57
-    21300116: Black_mamba_58
-    21300118: Black_mamba_59
-    21300120: Black_mamba_60
-    21300122: Black_mamba_61
-    21300124: Black_mamba_62
-    21300126: Black_mamba_63
-    21300128: Black_mamba_64
-    21300130: Black_mamba_65
-    21300132: Black_mamba_66
-    21300134: Black_mamba_67
-    21300136: Black_mamba_68
-    21300138: Black_mamba_69
-    21300140: Black_mamba_70
-    21300142: Black_mamba_71
-    21300144: Black_mamba_72
-    21300146: Black_mamba_73
-    21300148: Black_mamba_74
-    21300150: Black_mamba_75
-    21300152: Black_mamba_76
-    21300154: Black_mamba_77
-    21300156: Black_mamba_78
-    21300158: Black_mamba_79
-    21300160: Black_mamba_80
-    21300162: Black_mamba_81
-    21300164: Black_mamba_82
-    21300166: Black_mamba_83
-    21300168: Black_mamba_84
-    21300170: Black_mamba_85
-    21300172: Black_mamba_86
-    21300174: Black_mamba_87
-    21300176: Black_mamba_88
+    21300000: ennemy_3_1
+    21300002: ennemy_3_2
+    21300004: ennemy_3_3
+    21300006: ennemy_3_4
+    21300008: ennemy_3_5
+    21300010: ennemy_3_6
+    21300012: ennemy_3_7
+    21300014: ennemy_3_8
+    21300016: ennemy_3_9
+    21300018: ennemy_3_10
+    21300020: ennemy_3_11
+    21300022: ennemy_3_12
+    21300024: ennemy_3_13
+    21300026: ennemy_3_14
+    21300028: ennemy_3_15
+    21300030: ennemy_3_16
+    21300032: ennemy_3_17
+    21300034: ennemy_3_19
+    21300036: ennemy_3_20
+    21300038: ennemy_3_21
+    21300040: ennemy_3_22
+    21300042: ennemy_3_23
+    21300044: ennemy_3_24
+    21300046: ennemy_3_25
+    21300048: ennemy_3_26
+    21300050: ennemy_3_27
+    21300052: ennemy_3_28
+    21300054: ennemy_3_29
+    21300056: ennemy_3_30
+    21300058: ennemy_3_31
+    21300060: ennemy_3_32
+    21300062: ennemy_3_33
+    21300064: ennemy_3_34
+    21300066: ennemy_3_35
+    21300068: ennemy_3_36
+    21300070: ennemy_3_37
+    21300072: ennemy_3_38
+    21300074: ennemy_3_39
+    21300076: ennemy_3_40
+    21300078: ennemy_3_41
+    21300080: ennemy_3_42
+    21300082: ennemy_3_43
+    21300084: ennemy_3_44
+    21300086: ennemy_3_45
+    21300088: ennemy_3_46
+    21300090: ennemy_3_47
+    21300092: ennemy_3_48
+    21300094: ennemy_3_49
+    21300096: ennemy_3_50
+    21300098: ennemy_3_51
+    21300100: ennemy_3_52
+    21300102: ennemy_3_53
+    21300104: ennemy_3_54
+    21300106: ennemy_3_55
+    21300108: ennemy_3_56
+    21300110: ennemy_3_57
+    21300112: ennemy_3_58
+    21300114: ennemy_3_59
+    21300116: ennemy_3_60
+    21300118: ennemy_3_61
+    21300120: ennemy_3_62
+    21300122: ennemy_3_63
+    21300124: ennemy_3_64
+    21300126: ennemy_3_65
+    21300128: ennemy_3_66
+    21300130: ennemy_3_67
+    21300132: ennemy_3_68
+    21300134: ennemy_3_69
+    21300136: ennemy_3_70
+    21300138: ennemy_3_71
+    21300140: ennemy_3_72
+    21300142: ennemy_3_73
+    21300144: ennemy_3_74
+    21300146: ennemy_3_75
+    21300148: ennemy_3_76
+    21300150: ennemy_3_77
+    21300152: ennemy_3_78
+    21300154: ennemy_3_79
+    21300156: ennemy_3_80
+    21300158: ennemy_3_81
+    21300160: ennemy_3_82
+    21300162: ennemy_3_83
+    21300164: ennemy_3_84
+    21300166: ennemy_3_85
+    21300168: ennemy_3_86
+    21300170: ennemy_3_87
+    21300172: ennemy_3_88
+    21300174: ennemy_3_89
+    21300176: ennemy_3_90
+    21300178: ennemy_3_91
+    21300180: ennemy_3_92
+    21300182: ennemy_3_93
+    21300184: ennemy_3_0
+    21300186: ennemy_3_18
+    21300188: ennemy_3_94
+    21300190: ennemy_3_95
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -169,11 +176,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Black_mamba_0
+      name: ennemy_3_1
       rect:
         serializedVersion: 2
         x: 24
-        y: 279
+        y: 209
         width: 28
         height: 56
       alignment: 0
@@ -183,11 +190,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_1
+      name: ennemy_3_2
       rect:
         serializedVersion: 2
         x: 56
-        y: 279
+        y: 209
         width: 27
         height: 55
       alignment: 0
@@ -197,11 +204,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_2
+      name: ennemy_3_3
       rect:
         serializedVersion: 2
         x: 87
-        y: 279
+        y: 209
         width: 30
         height: 56
       alignment: 0
@@ -211,11 +218,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_3
+      name: ennemy_3_4
       rect:
         serializedVersion: 2
         x: 121
-        y: 279
+        y: 209
         width: 27
         height: 55
       alignment: 0
@@ -225,11 +232,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_4
+      name: ennemy_3_5
       rect:
         serializedVersion: 2
         x: 152
-        y: 279
+        y: 209
         width: 44
         height: 56
       alignment: 0
@@ -239,11 +246,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_5
+      name: ennemy_3_6
       rect:
         serializedVersion: 2
         x: 202
-        y: 279
+        y: 209
         width: 32
         height: 56
       alignment: 0
@@ -253,11 +260,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_6
+      name: ennemy_3_7
       rect:
         serializedVersion: 2
         x: 240
-        y: 279
+        y: 209
         width: 42
         height: 56
       alignment: 0
@@ -267,11 +274,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_7
+      name: ennemy_3_8
       rect:
         serializedVersion: 2
         x: 288
-        y: 279
+        y: 209
         width: 34
         height: 52
       alignment: 0
@@ -281,11 +288,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_8
+      name: ennemy_3_9
       rect:
         serializedVersion: 2
         x: 328
-        y: 279
+        y: 209
         width: 32
         height: 52
       alignment: 0
@@ -295,12 +302,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_9
+      name: ennemy_3_10
       rect:
         serializedVersion: 2
         x: 365
-        y: 279
-        width: 31
+        y: 209
+        width: 32
         height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -309,11 +316,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_10
+      name: ennemy_3_11
       rect:
         serializedVersion: 2
         x: 402
-        y: 279
+        y: 209
         width: 47
         height: 38
       alignment: 0
@@ -323,11 +330,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_11
+      name: ennemy_3_12
       rect:
         serializedVersion: 2
         x: 454
-        y: 279
+        y: 209
         width: 28
         height: 40
       alignment: 0
@@ -337,11 +344,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_12
+      name: ennemy_3_13
       rect:
         serializedVersion: 2
         x: 488
-        y: 279
+        y: 209
         width: 31
         height: 55
       alignment: 0
@@ -351,11 +358,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_13
+      name: ennemy_3_14
       rect:
         serializedVersion: 2
         x: 524
-        y: 279
+        y: 209
         width: 36
         height: 53
       alignment: 0
@@ -365,11 +372,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_14
+      name: ennemy_3_15
       rect:
         serializedVersion: 2
         x: 566
-        y: 279
+        y: 209
         width: 39
         height: 55
       alignment: 0
@@ -379,11 +386,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_15
+      name: ennemy_3_16
       rect:
         serializedVersion: 2
         x: 612
-        y: 279
+        y: 209
         width: 51
         height: 55
       alignment: 0
@@ -393,11 +400,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_16
+      name: ennemy_3_17
       rect:
         serializedVersion: 2
         x: 669
-        y: 279
+        y: 209
         width: 39
         height: 55
       alignment: 0
@@ -407,11 +414,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_17
+      name: ennemy_3_19
       rect:
         serializedVersion: 2
-        x: 6
-        y: 207
+        x: 5
+        y: 141
         width: 33
         height: 62
       alignment: 0
@@ -421,11 +428,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_18
+      name: ennemy_3_20
       rect:
         serializedVersion: 2
-        x: 42
-        y: 219
+        x: 41
+        y: 153
         width: 34
         height: 50
       alignment: 0
@@ -435,11 +442,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_19
+      name: ennemy_3_21
       rect:
         serializedVersion: 2
-        x: 81
-        y: 229
+        x: 80
+        y: 163
         width: 31
         height: 40
       alignment: 0
@@ -449,11 +456,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_20
+      name: ennemy_3_22
       rect:
         serializedVersion: 2
-        x: 116
-        y: 238
+        x: 115
+        y: 172
         width: 40
         height: 31
       alignment: 0
@@ -463,11 +470,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_21
+      name: ennemy_3_23
       rect:
         serializedVersion: 2
-        x: 161
-        y: 229
+        x: 160
+        y: 163
         width: 31
         height: 40
       alignment: 0
@@ -477,11 +484,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_22
+      name: ennemy_3_24
       rect:
         serializedVersion: 2
-        x: 197
-        y: 238
+        x: 196
+        y: 172
         width: 40
         height: 31
       alignment: 0
@@ -491,11 +498,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_23
+      name: ennemy_3_25
       rect:
         serializedVersion: 2
-        x: 241
-        y: 230
+        x: 240
+        y: 164
         width: 51
         height: 39
       alignment: 0
@@ -505,11 +512,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_24
+      name: ennemy_3_26
       rect:
         serializedVersion: 2
-        x: 297
-        y: 207
+        x: 293
+        y: 141
         width: 31
         height: 55
       alignment: 0
@@ -519,11 +526,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_25
+      name: ennemy_3_27
       rect:
         serializedVersion: 2
-        x: 335
-        y: 207
+        x: 331
+        y: 141
         width: 32
         height: 55
       alignment: 0
@@ -533,11 +540,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_26
+      name: ennemy_3_28
       rect:
         serializedVersion: 2
-        x: 371
-        y: 207
+        x: 367
+        y: 141
         width: 36
         height: 54
       alignment: 0
@@ -547,11 +554,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_27
+      name: ennemy_3_29
       rect:
         serializedVersion: 2
-        x: 411
-        y: 207
+        x: 407
+        y: 141
         width: 34
         height: 55
       alignment: 0
@@ -561,11 +568,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_28
+      name: ennemy_3_30
       rect:
         serializedVersion: 2
-        x: 450
-        y: 207
+        x: 446
+        y: 141
         width: 31
         height: 55
       alignment: 0
@@ -575,11 +582,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_29
+      name: ennemy_3_31
       rect:
         serializedVersion: 2
-        x: 486
-        y: 207
+        x: 482
+        y: 141
         width: 31
         height: 56
       alignment: 0
@@ -589,11 +596,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_30
+      name: ennemy_3_32
       rect:
         serializedVersion: 2
-        x: 524
-        y: 207
+        x: 520
+        y: 141
         width: 44
         height: 51
       alignment: 0
@@ -603,11 +610,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_31
+      name: ennemy_3_33
       rect:
         serializedVersion: 2
-        x: 573
-        y: 209
+        x: 569
+        y: 143
         width: 44
         height: 52
       alignment: 0
@@ -617,11 +624,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_32
+      name: ennemy_3_34
       rect:
         serializedVersion: 2
-        x: 622
-        y: 204
+        x: 618
+        y: 138
         width: 29
         height: 56
       alignment: 0
@@ -631,11 +638,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_33
+      name: ennemy_3_35
       rect:
         serializedVersion: 2
-        x: 655
-        y: 209
+        x: 651
+        y: 143
         width: 38
         height: 51
       alignment: 0
@@ -645,11 +652,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_34
+      name: ennemy_3_36
       rect:
         serializedVersion: 2
-        x: 696
-        y: 202
+        x: 692
+        y: 136
         width: 31
         height: 59
       alignment: 0
@@ -659,11 +666,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_35
+      name: ennemy_3_37
       rect:
         serializedVersion: 2
-        x: 12
-        y: 142
+        x: 22
+        y: 77
         width: 48
         height: 40
       alignment: 0
@@ -673,11 +680,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_36
+      name: ennemy_3_38
       rect:
         serializedVersion: 2
-        x: 68
-        y: 142
+        x: 78
+        y: 77
         width: 28
         height: 53
       alignment: 0
@@ -687,11 +694,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_37
+      name: ennemy_3_39
       rect:
         serializedVersion: 2
-        x: 100
-        y: 142
+        x: 110
+        y: 77
         width: 36
         height: 47
       alignment: 0
@@ -701,67 +708,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_38
+      name: ennemy_3_40
       rect:
         serializedVersion: 2
-        x: 140
-        y: 138
-        width: 54
-        height: 39
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_39
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 142
-        width: 56
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_40
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 142
-        width: 53
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_41
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 142
-        width: 58
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_42
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 142
+        x: 159
+        y: 81
         width: 54
         height: 31
       alignment: 0
@@ -771,11 +722,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_43
+      name: ennemy_3_41
       rect:
         serializedVersion: 2
-        x: 455
-        y: 142
+        x: 224
+        y: 77
+        width: 56
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_42
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 77
+        width: 53
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_43
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 77
+        width: 58
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_44
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 77
+        width: 54
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_45
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 77
         width: 50
         height: 40
       alignment: 0
@@ -785,11 +792,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_44
+      name: ennemy_3_46
       rect:
         serializedVersion: 2
-        x: 510
-        y: 142
+        x: 520
+        y: 77
         width: 38
         height: 51
       alignment: 0
@@ -799,11 +806,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_45
+      name: ennemy_3_47
       rect:
         serializedVersion: 2
-        x: 556
-        y: 142
+        x: 566
+        y: 77
         width: 32
         height: 55
       alignment: 0
@@ -813,11 +820,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_46
+      name: ennemy_3_48
       rect:
         serializedVersion: 2
-        x: 596
-        y: 142
+        x: 606
+        y: 77
         width: 31
         height: 43
       alignment: 0
@@ -827,11 +834,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_47
+      name: ennemy_3_49
       rect:
         serializedVersion: 2
-        x: 638
-        y: 142
+        x: 648
+        y: 77
         width: 40
         height: 46
       alignment: 0
@@ -841,39 +848,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_48
+      name: ennemy_3_50
       rect:
         serializedVersion: 2
-        x: 683
-        y: 142
-        width: 37
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_49
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 75
-        width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_50
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 75
+        x: 46
+        y: 5
         width: 25
         height: 52
       alignment: 0
@@ -883,53 +862,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_51
+      name: ennemy_3_51
       rect:
         serializedVersion: 2
-        x: 123
-        y: 110
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_52
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 110
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_53
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 110
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_54
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 75
+        x: 141
+        y: 5
         width: 25
         height: 53
       alignment: 0
@@ -939,11 +876,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_55
+      name: ennemy_3_52
       rect:
         serializedVersion: 2
-        x: 216
-        y: 75
+        x: 174
+        y: 5
         width: 24
         height: 53
       alignment: 0
@@ -953,11 +890,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_56
+      name: ennemy_3_53
       rect:
         serializedVersion: 2
-        x: 248
-        y: 75
+        x: 206
+        y: 5
         width: 33
         height: 56
       alignment: 0
@@ -967,11 +904,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_57
+      name: ennemy_3_54
       rect:
         serializedVersion: 2
-        x: 342
-        y: 75
+        x: 300
+        y: 5
         width: 38
         height: 52
       alignment: 0
@@ -981,11 +918,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_58
+      name: ennemy_3_55
       rect:
         serializedVersion: 2
-        x: 385
-        y: 75
+        x: 343
+        y: 5
         width: 28
         height: 52
       alignment: 0
@@ -995,11 +932,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_59
+      name: ennemy_3_56
       rect:
         serializedVersion: 2
-        x: 461
-        y: 79
+        x: 411
+        y: 9
         width: 40
         height: 52
       alignment: 0
@@ -1009,13 +946,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_60
+      name: ennemy_3_57
       rect:
         serializedVersion: 2
-        x: 507
-        y: 75
-        width: 44
-        height: 56
+        x: 533
+        y: 31
+        width: 24
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1023,13 +960,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_61
+      name: ennemy_3_58
       rect:
         serializedVersion: 2
-        x: 557
-        y: 75
-        width: 32
-        height: 60
+        x: 560
+        y: 31
+        width: 24
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1037,13 +974,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_62
+      name: ennemy_3_59
       rect:
         serializedVersion: 2
-        x: 593
-        y: 75
-        width: 44
-        height: 55
+        x: 591
+        y: 56
+        width: 31
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1051,11 +988,487 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_63
+      name: ennemy_3_60
       rect:
         serializedVersion: 2
-        x: 641
-        y: 75
+        x: 631
+        y: 52
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_61
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 55
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_62
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 51
+        width: 49
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_63
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 40
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_64
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 40
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_65
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 40
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_66
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 34
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_67
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 34
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_68
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 31
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_69
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 42
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_70
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 33
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_71
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 31
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_72
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 24
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_73
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 24
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_74
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 24
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_75
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 24
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_76
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 26
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_77
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 26
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_78
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 26
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_79
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 26
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_80
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 26
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_81
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 3
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_82
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 8
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_83
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 10
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_84
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 8
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_85
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 18
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_86
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 10
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_87
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 16
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_88
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 5
+        width: 5
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_89
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 5
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_90
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 4
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_91
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 5
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_92
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 4
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_93
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 4
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ennemy_3_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
         width: 34
         height: 52
       alignment: 0
@@ -1065,264 +1478,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_64
+      name: ennemy_3_18
       rect:
         serializedVersion: 2
-        x: 123
-        y: 94
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_65
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 94
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_66
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 94
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_67
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 96
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_68
-      rect:
-        serializedVersion: 2
-        x: 301
-        y: 96
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_69
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 96
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_70
-      rect:
-        serializedVersion: 2
-        x: 423
-        y: 96
-        width: 13
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_71
-      rect:
-        serializedVersion: 2
-        x: 440
-        y: 96
-        width: 13
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_72
-      rect:
-        serializedVersion: 2
-        x: 123
-        y: 78
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_73
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 80
-        width: 6
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_74
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 78
-        width: 13
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_75
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 3
-        width: 24
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_76
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 3
-        width: 26
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_77
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 3
-        width: 24
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_78
-      rect:
-        serializedVersion: 2
-        x: 167
-        y: 3
-        width: 28
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_79
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 3
-        width: 54
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_80
-      rect:
-        serializedVersion: 2
-        x: 262
-        y: 3
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_81
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 3
-        width: 54
-        height: 53
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_82
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 3
-        width: 54
+        x: 693
+        y: 77
+        width: 37
         height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1331,13 +1492,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_83
+      name: ennemy_3_94
       rect:
         serializedVersion: 2
-        x: 416
-        y: 3
-        width: 29
-        height: 67
+        x: 591
+        y: 42
+        width: 9
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1345,69 +1506,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Black_mamba_84
+      name: ennemy_3_95
       rect:
         serializedVersion: 2
-        x: 448
-        y: 4
-        width: 35
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_85
-      rect:
-        serializedVersion: 2
-        x: 487
-        y: 4
-        width: 35
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_86
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 3
-        width: 29
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_87
-      rect:
-        serializedVersion: 2
-        x: 562
-        y: 3
-        width: 35
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Black_mamba_88
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 8
-        width: 35
-        height: 62
+        x: 456
+        y: 34
+        width: 3
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

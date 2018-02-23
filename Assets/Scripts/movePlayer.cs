@@ -13,7 +13,13 @@ public class movePlayer : MonoBehaviour {
 	private animationSprite ac;
 	private string Horizontal;
 	private string Vertical;
-	private bool isAction = false; 
+
+	private string Fire1;
+	private string Fire2;
+	private string Fire3;
+
+	private bool isAction = false;
+	private bool IsUpdatedNow; 
 
 	// Use this for initialization
 	void Start () {
@@ -21,14 +27,18 @@ public class movePlayer : MonoBehaviour {
 		ac = GetComponent<animationSprite> ();
 		Horizontal = "Horizontal" + Player;
 		Vertical = "Vertical" + Player;
+		Fire1 = "Fire1" + Player;
+		Fire2 = "Fire2" + Player;
+		Fire3 = "Fire3" + Player;
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		if(Input.GetAxis("Fire1")  == 1){
+		IsUpdatedNow = false;
+		if(Input.GetButtonDown(Fire1)){
 			isAction = true;
-
+			IsUpdatedNow = true;
 			if(ac.currentAnim.name != "attack1")
 			{
 				ac.ChangeAnimation("attack1", isAction);
@@ -36,12 +46,15 @@ public class movePlayer : MonoBehaviour {
 		}
 		else
 		{
-			isAction = false;
+			if(!IsUpdatedNow)
+			{
+				isAction = false;
+			}
 		}
 
-		if(Input.GetAxis("Fire2")  == 1){
+		if(Input.GetButtonDown(Fire2)){
 			isAction = true;
-
+			IsUpdatedNow = true;
 			if(ac.currentAnim.name != "attack2")
 			{
 				ac.ChangeAnimation("attack2", isAction);
@@ -49,9 +62,29 @@ public class movePlayer : MonoBehaviour {
 		}
 		else
 		{
-			isAction = false;
+			if(!IsUpdatedNow)
+			{
+				isAction = false;
+			}
+			
 		}
 		
+		if(Input.GetButtonDown(Fire3)) {
+			isAction = true;
+			IsUpdatedNow = true;
+
+			if(ac.currentAnim.name != "attack3")
+			{
+				ac.ChangeAnimation("attack3", isAction);
+			}			
+		}
+		else
+		{
+			if(!IsUpdatedNow)
+			{
+				isAction = false;
+			}
+		}
 
 		if(!isAction) {
 			// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
@@ -84,7 +117,7 @@ public class movePlayer : MonoBehaviour {
 			transform.position.y,
 			transform.position.y
 			);
-			
+
 			// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 			// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 			// action (bouger, ne plus bouger, changer de direction) est prise en compte.
