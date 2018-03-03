@@ -8,6 +8,8 @@ public class Track : MonoBehaviour {
 	public Transform backgroundBarHealthP1;
 
 	public Transform foregroundBarHealthP2;
+	public Transform namePlayer1;
+	public Transform namePlayer2;
 	public Transform backgroundBarHealthP2;
 	public Transform foregroundBarUlt;
 	public Transform backgroundBarUlt;
@@ -18,6 +20,8 @@ public class Track : MonoBehaviour {
 	void Start () {
 		backgroundBarHealthP1.position = new Vector3(-2.5f,4.2f,2);
 		foregroundBarHealthP1.position = new Vector3(-2.5f,4.2f,1);	
+		namePlayer1.position = new Vector3(-8.8f, 4.5f, 1);
+		namePlayer2.position = new Vector3(-6f, 4.6f, 1);
 
 		backgroundBarHealthP2.position = new Vector3(-1.4f,4.2f,2);
 		foregroundBarHealthP2.position = new Vector3(-1.4f,4.2f,1);			
@@ -65,6 +69,8 @@ public class Track : MonoBehaviour {
 		this.transform.position += moveOffset;
 		backgroundBarHealthP1.position += moveOffset;	
 		foregroundBarHealthP1.position += moveOffset;	
+		namePlayer1.position += moveOffset;
+		namePlayer2.position += moveOffset;
 
 		backgroundBarHealthP2.position += moveOffset;	
 		foregroundBarHealthP2.position += moveOffset;	
