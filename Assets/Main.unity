@@ -394,6 +394,7 @@ MonoBehaviour:
   backgroundBarHealthP1: {fileID: 0}
   foregroundBarHealthP2: {fileID: 0}
   namePlayer1: {fileID: 0}
+  namePlayer2: {fileID: 0}
   backgroundBarHealthP2: {fileID: 0}
   foregroundBarUlt: {fileID: 0}
   backgroundBarUlt: {fileID: 0}
@@ -619,6 +620,7 @@ MonoBehaviour:
   backgroundBarHealthP1: {fileID: 333000463}
   foregroundBarHealthP2: {fileID: 699499124}
   namePlayer1: {fileID: 634506991}
+  namePlayer2: {fileID: 1788160286}
   backgroundBarHealthP2: {fileID: 402671356}
   foregroundBarUlt: {fileID: 586604526}
   backgroundBarUlt: {fileID: 717922897}
