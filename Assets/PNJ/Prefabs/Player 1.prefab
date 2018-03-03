@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114550580230889948}
   - component: {fileID: 114036929105016260}
   - component: {fileID: 114570220112660834}
+  - component: {fileID: 114413988930464330}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +106,35 @@ MonoBehaviour:
   maxSpeed: 4
   Player: 
   currentSpeed: {x: 0, y: 0, z: 0}
+--- !u!114 &114413988930464330
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1675268480427012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 3
+  maxHp: 3
+  maxCombo: 3
+  combo: 0
+  Attacks:
+  - name: coup de poing
+    SpriteDamage: {fileID: 21300070, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    dammageValue: 1
+    comboValue: 3
+  - name: air kick
+    SpriteDamage: {fileID: 21300020, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    dammageValue: 2
+    comboValue: 2
+  - name: high kick
+    SpriteDamage: {fileID: 21300040, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    dammageValue: 3
+    comboValue: 1
+  EnemyType: 
 --- !u!114 &114550580230889948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,8 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2206c04005b3f3c4890d93de98d815f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4016537442982944, guid: b16c2be42b5eb304391a42ec5603f0b5,
-    type: 2}
+  player2: {fileID: 0}
 --- !u!114 &114570220112660834
 MonoBehaviour:
   m_ObjectHideFlags: 1

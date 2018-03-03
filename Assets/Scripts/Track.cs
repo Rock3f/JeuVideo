@@ -13,6 +13,9 @@ public class Track : MonoBehaviour {
 	public Transform backgroundBarHealthP2;
 	public Transform foregroundBarUlt;
 	public Transform backgroundBarUlt;
+
+	public Transform foregroundBarUltP2;
+	public Transform backgroundBarUltP2;
 	public Transform target;
 	public float trackingDistance = 1f;
 	public bool isCameraFix = false;
@@ -28,6 +31,9 @@ public class Track : MonoBehaviour {
 
 		backgroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
 		foregroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
+
+		backgroundBarUltP2.position = new Vector3(-1.4f,3.5f,2);
+		foregroundBarUltP2.position = new Vector3(-1.4f,3.5f,2);
 	}
 	
 	// Update is called once per frame
@@ -77,6 +83,8 @@ public class Track : MonoBehaviour {
 
 		backgroundBarUlt.position += moveOffset;	
 		foregroundBarUlt.position += moveOffset;	
+		backgroundBarUltP2.position += moveOffset;	
+		foregroundBarUltP2.position += moveOffset;	
 		}		
 	}
 }

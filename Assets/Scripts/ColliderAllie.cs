@@ -5,10 +5,9 @@ using UnityEngine;
 public class ColliderAllie : MonoBehaviour {
 
 	// Use this for initialization
-	public Transform bulletPrefab;
+	public Transform player2;
     void Start() {
-        Transform bullet = Instantiate(bulletPrefab) as Transform;
-        Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        Physics2D.IgnoreCollision(player2.GetComponent<Collider2D>(), GetComponent<Collider2D>());
     }
 
 	

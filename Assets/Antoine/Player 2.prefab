@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114757847587388130}
   - component: {fileID: 61834567070232554}
   - component: {fileID: 50767146009174020}
+  - component: {fileID: 114880012110600784}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -128,6 +129,23 @@ MonoBehaviour:
     sprites:
     - {fileID: 21300000, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   imagesParSecondes: 6
+--- !u!114 &114880012110600784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1551359416856536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
+  maxHp: 5
+  maxCombo: 5
+  combo: 0
+  Attacks: []
+  EnemyType: 
 --- !u!212 &212126387885004334
 SpriteRenderer:
   m_ObjectHideFlags: 1
