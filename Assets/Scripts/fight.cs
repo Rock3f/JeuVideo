@@ -12,6 +12,7 @@ public struct Attack{
 	public float dammageValue;
 
 	public float comboValue;
+
 }
 
 [ExecuteInEditMode]
@@ -19,13 +20,15 @@ public class fight : MonoBehaviour {
 	// Public
 	public float hp = 5;
 	public float maxHp = 5;
-	public float maxCombo = 5;
-	public float combo = 0;
 	public Attack[] Attacks;
+
+	public GameObject UltBarVar;
 	// Private 
 	private float accumulateur;
 
-	public string EnemyType;
+	private string EnemyType;
+
+	private float angle;
 
 	// Use this for initialization
 	void Start () {
@@ -45,24 +48,25 @@ public class fight : MonoBehaviour {
 	}
 
     public void OnCollisionStay2D (Collision2D col)
-    {	
+    {
+
+        angle = Vector2.SignedAngle(col.gameObject.transform.position, transform.position);
+		
+        if (angle < 5.0f){
+            print("close");
+		}
+
+
         accumulateur += Time.deltaTime;
 		foreach (Attack att in Attacks){
 			if(col.gameObject.tag == EnemyType && this.GetComponent<SpriteRenderer>().sprite == att.SpriteDamage && accumulateur > 0.2)
 			{
 				col.gameObject.GetComponent<fight>().hp -= att.dammageValue;
-				combo += att.comboValue;
+				if (UltBarVar != null){
+					UltBarVar.GetComponent<UltBar>().hit += att.comboValue;
+				}
 				accumulateur = 0;
 			}
 		}
     }
-
-
-	public void AddHp (float amount) {
-		hp += amount;
-	}
-
-	public void AddCombo (float amount){
-		combo += amount;
-	}
 }
