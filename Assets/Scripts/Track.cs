@@ -4,36 +4,24 @@ using UnityEngine;
 
 public class Track : MonoBehaviour {
 
-	public Transform foregroundBarHealthP1;
-	public Transform backgroundBarHealthP1;
+	public Transform barHealthP1;
 
-	public Transform foregroundBarHealthP2;
-	public Transform namePlayer1;
-	public Transform namePlayer2;
-	public Transform backgroundBarHealthP2;
-	public Transform foregroundBarUlt;
-	public Transform backgroundBarUlt;
+	public Transform barHealthP2;
 
-	public Transform foregroundBarUltP2;
-	public Transform backgroundBarUltP2;
+	public Transform barUlt;
+
 	public Transform target;
 	public float trackingDistance = 1f;
 	public bool isCameraFix = false;
 	// Use this for initialization
 	void Start () {
-		backgroundBarHealthP1.position = new Vector3(-2.5f,4.2f,2);
-		foregroundBarHealthP1.position = new Vector3(-2.5f,4.2f,1);	
-		namePlayer1.position = new Vector3(-8.8f, 4.5f, 1);
-		namePlayer2.position = new Vector3(-6f, 4.6f, 1);
+		barHealthP1.position = new Vector3(-10f,4.2f,1);	
+		barHealthP2.position = new Vector3(-6f,4.2f,2);
 
-		backgroundBarHealthP2.position = new Vector3(-1.4f,4.2f,2);
-		foregroundBarHealthP2.position = new Vector3(-1.4f,4.2f,1);			
+		barUlt.position = new Vector3(-10f,3.5f,2);	
 
-		backgroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
-		foregroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
-
-		backgroundBarUltP2.position = new Vector3(-1.4f,3.5f,2);
-		foregroundBarUltP2.position = new Vector3(-1.4f,3.5f,2);
+		// backgroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
+		// foregroundBarUlt.position = new Vector3(-2.5f,3.5f,2);
 	}
 	
 	// Update is called once per frame
@@ -73,18 +61,10 @@ public class Track : MonoBehaviour {
 		// Applique le déplacement à la position en additionnant les vecteurs
 		// équivalent de <code>this.transform.position = this.transform.position + moveOffset;</code>
 		this.transform.position += moveOffset;
-		backgroundBarHealthP1.position += moveOffset;	
-		foregroundBarHealthP1.position += moveOffset;	
-		namePlayer1.position += moveOffset;
-		namePlayer2.position += moveOffset;
-
-		backgroundBarHealthP2.position += moveOffset;	
-		foregroundBarHealthP2.position += moveOffset;	
-
-		backgroundBarUlt.position += moveOffset;	
-		foregroundBarUlt.position += moveOffset;	
-		backgroundBarUltP2.position += moveOffset;	
-		foregroundBarUltP2.position += moveOffset;	
+		
+		this.barHealthP1.position += moveOffset;
+		this.barHealthP2.position += moveOffset;
+		this.barUlt.position += moveOffset;
 		}		
 	}
 }
