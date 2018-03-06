@@ -10,6 +10,9 @@ public class Track : MonoBehaviour {
 
 	public Transform barUlt;
 
+	public Transform panelGo;
+	public Transform panelWarning;
+
 	public Transform target;
 	public float trackingDistance = 1f;
 	public bool isCameraFix = false;
@@ -65,6 +68,8 @@ public class Track : MonoBehaviour {
 		this.barHealthP1.position += moveOffset;
 		this.barHealthP2.position += moveOffset;
 		this.barUlt.position += moveOffset;
+		this.panelGo.position += moveOffset;
+		this.panelWarning.position += moveOffset;
 		}		
 	}
 }
