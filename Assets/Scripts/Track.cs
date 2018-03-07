@@ -8,6 +8,8 @@ public class Track : MonoBehaviour {
 
 	public Transform barHealthP2;
 
+	public Transform screenGameOver;
+
 	public Transform barUlt;
 
 	public Transform panelGo;
@@ -70,6 +72,7 @@ public class Track : MonoBehaviour {
 		this.barUlt.position += moveOffset;
 		this.panelGo.position += moveOffset;
 		this.panelWarning.position += moveOffset;
+		this.screenGameOver.position += moveOffset;
 		}		
 	}
 }

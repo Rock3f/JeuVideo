@@ -23,6 +23,7 @@ public class fight : MonoBehaviour {
 	public Attack[] Attacks;
 
 	public GameObject UltBarVar;
+	public GameObject screenGameOver;
 	// Private 
 	private float accumulateur;
 
@@ -50,8 +51,15 @@ public class fight : MonoBehaviour {
 
 		//Est detruit quand sa vie arrive à 0
 		if (hp <= 0){
+			
+
+			if (this.gameObject.tag == "Player"){
+				screenGameOver.SetActive(true);
+			}
+
 			DestroyImmediate(this.gameObject);
 		}
+
 		// Initialise pour detection d'angle
 		Vector2 size = GetComponent<BoxCollider2D>().size;
          size = Vector2.Scale (size, (Vector2)transform.localScale);
