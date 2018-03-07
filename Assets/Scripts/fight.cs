@@ -49,21 +49,7 @@ public class fight : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-<<<<<<< HEAD
 		
-=======
-		//Est detruit quand sa vie arrive à 0
-		if (hp <= 0){
-			
-
-			if (this.gameObject.tag == "Player"){
-				screenGameOver.SetActive(true);
-			}
-
-			DestroyImmediate(this.gameObject);
-		}
-
->>>>>>> 4a359905cef4caaa628a995843a68a2621c1f385
 		// Initialise pour detection d'angle
 		Vector2 size = GetComponent<BoxCollider2D>().size;
          size = Vector2.Scale (size, (Vector2)transform.localScale);
