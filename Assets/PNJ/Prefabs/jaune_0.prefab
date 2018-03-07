@@ -84,7 +84,9 @@ MonoBehaviour:
   maxHp: 10
   Attacks: []
   UltBarVar: {fileID: 0}
+  screenGameOver: {fileID: 0}
   CollisonSide: 
+  Angle: 0
 --- !u!114 &114562977436848086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +133,7 @@ MonoBehaviour:
     - {fileID: 21300042, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   - name: hit
     sprites:
-    - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300000, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   - name: die
     sprites:

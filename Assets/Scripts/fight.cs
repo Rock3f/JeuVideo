@@ -24,12 +24,15 @@ public class fight : MonoBehaviour {
 
 	public GameObject UltBarVar;
 	public GameObject screenGameOver;
+
 	// Private 
 	private float accumulateur;
 
 	private string EnemyType;
 
 	public string CollisonSide;
+
+	public float Angle;
 
 	private float topAngle;
     private float sideAngle;
@@ -48,8 +51,6 @@ public class fight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		
 		// Initialise pour detection d'angle
 		Vector2 size = GetComponent<BoxCollider2D>().size;
          size = Vector2.Scale (size, (Vector2)transform.localScale);
@@ -71,6 +72,10 @@ public class fight : MonoBehaviour {
 				if (EnemyType == "Player"){
 					DestroyImmediate(this.gameObject);
 				}
+
+				if (EnemyType == "Enemy"){
+					screenGameOver.SetActive(true);
+				}
 				
 			}	
 		}
@@ -84,15 +89,20 @@ public class fight : MonoBehaviour {
  
 		if (Vector2.Angle(v, transform.up) <= topAngle) {
 			CollisonSide = "T";
+			Angle = Vector2.Angle(v, transform.up);
+
 		}
 		else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
 			CollisonSide = "R";
+			Angle = Vector2.Angle(v, transform.right);
 		}
 		else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
 			CollisonSide = "L";
+			Angle = Vector2.Angle(v, transform.right);
 		}
 		else {
 			CollisonSide = "B";
+			Angle = Vector2.Angle(v, transform.up);
 		}
 
 		// Permet de n'infliger qu'une seul fois des dégats par coup
@@ -100,13 +110,17 @@ public class fight : MonoBehaviour {
 
 		// Lorsqu'une collison à lieu avec un enemie
 		if(coll.gameObject.tag == EnemyType){
+			
+			string OtherCollSide = coll.gameObject.GetComponent<fight>().CollisonSide;
+			bool OtherflipX = GetComponent<SpriteRenderer>().flipX;
+
 			// Pour chaque attack regarde si le sprite correspond au sprite de degat associé
 			foreach (Attack att in Attacks){
 				if(GetComponent<SpriteRenderer>().sprite == att.SpriteDamage 
 				&& accumulateur > 0.2
 				// Vérifie que les ennemies sont bien face a face pour se frapper
-				&& ((CollisonSide == "R" && coll.gameObject.GetComponent<fight>().CollisonSide == "L" && GetComponent<SpriteRenderer>().flipX == false) 
-				|| (CollisonSide == "L" && coll.gameObject.GetComponent<fight>().CollisonSide == "R" &&GetComponent<SpriteRenderer>().flipX))
+				&& ((CollisonSide == "R" && OtherCollSide == "L" && OtherflipX == false) 
+				|| (CollisonSide == "L" && OtherCollSide == "R" && OtherflipX == true))
 				)
 
 				{	
@@ -120,11 +134,15 @@ public class fight : MonoBehaviour {
 
 					// Si le personnage a une barre de combo la rempli en fonction de l'attaque
 					if (UltBarVar != null){
-						UltBarVar.GetComponent<UltBar>().hit += att.comboValue;
+						AddHit(att.comboValue);
 					}
 					accumulateur = 0;
 				}
 			}
 		}
     }
+
+	private void AddHit(float AddedHit) {
+		UltBarVar.GetComponent<UltBar>().hit += AddedHit;
+	}
 }
