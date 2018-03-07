@@ -103,8 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 3
   maxHp: 3
-  maxCombo: 3
-  combo: 0
   Attacks:
   - name: coup de poing
     SpriteDamage: {fileID: 21300070, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
@@ -118,7 +116,7 @@ MonoBehaviour:
     SpriteDamage: {fileID: 21300040, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     dammageValue: 3
     comboValue: 1
-  EnemyType: 
+  UltBarVar: {fileID: 0}
 --- !u!114 &114387703588246680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +156,18 @@ MonoBehaviour:
     - {fileID: 21300036, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
     - {fileID: 21300038, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
     - {fileID: 21300040, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+  - name: hit
+    sprites:
+    - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+  - name: die
+    sprites:
+    - {fileID: 21300216, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300226, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300246, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300228, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300248, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 0}
   imagesParSecondes: 12
   currentAnim:
     name: 
