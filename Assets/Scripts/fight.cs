@@ -107,23 +107,42 @@ public class fight : MonoBehaviour {
     {
 		// Detecte de quel cote viens la collison
 		Vector2 v = coll.contacts[0].point - (Vector2)transform.position;
- 
-		if (Vector2.Angle(v, transform.up) <= topAngle) {
-			CollisonSide = "T";
-			Angle = Vector2.Angle(v, transform.up);
-
-		}
-		else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
-			CollisonSide = "R";
-			Angle = Vector2.Angle(v, transform.right);
-		}
-		else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+		if (EnemyType == "Enemy"){
+			if (Vector2.Angle(v, transform.up) <= topAngle) {
 			CollisonSide = "L";
-			Angle = Vector2.Angle(v, transform.right);
-		}
-		else {
-			CollisonSide = "B";
 			Angle = Vector2.Angle(v, transform.up);
+			}
+			else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
+				CollisonSide = "B";
+				Angle = Vector2.Angle(v, transform.right);
+			}
+			else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+				CollisonSide = "T";
+				Angle = Vector2.Angle(v, transform.right);
+			}
+			else {
+				CollisonSide = "R";
+				Angle = Vector2.Angle(v, transform.up);
+			}
+		}
+
+		else{
+			if (Vector2.Angle(v, transform.up) <= topAngle) {
+				CollisonSide = "T";
+				Angle = Vector2.Angle(v, transform.up);
+			}
+			else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
+				CollisonSide = "R";
+				Angle = Vector2.Angle(v, transform.right);
+			}
+			else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+				CollisonSide = "L";
+				Angle = Vector2.Angle(v, transform.right);
+			}
+			else {
+				CollisonSide = "B";
+				Angle = Vector2.Angle(v, transform.up);
+			}
 		}
 
 		// Permet de n'infliger qu'une seul fois des dégats par coup

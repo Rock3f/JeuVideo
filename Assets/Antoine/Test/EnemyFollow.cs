@@ -28,6 +28,9 @@ public class EnemyFollow : MonoBehaviour {
 			target = Player1.GetComponent<Transform>();
 		}
 		transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x +1, target.position.y, target.position.z), speed * Time.deltaTime);
-		
+		gameObject.GetComponent<animationSprite>().SetAnimationFromSpeed(speed, true);
+		if (transform.position.x > target.position.x){
+			gameObject.GetComponent<SpriteRenderer>().flipX = true;
+		}
 	}
 }
