@@ -39,6 +39,7 @@ public class fight : MonoBehaviour {
 	private float topAngle;
     private float sideAngle;
 
+	private AudioSource[] sounds;
 	// Use this for initialization
 	void Start () {
 
@@ -49,6 +50,11 @@ public class fight : MonoBehaviour {
 		else{
 			EnemyType = "Player";
 		}
+
+		if(cameraMain != null)
+		{
+			sounds = cameraMain.GetComponents<AudioSource>();
+		}		
 	}
 	
 	// Update is called once per frame
@@ -65,24 +71,31 @@ public class fight : MonoBehaviour {
 		if(hp <= 0){
 			if(gameObject.GetComponent<animationSprite>().currentAnim.name != "die")
 			{
-				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);
+				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);		
+
+				if(cameraMain != null)
+				{
+					sounds.FirstOrDefault(x => x.clip.name.Contains("deathPlayer")).Play();
+				}				
 			}
+
+			string spritesLastName = GetComponent<animationSprite>().currentAnim.sprites.Last().name;
+			string spriteCurrentName =  GetComponent<animationSprite>().currentAnim.sprites[GetComponent<animationSprite>().currentSpriteIdx].name;
+			
 			// Le dernier sprite de l'animation est vide et fait disparaitre le personnage
-			if(GetComponent<SpriteRenderer>().sprite == null){
+			if( spritesLastName == spriteCurrentName){
 				gameObject.SetActive(false);
+				
 				// Si c'est un mechant il est le GameObject est détruit
 				if (EnemyType == "Player"){
 					DestroyImmediate(this.gameObject);
 				}
 
 				if (EnemyType == "Enemy"){
+					
+					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 					screenGameOver.SetActive(true);
-					AudioSource[] sounds = cameraMain.GetComponents<AudioSource>();
-					AudioSource mainTheme = sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1"));
-					AudioSource gameOverTheme = sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver"));
-
-					mainTheme.Stop();
-					gameOverTheme.Play();
+					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).Play();
 				}
 				
 			}	
