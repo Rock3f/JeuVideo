@@ -23,7 +23,7 @@ public class animationSprite : MonoBehaviour {
 
     // état privé
     // indice de la frame actuellement affichée
-    private int currentSpriteIdx = 0;
+    public int currentSpriteIdx = 0;
     // indice de l'animation actuellement affichée    
     public Animation currentAnim;
     // accumulateur pour mesurer le temps cumulé qui passe
@@ -108,6 +108,11 @@ public class animationSprite : MonoBehaviour {
        
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
 
+        // if(currentAnim.name == "die" && currentAnim.sprites.LastOrDefault().name == currentAnim.sprites[currentSpriteIdx].name )
+        // {
+        //     gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1f, gameObject.transform.position.z - 1f);
+        // }
+
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
            
@@ -116,14 +121,21 @@ public class animationSprite : MonoBehaviour {
     private void NextFrameAction() {
         currentSpriteIdx++;
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
+        if(currentAnim.name == "die" && currentAnim.sprites.LastOrDefault().name == currentAnim.sprites[currentSpriteIdx].name )
+        {
+            float positionX = GetComponent<SpriteRenderer>().flipX ? gameObject.transform.position.x  +1f 
+                            : gameObject.transform.position.x  - 1f;
+                            
+            gameObject.transform.position = new Vector3(positionX, gameObject.transform.position.y - 1.5f, gameObject.transform.position.z - 1.5f);
+        }
 
-        if(currentSpriteIdx < currentAnim.sprites.Length)
+        if(currentSpriteIdx < currentAnim.sprites.Length) {
             spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
+        }
        else
        {
             isRunning = false;
             ChangeAnimation("normal", false);
        }
-      
     }
 }

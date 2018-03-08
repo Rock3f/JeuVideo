@@ -85,6 +85,7 @@ public class movePlayer : MonoBehaviour {
 				isAction = false;
 			}
 		}
+		
 
 		if(!isAction && this.gameObject.GetComponent<fight>().hp > 0) {
 			// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
