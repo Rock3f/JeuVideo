@@ -12,16 +12,6 @@ public struct ScreenEnnemy {
 public class Track : MonoBehaviour {
 
 	public ScreenEnnemy[] allScreen;
-	public Transform barHealthP1;
-
-	public Transform barHealthP2;
-
-	public Transform screenGameOver;
-
-	public Transform barUlt;
-
-	public Transform panelGo;
-	public Transform panelWarning;
 
 	public Transform target;
 	public float trackingDistance = 1f;
@@ -35,11 +25,7 @@ public class Track : MonoBehaviour {
 	public int idCurrentScreen = 0;
 
 	// Use this for initialization
-	void Start () {
-		barHealthP1.position = new Vector3(-10f,4.2f,1);	
-		barHealthP2.position = new Vector3(-6f,4.2f,2);
-
-		barUlt.position = new Vector3(-10f,3.5f,2);	
+	void Start () {	
 	}
 	
 	// Update is called once per frame
@@ -103,15 +89,6 @@ public class Track : MonoBehaviour {
 			// Applique le déplacement à la position en additionnant les vecteurs
 			// équivalent de <code>this.transform.position = this.transform.position + moveOffset;</code>
 			this.transform.position += moveOffset;
-			
-			this.barHealthP1.position += moveOffset;
-			this.barHealthP2.position += moveOffset;
-			this.barUlt.position += moveOffset;
-			this.panelGo.position += moveOffset;
-			this.panelWarning.position += moveOffset;
-			this.screenGameOver.position += moveOffset;
-
-
 
 			 accumulateur += Time.deltaTime;
 
