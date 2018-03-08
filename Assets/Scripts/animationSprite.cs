@@ -106,6 +106,7 @@ public class animationSprite : MonoBehaviour {
     private void NextFrame () {
        
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
+
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
            

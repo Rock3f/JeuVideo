@@ -82,17 +82,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   maxHp: 10
-  maxCombo: 5
-  combo: 0
   Attacks: []
-  EnemyType: 
+  UltBarVar: {fileID: 0}
+  screenGameOver: {fileID: 0}
+  CollisonSide: 
+  Angle: 0
 --- !u!114 &114562977436848086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151676770360130}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4fe10345a8b33945ac67b8611300bb8, type: 3}
   m_Name: 
@@ -130,6 +131,18 @@ MonoBehaviour:
     - {fileID: 21300040, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300044, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300042, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+  - name: hit
+    sprites:
+    - {fileID: 21300000, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+  - name: die
+    sprites:
+    - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300112, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300110, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300106, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 21300108, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    - {fileID: 0}
   imagesParSecondes: 8
   currentAnim:
     name: 
@@ -185,7 +198,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.26, y: 0.66}
