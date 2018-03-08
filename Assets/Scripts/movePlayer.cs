@@ -60,7 +60,7 @@ public class movePlayer : MonoBehaviour {
 			if(ac.currentAnim.name != "attack2")
 			{
 				ac.ChangeAnimation("attack2", isAction);
-				mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).Play();
+				mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
 			}			
 		}
 		else

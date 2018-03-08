@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CameraWarningPlayer : MonoBehaviour {
@@ -28,16 +29,22 @@ public class CameraWarningPlayer : MonoBehaviour {
 
         // vide l'accumulateur et fait avancer les frames        
         while (accumulateur > frameDuration && frameDuration > 0) {
-
+			AudioSource siren = cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name.Contains("siren"));
             if((P1.position.x - cameraTransform.position.x) > (cameraMain.orthographicSize * 2)
 			 || (P1.position.x - cameraTransform.position.x) < (cameraMain.orthographicSize * -2) 
 			 || (P2.position.x - cameraTransform.position.x) > (cameraMain.orthographicSize * 2) 
 			 || (P2.position.x - cameraTransform.position.x) < (cameraMain.orthographicSize * -2))
 			{
 				warning.SetActive(!warning.activeSelf);
+
+				if(!siren.isPlaying)
+					siren.PlayOneShot(siren.clip);
 			}     
 			else
 			{
+				if(siren.isPlaying)
+					siren.Stop();
+
 				warning.SetActive(false);
 			}
 
