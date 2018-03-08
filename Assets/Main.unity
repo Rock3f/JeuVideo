@@ -292,12 +292,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 734882277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d17dc360d0a7f44a17a48df0dbd58e, type: 3}
+  m_Script: {fileID: 11500000, guid: 748a8f7b39dceb6428aac756ff0be11e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   P1: {fileID: 1687335806}
   P2: {fileID: 779626187}
-  P1GO: {fileID: 0}
+  P1GO: {fileID: 924531631}
   P2GO: {fileID: 779626180}
   frameDuration: 0.2
   warning: {fileID: 894489339}
@@ -1272,6 +1272,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c374157fdf4d8d948a7cabdf66541541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allScreen:
+  - name: screen0
+    ennemies:
+    - {fileID: 2032412968}
   barHealthP1: {fileID: 976640937}
   barHealthP2: {fileID: 741762099}
   screenGameOver: {fileID: 979205515}
@@ -1574,6 +1578,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0401511, y: 0.211411}
   m_EdgeRadius: 0
+--- !u!1 &2032412968 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1151676770360130, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1135700772}
 --- !u!1 &2101272781
 GameObject:
   m_ObjectHideFlags: 0

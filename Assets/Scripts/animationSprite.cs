@@ -35,6 +35,7 @@ public class animationSprite : MonoBehaviour {
     void Start () {
         // Récupère une référence au script AnimationCourse attaché au même GameObject
         spriteRenderer = GetComponent<SpriteRenderer> ();
+        ChangeAnimation ("normal", isAction);
     }
 
     public void SetAnimationFromSpeed (float vitesse, bool isAction) {
