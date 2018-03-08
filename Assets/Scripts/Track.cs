@@ -92,8 +92,13 @@ public class Track : MonoBehaviour {
 
 			 accumulateur += Time.deltaTime;
 
+			AudioSource source = gameObject.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name.Contains("bell"));
         	// vide l'accumulateur et fait avancer les frames        
         	while (accumulateur > frameDuration && frameDuration > 0) {
+				if(!source.isPlaying && !go.activeSelf)
+				{
+					source.Play();
+				}
 
 				if(nbClignotement <= maxClignotement)
 				{

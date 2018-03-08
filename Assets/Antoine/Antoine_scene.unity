@@ -1242,7 +1242,7 @@ Prefab:
     - target: {fileID: 114413988930464330, guid: 8d568662c564b81478e1395491fa8fd4,
         type: 2}
       propertyPath: hp
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 114413988930464330, guid: 8d568662c564b81478e1395491fa8fd4,
         type: 2}
@@ -1697,10 +1697,20 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
       propertyPath: anims.Array.data[6].sprites.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1765,6 +1775,96 @@ Prefab:
       propertyPath: cameraMain
       value: 
       objectReference: {fileID: 1585615048}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[0].name
+      value: coup de poing
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[0].SpriteDamage
+      value: 
+      objectReference: {fileID: 21300020, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[0].dammageValue
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[1].name
+      value: high kick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[1].SpriteDamage
+      value: 
+      objectReference: {fileID: 21300050, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[1].dammageValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[2].name
+      value: WTF
+      objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[2].SpriteDamage
+      value: 
+      objectReference: {fileID: 21300038, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: Attacks.Array.data[2].dammageValue
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300024, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300022, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300020, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300022, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300024, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300026, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[2].sprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300026, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 114619573045601238, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
@@ -3847,12 +3947,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1151676770360130, guid: 2e5f85f8b1f882c4084ef44863546e1a,
     type: 2}
   m_PrefabInternal: {fileID: 1135700772}
---- !u!4 &2032412974 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1135700772}
---- !u!114 &2032412975
+--- !u!114 &2032412973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3863,10 +3958,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629b11b5565c4144eb5a0ab89ccfd653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   Player1: {fileID: 1687335806}
   Player2: {fileID: 779626187}
-  ActualPosition: {x: 0, y: 0}
+--- !u!4 &2032412974 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1135700772}
 --- !u!50 &2032412976
 Rigidbody2D:
   serializedVersion: 4
