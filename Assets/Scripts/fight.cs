@@ -96,6 +96,12 @@ public class fight : MonoBehaviour {
 					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 					screenGameOver.SetActive(true);
 					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).Play();
+
+					foreach(AudioSource sound in sounds)
+					{
+						if(!sound.clip.name.Contains("gameOver"))
+							sound.mute = true;
+					}
 				}
 				
 			}	
@@ -166,6 +172,24 @@ public class fight : MonoBehaviour {
 				{	
 					// Inflige des dégats en fonction de l'attaque
 					coll.gameObject.GetComponent<fight>().hp -= att.dammageValue;
+
+					if(att.name == "coup de poing")
+					{
+						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("punch"));
+						source.Play();
+					}
+
+					if(att.name == "air kick")
+					{
+						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("airKick"));
+						source.Play();
+					}
+
+					if(att.name == "high kick")
+					{
+						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("HighKick"));
+						source.Play();
+					}
 
 					// Déclenche l'animation hit
 					if (coll.gameObject.GetComponent<fight>().hp > 0){
