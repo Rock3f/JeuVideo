@@ -113,43 +113,24 @@ public class fight : MonoBehaviour {
     {
 		// Detecte de quel cote viens la collison
 		Vector2 v = coll.contacts[0].point - (Vector2)transform.position;
-		if (EnemyType == "Enemy"){
-			if (Vector2.Angle(v, transform.up) <= topAngle) {
-			CollisonSide = "L";
+		
+		if (Vector2.Angle(v, transform.up) <= topAngle) {
+			CollisonSide = "T";
 			Angle = Vector2.Angle(v, transform.up);
-			}
-			else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
-				CollisonSide = "B";
-				Angle = Vector2.Angle(v, transform.right);
-			}
-			else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
-				CollisonSide = "T";
-				Angle = Vector2.Angle(v, transform.right);
-			}
-			else {
-				CollisonSide = "R";
-				Angle = Vector2.Angle(v, transform.up);
-			}
 		}
-
-		else{
-			if (Vector2.Angle(v, transform.up) <= topAngle) {
-				CollisonSide = "T";
-				Angle = Vector2.Angle(v, transform.up);
-			}
-			else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
-				CollisonSide = "R";
-				Angle = Vector2.Angle(v, transform.right);
-			}
-			else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
-				CollisonSide = "L";
-				Angle = Vector2.Angle(v, transform.right);
-			}
-			else {
-				CollisonSide = "B";
-				Angle = Vector2.Angle(v, transform.up);
-			}
+		else if (Vector2.Angle(v, transform.right) <= sideAngle)  {
+			CollisonSide = "R";
+			Angle = Vector2.Angle(v, transform.right);
 		}
+		else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+			CollisonSide = "L";
+			Angle = Vector2.Angle(v, transform.right);
+		}
+		else {
+			CollisonSide = "B";
+			Angle = Vector2.Angle(v, transform.up);
+		}
+		
 
 		// Permet de n'infliger qu'une seul fois des dégats par coup
         accumulateur += Time.deltaTime;
@@ -193,7 +174,10 @@ public class fight : MonoBehaviour {
 
 					// Déclenche l'animation hit
 					if (coll.gameObject.GetComponent<fight>().hp > 0){
-						coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+						if(coll.gameObject.GetComponent<animationSprite>().currentAnim.name != "hit")
+						{
+							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+						}
 					}
 
 					// Si le personnage a une barre de combo la rempli en fonction de l'attaque
