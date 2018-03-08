@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class movePlayer : MonoBehaviour {
@@ -9,6 +10,7 @@ public class movePlayer : MonoBehaviour {
 
 	public string Player;
 	public Vector3 currentSpeed;
+	public GameObject mainCamera;	
 
 	private animationSprite ac;
 	private string Horizontal;
@@ -57,6 +59,7 @@ public class movePlayer : MonoBehaviour {
 			IsUpdatedNow = true;
 			if(ac.currentAnim.name != "attack2")
 			{
+				mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).Play();
 				ac.ChangeAnimation("attack2", isAction);
 			}			
 		}
