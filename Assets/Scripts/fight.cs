@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -24,6 +25,7 @@ public class fight : MonoBehaviour {
 
 	public GameObject UltBarVar;
 	public GameObject screenGameOver;
+	public GameObject cameraMain;
 
 	// Private 
 	private float accumulateur;
@@ -75,6 +77,12 @@ public class fight : MonoBehaviour {
 
 				if (EnemyType == "Enemy"){
 					screenGameOver.SetActive(true);
+					AudioSource[] sounds = cameraMain.GetComponents<AudioSource>();
+					AudioSource mainTheme = sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1"));
+					AudioSource gameOverTheme = sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver"));
+
+					mainTheme.Stop();
+					gameOverTheme.Play();
 				}
 				
 			}	
