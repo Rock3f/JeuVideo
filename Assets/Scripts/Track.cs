@@ -40,28 +40,33 @@ public class Track : MonoBehaviour {
 		barHealthP2.position = new Vector3(-6f,4.2f,2);
 
 		barUlt.position = new Vector3(-10f,3.5f,2);	
-
-		actualScreenName = "screen" + idCurrentScreen;
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		actualScreenName = "screen" + idCurrentScreen;
 		ScreenEnnemy screen = allScreen.FirstOrDefault(x => x.name == actualScreenName);
 		
-		foreach(GameObject ennemy in screen.ennemies)
+		if(screen.ennemies != null)
 		{
-			if(ennemy != null)
+			foreach(GameObject ennemy in screen.ennemies)
 			{
-				isCameraFix = true;
-				break;
-			}
-			else
-			{
-				isCameraFix = false;
+				if(ennemy != null)
+				{
+					isCameraFix = true;
+					break;
+				}
+				else
+				{
+					isCameraFix = false;
+				}
 			}
 		}
+		else
+		{
+			isCameraFix = false;
+		}
+		
 
 		if(!isCameraFix)
 		{

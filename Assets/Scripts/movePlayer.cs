@@ -86,7 +86,7 @@ public class movePlayer : MonoBehaviour {
 			}
 		}
 
-		if(!isAction) {
+		if(!isAction && this.gameObject.GetComponent<fight>().hp > 0) {
 			// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
 			// Chaque valeur du Vector3 est exprimée en unité par seconde par seconde
 			// celà veut dire que chaque seconde, la vitesse augmente de cette valeur configurée.
