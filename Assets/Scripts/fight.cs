@@ -71,15 +71,19 @@ public class fight : MonoBehaviour {
 		if(hp <= 0){
 			if(gameObject.GetComponent<animationSprite>().currentAnim.name != "die")
 			{
-				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);
+				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);		
 
 				if(cameraMain != null)
 				{
 					sounds.FirstOrDefault(x => x.clip.name.Contains("deathPlayer")).Play();
 				}				
 			}
+
+			string spritesLastName = GetComponent<animationSprite>().currentAnim.sprites.Last().name;
+			string spriteCurrentName =  GetComponent<animationSprite>().currentAnim.sprites[GetComponent<animationSprite>().currentSpriteIdx].name;
+			
 			// Le dernier sprite de l'animation est vide et fait disparaitre le personnage
-			if(GetComponent<SpriteRenderer>().sprite == null){
+			if( spritesLastName == spriteCurrentName){
 				gameObject.SetActive(false);
 				
 				// Si c'est un mechant il est le GameObject est détruit

@@ -232,6 +232,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -266,11 +271,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -290,6 +295,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
@@ -310,6 +320,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114387703588246680, guid: 4815babbfceefdc4e9315b7f3cbe1187,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4520631133908228, guid: 4815babbfceefdc4e9315b7f3cbe1187, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -397,6 +412,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -431,11 +451,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -455,6 +475,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
@@ -962,6 +987,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114570220112660834, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4243143410658442, guid: 8d568662c564b81478e1395491fa8fd4, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.6151385
@@ -1355,6 +1385,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1
@@ -1389,11 +1424,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -1413,6 +1448,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
@@ -2670,6 +2710,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -2704,11 +2749,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -2728,6 +2773,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
@@ -2806,6 +2856,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -2840,11 +2895,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -2864,6 +2919,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
@@ -3302,6 +3362,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 494941934}
     m_Modifications:
+    - target: {fileID: 114562977436848086, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: anims.Array.data[6].sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 14.5
@@ -3336,11 +3401,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
         type: 2}
@@ -3360,6 +3425,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114111889481090878, guid: 2e5f85f8b1f882c4084ef44863546e1a,
+        type: 2}
+      propertyPath: cameraMain
+      value: 
+      objectReference: {fileID: 1585615048}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
   m_IsPrefabParent: 0
