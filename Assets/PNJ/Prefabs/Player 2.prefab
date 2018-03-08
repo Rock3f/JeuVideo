@@ -58,7 +58,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -117,6 +117,10 @@ MonoBehaviour:
     dammageValue: 3
     comboValue: 1
   UltBarVar: {fileID: 0}
+  screenGameOver: {fileID: 0}
+  cameraMain: {fileID: 0}
+  CollisonSide: 
+  Angle: 0
 --- !u!114 &114387703588246680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,20 +146,20 @@ MonoBehaviour:
     - {fileID: 21300012, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
   - name: attack1
     sprites:
-    - {fileID: 21300072, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300074, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300076, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300072, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300074, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300076, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   - name: attack2
     sprites:
-    - {fileID: 21300014, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300016, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300018, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300020, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300014, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300016, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300018, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300020, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   - name: attack3
     sprites:
-    - {fileID: 21300036, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300038, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
-    - {fileID: 21300040, guid: 156ed63414b62d643a1938a17942cd64, type: 3}
+    - {fileID: 21300036, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300038, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300040, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   - name: hit
     sprites:
     - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}

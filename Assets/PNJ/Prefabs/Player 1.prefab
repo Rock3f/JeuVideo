@@ -59,7 +59,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -133,6 +133,10 @@ MonoBehaviour:
     dammageValue: 3
     comboValue: 1
   UltBarVar: {fileID: 0}
+  screenGameOver: {fileID: 0}
+  cameraMain: {fileID: 0}
+  CollisonSide: 
+  Angle: 0
 --- !u!114 &114550580230889948
 MonoBehaviour:
   m_ObjectHideFlags: 1
