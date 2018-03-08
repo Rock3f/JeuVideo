@@ -368,6 +368,10 @@ Prefab:
       propertyPath: screenGameOver
       value: 
       objectReference: {fileID: 979205513}
+    - target: {fileID: 1447849978199408, guid: 4815babbfceefdc4e9315b7f3cbe1187, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4815babbfceefdc4e9315b7f3cbe1187, type: 2}
   m_IsPrefabParent: 0
