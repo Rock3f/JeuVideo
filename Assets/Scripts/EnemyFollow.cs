@@ -59,6 +59,8 @@ public class EnemyFollow : MonoBehaviour {
 
 	}
 
+
+
 	public void OnCollisionEnter2D(Collision2D coll) {
 		if ( coll.gameObject.tag == "Player" && IsAlive){
 			speed = 0;
