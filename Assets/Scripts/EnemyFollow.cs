@@ -35,28 +35,35 @@ public class EnemyFollow : MonoBehaviour {
 
 		IsAlive = gameObject.GetComponent<fight>().hp > 0;
 		
-		if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
-			target = Player2.GetComponent<Transform>();
+		if(IsAlive)
+		{
+			if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
+				target = Player2.GetComponent<Transform>();
+			}
+			else{
+				target = Player1.GetComponent<Transform>();
+			}
+			transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x +1, target.position.y, target.position.z), speed * Time.deltaTime);
+
+			gameObject.GetComponent<animationSprite>().SetAnimationFromSpeed(speed, true);
+
+			
+			if (transform.position.x > target.position.x){
+				gameObject.GetComponent<SpriteRenderer>().flipX = true;
+			}
+
+			string spritesLastName = GetComponent<animationSprite>().currentAnim.sprites.Last().name;
+			string spriteCurrentName =  GetComponent<animationSprite>().currentAnim.sprites[GetComponent<animationSprite>().currentSpriteIdx].name;
+
+			if( spritesLastName == spriteCurrentName){
+				attackChoice = "attack" + rnd.Next(1,4);
+			}
 		}
-		else{
-			target = Player1.GetComponent<Transform>();
+		else
+		{
+			// gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);
+			// DestroyImmediate(this.gameObject);
 		}
-		transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x +1, target.position.y, target.position.z), speed * Time.deltaTime);
-
-		gameObject.GetComponent<animationSprite>().SetAnimationFromSpeed(speed, true);
-
-		
-		if (transform.position.x > target.position.x){
-			gameObject.GetComponent<SpriteRenderer>().flipX = true;
-		}
-
-		string spritesLastName = GetComponent<animationSprite>().currentAnim.sprites.Last().name;
-		string spriteCurrentName =  GetComponent<animationSprite>().currentAnim.sprites[GetComponent<animationSprite>().currentSpriteIdx].name;
-
-		if( spritesLastName == spriteCurrentName){
-			attackChoice = "attack" + rnd.Next(1,4);
-		}
-
 	}
 
 
