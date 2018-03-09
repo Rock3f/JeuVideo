@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     public void StartMenu()
     {
         SceneManager.LoadScene("MenuStart");
+        pauseCanvas.GetComponent<PauseMenu>().Resume();
     }
 
     public void replay()
