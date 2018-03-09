@@ -105,7 +105,7 @@ MonoBehaviour:
   maxHp: 3
   Attacks:
   - name: coup de poing
-    SpriteDamage: {fileID: 21300070, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    SpriteDamage: {fileID: 21300076, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     dammageValue: 1
     comboValue: 3
   - name: air kick
@@ -192,6 +192,7 @@ MonoBehaviour:
   maxSpeed: 4
   Player: 2
   currentSpeed: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
 --- !u!212 &212090333369843548
 SpriteRenderer:
   m_ObjectHideFlags: 1
