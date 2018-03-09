@@ -1805,6 +1805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2058519696}
   - component: {fileID: 2058519698}
+  - component: {fileID: 2058519699}
   - component: {fileID: 2058519697}
   m_Layer: 5
   m_Name: Background
@@ -1839,6 +1840,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 2058519695}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796f9bd33fc91af4b88fa5a408a7d92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frames:
+  - {fileID: 21300000, guid: cd4fb5d5b00d45d41a9e7695eceffc7e, type: 3}
+  - {fileID: 21300000, guid: 34ab2c2d54d74bf4c98a20544d435a48, type: 3}
+  - {fileID: 21300000, guid: 5a0f678316c68b442aa2fb07ee2f7a9d, type: 3}
+  - {fileID: 21300000, guid: 3e81c0c383d6ece40b395346796b41d4, type: 3}
+  menuBackground: {fileID: 2058519699}
+  frameRate: 0.08
+--- !u!222 &2058519698
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058519695}
+--- !u!114 &2058519699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058519695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1858,9 +1883,3 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &2058519698
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2058519695}
