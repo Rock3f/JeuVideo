@@ -69,6 +69,10 @@ public class fight : MonoBehaviour {
 	void LateUpdate() {
 		// Lorsque la vie arrive à zero fait l'animation de mort
 		if(hp <= 0){
+			if (EnemyType == "Enemy"){
+				GetComponent<movePlayer>().IsDead = true;
+			}
+			
 			if(gameObject.GetComponent<animationSprite>().currentAnim.name != "die")
 			{
 				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);		
@@ -93,6 +97,7 @@ public class fight : MonoBehaviour {
 
 				if (EnemyType == "Enemy"){
 					
+
 					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 					screenGameOver.SetActive(true);
 					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
