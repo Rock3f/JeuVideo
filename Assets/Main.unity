@@ -478,7 +478,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 19
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1134,7 +1134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2704,6 +2704,7 @@ MonoBehaviour:
   Player: 
   currentSpeed: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 1585615048}
+  IsDead: 0
 --- !u!114 &924531635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4515,6 +4516,7 @@ MonoBehaviour:
   trackingDistance: 1
   isCameraFix: 0
   go: {fileID: 1194611179}
+  ennemies: {fileID: 494941933}
   frameDuration: 0.27
   maxClignotement: 4
   idCurrentScreen: 0
@@ -5639,7 +5641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5922,7 +5924,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.5
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6577,7 +6579,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4118287945818412, guid: 2e5f85f8b1f882c4084ef44863546e1a, type: 2}
       propertyPath: m_LocalPosition.y

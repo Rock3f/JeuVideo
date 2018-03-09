@@ -17,6 +17,7 @@ public class Track : MonoBehaviour {
 	public float trackingDistance = 1f;
 	public bool isCameraFix = true;
 	public GameObject go;
+	public GameObject ennemies;
 	private float accumulateur = 0;
 	public float frameDuration = 0.2f;
 	private int nbClignotement = 0;
@@ -89,6 +90,7 @@ public class Track : MonoBehaviour {
 			// Applique le déplacement à la position en additionnant les vecteurs
 			// équivalent de <code>this.transform.position = this.transform.position + moveOffset;</code>
 			this.transform.position += moveOffset;
+			ennemies.transform.position += moveOffset;
 
 			 accumulateur += Time.deltaTime;
 
