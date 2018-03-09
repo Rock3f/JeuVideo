@@ -7,12 +7,13 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour {
 
 	public float speed;
+	private GameObject[] PlayerList;
+	private Transform Player1;
 
-	public Transform Player1;
-
-	public Transform Player2;
+	private Transform Player2;
 
 	private Transform target;
+	private float normalspeed;
 
 	private bool IsAlive;
 
@@ -22,8 +23,11 @@ public class EnemyFollow : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		
+		normalspeed = speed;
+		PlayerList = GameObject.FindGameObjectsWithTag("Player");
+		Debug.Log(PlayerList[0].name +" "+ PlayerList[1].name);
+		Player1 = PlayerList[0].transform;
+		Player2 = PlayerList[1].transform;
 	}
 	
 	// Update is called once per frame
@@ -61,7 +65,7 @@ public class EnemyFollow : MonoBehaviour {
 		}
 	}
 	public void OnCollisionExit2D(Collision2D coll) {
-		speed = 2;
+		speed = normalspeed;
 	}
 
 	public void OnCollisionStay2D(Collision2D coll) {
