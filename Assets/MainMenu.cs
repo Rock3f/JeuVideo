@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public Canvas pauseCanvas;
     public Scene startScene;
 
     public void PlayGame()
@@ -20,6 +21,8 @@ public class MainMenu : MonoBehaviour
     public void replay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        pauseCanvas.GetComponent<PauseMenu>().Resume();
     }
 
     public void QuitGame()
