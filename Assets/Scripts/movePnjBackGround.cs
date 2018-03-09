@@ -1,103 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class movePlayer : MonoBehaviour {
+public class movePnjBackGround : MonoBehaviour {
 
-	public float acceleration = 8f; // unit per second, per second
+public float acceleration = 8f; // unit per second, per second
 	public float maxSpeed = 4f; // unit per second
-
-	public string Player;
-	public Vector3 currentSpeed;
-	public GameObject mainCamera;	
+	public Vector3 currentSpeed;	
 
 	private animationSprite ac;
-	private string Horizontal;
-	private string Vertical;
 
-	private string Fire1;
-	private string Fire2;
-	private string Fire3;
+	public float xmin = 119;
+	public float xmax = 130;
 
-	private bool isAction = false;
-	private bool IsUpdatedNow; 
+	private bool isGoingLeft = false;
 
 	// Use this for initialization
 	void Start () {
-		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<animationSprite> ();
-		Horizontal = "Horizontal" + Player;
-		Vertical = "Vertical" + Player;
-		Fire1 = "Fire1" + Player;
-		Fire2 = "Fire2" + Player;
-		Fire3 = "Fire3" + Player;
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
-
-		IsUpdatedNow = false;
-		if(Input.GetButtonDown(Fire1)){
-			isAction = true;
-			IsUpdatedNow = true;
-			if(ac.currentAnim.name != "attack1")
-			{
-				ac.ChangeAnimation("attack1", isAction);
-			}			
-		}
-		else
-		{
-			if(!IsUpdatedNow)
-			{
-				isAction = false;
-			}
-		}
-
-		if(Input.GetButtonDown(Fire2)){
-			isAction = true;
-			IsUpdatedNow = true;
-			if(ac.currentAnim.name != "attack2")
-			{
-				ac.ChangeAnimation("attack2", isAction);
-				mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
-			}			
-		}
-		else
-		{
-			if(!IsUpdatedNow)
-			{
-				isAction = false;
-			}
-			
-		}
-		
-		if(Input.GetButtonDown(Fire3)) {
-			isAction = true;
-			IsUpdatedNow = true;
-
-			if(ac.currentAnim.name != "attack3")
-			{
-				ac.ChangeAnimation("attack3", isAction);
-			}			
-		}
-		else
-		{
-			if(!IsUpdatedNow)
-			{
-				isAction = false;
-			}
-		}
-		
-
-		if(!isAction && this.gameObject.GetComponent<fight>().hp > 0) {
 			// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
 			// Chaque valeur du Vector3 est exprimée en unité par seconde par seconde
 			// celà veut dire que chaque seconde, la vitesse augmente de cette valeur configurée.
 			// Ex: Chaque seconde, la vitesse augmente de 8 unités par seconde.
 			Vector3 currentAcceleration = new Vector3 (
-				Input.GetAxis (Horizontal) * acceleration,
-				Input.GetAxis (Vertical) * acceleration,
+				1 * acceleration,
+				0,
 				0
 			);
 
@@ -115,7 +46,27 @@ public class movePlayer : MonoBehaviour {
 			// currentSpeed est exprimé en unités par seconde mais lors d'un update 
 			// seulement "Time.deltaTime" secondes se sont écoulées. On applique donc la vitesse proportionellement 
 			// au temps écoulé.
-			this.transform.position += currentSpeed * Time.deltaTime;
+
+			if(this.transform.position.x >= xmax)
+			{
+				isGoingLeft = true;
+				
+			}
+
+			if(this.transform.position.x <= xmin)
+			{
+				isGoingLeft = false;
+			}
+
+			if(isGoingLeft)
+			{
+				this.transform.position -= currentSpeed * Time.deltaTime;
+			}
+			else
+			{
+				this.transform.position += currentSpeed * Time.deltaTime;
+			}
+			
 			this.transform.position = new Vector3(
 			transform.position.x,
 			transform.position.y,
@@ -126,8 +77,6 @@ public class movePlayer : MonoBehaviour {
 			// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 			// action (bouger, ne plus bouger, changer de direction) est prise en compte.
 			
-			ac.SetAnimationFromSpeed (Input.GetAxis (Horizontal) + 0.001f * currentAcceleration.magnitude, isAction);
-		}
-		
+			ac.SetAnimationPNJ (1 + 0.001f * currentAcceleration.magnitude, isGoingLeft);
 	}
 }

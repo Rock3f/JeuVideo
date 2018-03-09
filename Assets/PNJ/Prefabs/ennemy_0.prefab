@@ -56,7 +56,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 8
   maxSpeed: 4
+  Player: 
   currentSpeed: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
 --- !u!114 &114851710847092906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,6 +131,10 @@ MonoBehaviour:
     - {fileID: 21300086, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
     - {fileID: 21300088, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
   imagesParSecondes: 24
+  currentSpriteIdx: 0
+  currentAnim:
+    name: 
+    sprites: []
 --- !u!114 &114986086751914454
 MonoBehaviour:
   m_ObjectHideFlags: 1

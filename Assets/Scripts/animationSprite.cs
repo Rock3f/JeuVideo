@@ -54,6 +54,14 @@ public class animationSprite : MonoBehaviour {
         }
     }
 
+    public void SetAnimationPNJ(float vitesse, bool isGoingLeft)
+    {
+         this.spriteRenderer.flipX = isGoingLeft;
+         if (currentAnim.name != "normal") {
+            ChangeAnimation ("normal", isAction);
+        }
+    }
+
     public void ChangeAnimation (string anim, bool isAction) {
         GetCurrentAnimation(anim);
         // Lors d'une nouvelle animation, repartir à la première image de cette animation
@@ -107,12 +115,6 @@ public class animationSprite : MonoBehaviour {
     private void NextFrame () {
        
         currentSpriteIdx = (currentSpriteIdx + 1) % currentAnim.sprites.Length;
-
-        // if(currentAnim.name == "die" && currentAnim.sprites.LastOrDefault().name == currentAnim.sprites[currentSpriteIdx].name )
-        // {
-        //     gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 1f, gameObject.transform.position.z - 1f);
-        // }
-
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
         spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
            

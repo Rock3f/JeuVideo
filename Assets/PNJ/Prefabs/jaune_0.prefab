@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4118287945818412}
   - component: {fileID: 212764427360831354}
   - component: {fileID: 114562977436848086}
-  - component: {fileID: 114619573045601238}
   - component: {fileID: 114111889481090878}
   - component: {fileID: 61516641346330780}
+  - component: {fileID: 114982171515786242}
   m_Layer: 0
   m_Name: jaune_0
   m_TagString: Enemy
@@ -82,9 +82,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   maxHp: 10
-  Attacks: []
+  Attacks:
+  - name: 'attack 1 '
+    SpriteDamage: {fileID: 21300020, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    dammageValue: 0.5
+    comboValue: 0
+  - name: attack 2
+    SpriteDamage: {fileID: 21300050, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    dammageValue: 1
+    comboValue: 0
+  - name: attack 3
+    SpriteDamage: {fileID: 21300040, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
+    dammageValue: 1.5
+    comboValue: 0
   UltBarVar: {fileID: 0}
   screenGameOver: {fileID: 0}
+  cameraMain: {fileID: 0}
   CollisonSide: 
   Angle: 0
 --- !u!114 &114562977436848086
@@ -110,7 +123,6 @@ MonoBehaviour:
     - {fileID: 21300006, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   - name: attack1
     sprites:
-    - {fileID: 21300026, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300024, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300022, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300020, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
@@ -144,24 +156,24 @@ MonoBehaviour:
     - {fileID: 21300108, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 0}
   imagesParSecondes: 8
+  currentSpriteIdx: 0
   currentAnim:
     name: 
     sprites: []
---- !u!114 &114619573045601238
+--- !u!114 &114982171515786242
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151676770360130}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4eb6680fda59643ae94bf1a0a0cd81, type: 3}
+  m_Script: {fileID: 11500000, guid: 629b11b5565c4144eb5a0ab89ccfd653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 8
-  maxSpeed: 4
-  Player: 
-  currentSpeed: {x: 0, y: 0, z: 0}
+  speed: 1
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
 --- !u!212 &212764427360831354
 SpriteRenderer:
   m_ObjectHideFlags: 1
