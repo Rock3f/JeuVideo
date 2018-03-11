@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public struct Attack{
@@ -26,10 +26,12 @@ public class fight : MonoBehaviour {
 	public GameObject UltBarVar;
 	public GameObject screenGameOver;
 	public GameObject cameraMain;
+	public GameObject menuButton;
+	public bool isBoss = false;
+	public GameObject screenVictory;
 
 	// Private 
 	private float accumulateur;
-
 	private string EnemyType;
 
 	public string CollisonSide;
@@ -71,6 +73,7 @@ public class fight : MonoBehaviour {
 		if(hp <= 0){
 			if (EnemyType == "Enemy"){
 				GetComponent<movePlayer>().IsDead = true;
+
 			}
 			
 			if(gameObject.GetComponent<animationSprite>().currentAnim.name != "die")
@@ -93,13 +96,20 @@ public class fight : MonoBehaviour {
 				// Si c'est un mechant il est le GameObject est détruit
 				if (EnemyType == "Player"){
 					DestroyImmediate(this.gameObject);
+
+					if(isBoss)
+					{
+						screenVictory.SetActive(true);
+					}
 				}
 
 				if (EnemyType == "Enemy"){
 					
-
+					Time.timeScale = 0f;
 					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 					screenGameOver.SetActive(true);
+					EventSystem.current.firstSelectedGameObject = menuButton;
+
 					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
 
 					foreach(AudioSource sound in sounds)
