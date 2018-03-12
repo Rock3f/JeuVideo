@@ -199,6 +199,7 @@ public class fight : MonoBehaviour {
 					if (coll.gameObject.GetComponent<fight>().hp > 0){
 						if(coll.gameObject.GetComponent<animationSprite>().currentAnim.name != "hit")
 						{
+							cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").clip);
 							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
 						}
 					}
