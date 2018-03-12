@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Hounguevou_Etienne/MenuStart.unity
+    guid: 5c2b36cb77aacb140869b31c8aece690
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: adc5377957f809541acae58f9eba7aa7

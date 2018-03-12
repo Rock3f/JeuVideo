@@ -23,7 +23,7 @@ public class animationSprite : MonoBehaviour {
 
     // état privé
     // indice de la frame actuellement affichée
-    private int currentSpriteIdx = 0;
+    public int currentSpriteIdx = 0;
     // indice de l'animation actuellement affichée    
     public Animation currentAnim;
     // accumulateur pour mesurer le temps cumulé qui passe
@@ -35,6 +35,7 @@ public class animationSprite : MonoBehaviour {
     void Start () {
         // Récupère une référence au script AnimationCourse attaché au même GameObject
         spriteRenderer = GetComponent<SpriteRenderer> ();
+        ChangeAnimation ("normal", isAction);
     }
 
     public void SetAnimationFromSpeed (float vitesse, bool isAction) {
@@ -49,6 +50,14 @@ public class animationSprite : MonoBehaviour {
 
         //Si le personnage est arrêté et qu'il n'est pas déjà en animation d'attente, déclencher l'animation d'attente.       
         if (vitesse == 0 && currentAnim.name != "normal" && !isAction && !isRunning) {
+            ChangeAnimation ("normal", isAction);
+        }
+    }
+
+    public void SetAnimationPNJ(float vitesse, bool isGoingLeft)
+    {
+         this.spriteRenderer.flipX = isGoingLeft;
+         if (currentAnim.name != "normal") {
             ChangeAnimation ("normal", isAction);
         }
     }
@@ -114,14 +123,21 @@ public class animationSprite : MonoBehaviour {
     private void NextFrameAction() {
         currentSpriteIdx++;
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
+        if(currentAnim.name == "die" && currentAnim.sprites.LastOrDefault().name == currentAnim.sprites[currentSpriteIdx].name )
+        {
+            float positionX = GetComponent<SpriteRenderer>().flipX ? gameObject.transform.position.x  +1f 
+                            : gameObject.transform.position.x  - 1f;
+                            
+            gameObject.transform.position = new Vector3(positionX, gameObject.transform.position.y - 1.5f, gameObject.transform.position.z - 1.5f);
+        }
 
-        if(currentSpriteIdx < currentAnim.sprites.Length)
+        if(currentSpriteIdx < currentAnim.sprites.Length) {
             spriteRenderer.sprite = currentAnim.sprites[currentSpriteIdx];
+        }
        else
        {
             isRunning = false;
             ChangeAnimation("normal", false);
        }
-      
     }
 }
