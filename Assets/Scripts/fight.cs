@@ -100,6 +100,14 @@ public class fight : MonoBehaviour {
 					if(isBoss)
 					{
 						screenVictory.SetActive(true);
+
+						sounds.FirstOrDefault(x => x.clip.name.Contains("win")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("win")).clip);
+
+						foreach(AudioSource sound in sounds)
+						{
+							if(!sound.clip.name.Contains("win"))
+								sound.mute = true;
+						}
 					}
 				}
 
