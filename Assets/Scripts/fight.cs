@@ -129,6 +129,10 @@ public class fight : MonoBehaviour {
 				
 			}	
 		}
+
+		if (hp > maxHp){
+			hp = maxHp;
+		}
 		
 	}
 
