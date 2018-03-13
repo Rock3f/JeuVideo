@@ -316,7 +316,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -146.3, y: 55.3}
-  m_SizeDelta: {x: 520, y: 150}
+  m_SizeDelta: {x: 2000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321024267
 MonoBehaviour:
@@ -1770,7 +1770,7 @@ GameObject:
   - component: {fileID: 1423821416}
   - component: {fileID: 1423821415}
   m_Layer: 5
-  m_Name: Story Canvas
+  m_Name: First Story Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2041,7 +2041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1666908902
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2093,7 +2093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1747393636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2269,8 +2269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -146, y: 52.4}
-  m_SizeDelta: {x: 494.7, y: 130.5}
+  m_AnchoredPosition: {x: -0.5, y: 1.8}
+  m_SizeDelta: {x: 902.7, y: 409.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106102527
 MonoBehaviour:
@@ -2293,18 +2293,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3feac6c23ae8b144eb3a698293092a94, type: 3}
-    m_FontSize: 25
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Why did you hit my friends ? \n\nI will make you regret this !"
+  m_Text: "Somewhere in\n\n BladeCity"
 --- !u!222 &2106102528
 CanvasRenderer:
   m_ObjectHideFlags: 0
