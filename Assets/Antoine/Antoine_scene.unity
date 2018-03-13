@@ -3718,6 +3718,13 @@ MonoBehaviour:
     - {fileID: 21300250, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
     - {fileID: 21300232, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
     - {fileID: 21300230, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+  - name: dance
+    sprites:
+    - {fileID: 21300022, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300054, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300044, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300100, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300170, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   imagesParSecondes: 12
   currentSpriteIdx: 0
   currentAnim:
@@ -3858,6 +3865,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6085ec3ac621514cb1838a3b58ce714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  explosion: {fileID: 0}
+  UltBarVar: {fileID: 284973792}
+  DanceTime: 2
+  initalPosition: {x: 0, y: 0, z: 0}
+  upPosition: {x: 0, y: 0, z: 0}
+  downPosition: {x: 0, y: 0, z: 0}
+  goingUp: 0
+  playAnimation: 0
+  playDance: 0
+  accumulateur: 0
 --- !u!4 &976640937 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4478515434319588, guid: 523a651967d08a04db589ba58af8e944,
@@ -3938,6 +3956,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4615745307107894, guid: 3fb0a9c903e6077419fe6ecdff68d13a, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4.6151385
@@ -4000,6 +4023,41 @@ Prefab:
       propertyPath: menuButton
       value: 
       objectReference: {fileID: 412084830}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].name
+      value: dance
+      objectReference: {fileID: 0}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300022, guid: 9795102c525abcb4caad961b16b4f320,
+        type: 3}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300054, guid: 9795102c525abcb4caad961b16b4f320,
+        type: 3}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300044, guid: 9795102c525abcb4caad961b16b4f320,
+        type: 3}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300100, guid: 9795102c525abcb4caad961b16b4f320,
+        type: 3}
+    - target: {fileID: 114588020727178994, guid: 3fb0a9c903e6077419fe6ecdff68d13a,
+        type: 2}
+      propertyPath: anims.Array.data[7].sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300170, guid: 9795102c525abcb4caad961b16b4f320,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb0a9c903e6077419fe6ecdff68d13a, type: 2}
   m_IsPrefabParent: 0
