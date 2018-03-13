@@ -12,33 +12,30 @@ public class Ultim : MonoBehaviour {
 	public float speed;
 	public GameObject explosion;
 	public GameObject UltBarVar;
-
 	public float DanceTime;
-
 	public GameObject cameraMain;
+	public int Player;
 
 	//Private
-
 	private Vector3 initalPosition;
 	private Vector3 upPosition;
 	private Vector3 downPosition;
-	
 	private bool goingUp;
-
-	public bool playAnimation = false;
-	public bool playDance = false;
-
+	private bool playAnimation = false;
+	private bool playDance = false;
 	private float MaxHit;
-
 	private float accumulateur;
-
+	private string UltPlayer;
 	private AudioSource[] sounds;
 	private GameObject[] EnemyList;
 	private GameObject[] PlayerList;
 	private SpriteRenderer spriteRenderer;
+	private bool choiceBanousMalus = false;
+
 
 	// Use this for initialization
 	void Start () {
+		UltPlayer = "Ult" + Player;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		PlayerList = GameObject.FindGameObjectsWithTag("Player");
 		MaxHit = UltBarVar.GetComponent<UltBar>().maxHit;
@@ -50,41 +47,40 @@ public class Ultim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Ult") && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
+		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
-			
-			// Effet MALUS
-       		/*
-			gameObject.GetComponent<movePlayer>().enabled = false;
-			playDance = true;
-			sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Pause();
-			sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).clip);
-        	*/
 
-			// Effet BONUS
+			System.Random Rand = new System.Random();
+			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
+			Debug.Log(choiceBanousMalus);
 
-			
-			
-
-			gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-			gameObject.GetComponent<movePlayer>().enabled = false;
-			initalPosition = transform.position;
-			if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
-				upPosition = new Vector3(initalPosition.x + 3 , initalPosition.y + 4, initalPosition.z +4 );
-				downPosition = new Vector3(initalPosition.x + 5 , initalPosition.y, initalPosition.z);
+			if(choiceBanousMalus == true){
+				// Effet MALUS
+				
+				gameObject.GetComponent<movePlayer>().enabled = false;
+				playDance = true;
+				sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Pause();
+				sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).clip);
 			}
+
 			else{
-				upPosition = new Vector3(initalPosition.x - 3 , initalPosition.y + 4, initalPosition.z +4 );
-				downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
-			}
-			playAnimation =true;
-			goingUp = true;
-		}
+				// Effet BONUS
 
-		/*if (transform.position == downPosition){
-			explosion.GetComponent<Transform>().position = downPosition;
-			explosion.GetComponent<SpriteRenderer>().enabled = true;
-		}*/
+				gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+				gameObject.GetComponent<movePlayer>().enabled = false;
+				initalPosition = transform.position;
+				if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
+					upPosition = new Vector3(initalPosition.x + 3 , initalPosition.y + 4, initalPosition.z +4 );
+					downPosition = new Vector3(initalPosition.x + 5 , initalPosition.y, initalPosition.z);
+				}
+				else{
+					upPosition = new Vector3(initalPosition.x - 3 , initalPosition.y + 4, initalPosition.z +4 );
+					downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
+				}
+				playAnimation =true;
+				goingUp = true;
+			}
+		}
 
 		if (playAnimation == true){
 			UltAnimation(initalPosition, upPosition, downPosition);
@@ -105,6 +101,8 @@ public class Ultim : MonoBehaviour {
 		}
 
 		if (transform.position == downPosition && playAnimation == true){
+			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
+			EventManager<float>.TriggerEvent ("Shake", 1);
 			EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
 			foreach( GameObject enemys in EnemyList) {
 				enemys.GetComponent<fight>().hp -= 5;

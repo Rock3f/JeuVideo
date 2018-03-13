@@ -59,11 +59,11 @@ public class EnemyFollow : MonoBehaviour {
 				attackChoice = "attack" + rnd.Next(1,4);
 			}
 		}
-		else
+		/*else
 		{
 			// gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);
 			// DestroyImmediate(this.gameObject);
-		}
+		}*/
 	}
 
 
@@ -76,6 +76,11 @@ public class EnemyFollow : MonoBehaviour {
 	public void OnCollisionExit2D(Collision2D coll) {
 		speed = normalspeed;
 	}
+
+	public void OnTriggerExit2D(Collider2D other)
+    {
+        speed = normalspeed;
+    }
 
 	public void OnCollisionStay2D(Collision2D coll) {
 

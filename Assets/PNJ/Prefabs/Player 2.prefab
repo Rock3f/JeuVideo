@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114647624020556960}
   - component: {fileID: 114387703588246680}
   - component: {fileID: 114321780531350344}
+  - component: {fileID: 114702897676558006}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1447849978199408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -2.12, z: 1}
+  m_LocalPosition: {x: -3, y: -2.12, z: -1.79}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,6 +120,9 @@ MonoBehaviour:
   UltBarVar: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 0}
+  menuButton: {fileID: 0}
+  isBoss: 0
+  screenVictory: {fileID: 0}
   CollisonSide: 
   Angle: 0
 --- !u!114 &114387703588246680
@@ -171,7 +175,13 @@ MonoBehaviour:
     - {fileID: 21300246, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     - {fileID: 21300228, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     - {fileID: 21300248, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
-    - {fileID: 0}
+  - name: dance
+    sprites:
+    - {fileID: 21300022, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300054, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300058, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300060, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300166, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   imagesParSecondes: 12
   currentSpriteIdx: 0
   currentAnim:
@@ -193,6 +203,25 @@ MonoBehaviour:
   Player: 2
   currentSpeed: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 0}
+  IsDead: 0
+--- !u!114 &114702897676558006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1447849978199408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43929b37dc2d023468aad26270942169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GoUp: {fileID: 21300102, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+  GoDown: {fileID: 21300026, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+  speed: 25
+  explosion: {fileID: 0}
+  UltBarVar: {fileID: 0}
+  DanceTime: 3
+  cameraMain: {fileID: 0}
 --- !u!212 &212090333369843548
 SpriteRenderer:
   m_ObjectHideFlags: 1
