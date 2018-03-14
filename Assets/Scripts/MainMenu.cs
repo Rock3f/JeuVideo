@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     void Update() {
         if(Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)
         {
+            // SBO: eventSystem null au runtime (erreur de script). Où est-il initialisé ?
             eventSystem.SetSelectedGameObject(selectedGameObject);
             buttonSelected = true;
         }

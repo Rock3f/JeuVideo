@@ -113,7 +113,7 @@ public class fight : MonoBehaviour {
 
 				if (EnemyType == "Enemy"){
 					
-					Time.timeScale = 0f;
+					Time.timeScale = 0f; // SBO: A quoi sert cette ligne ?
 					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 					screenGameOver.SetActive(true);
 					EventSystem.current.firstSelectedGameObject = menuButton;
@@ -161,6 +161,8 @@ public class fight : MonoBehaviour {
 
 		// Permet de n'infliger qu'une seul fois des dégats par coup
         accumulateur += Time.deltaTime;
+		// SBO: Utiliser OnCollisionEnter2D permet de ne déclencher l'événement qu'un fois par collision
+		//    : Néamoins un cooldown de combo comme ici peut rester pertinent
 
 		// Lorsqu'une collison à lieu avec un enemie
 		if(coll.gameObject.tag == EnemyType){

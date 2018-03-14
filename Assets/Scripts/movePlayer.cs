@@ -29,6 +29,7 @@ public class movePlayer : MonoBehaviour {
 	void Start () {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<animationSprite> ();
+		// SBO: très bien !
 		Horizontal = "Horizontal" + Player;
 		Vertical = "Vertical" + Player;
 		Fire1 = "Fire1" + Player;
@@ -92,8 +93,14 @@ public class movePlayer : MonoBehaviour {
 					isAction = false;
 				}
 			}
+
+			// SBO: logique à simplifier, c'est difficile à suivre
+			// proposition : enlever isAction et IsUpdatedNow de toutes les logiques de input => réaction
+			//               utiliser à part la formule "bool isAction = Input.GetButtonDown(Fire1) || Input.GetButtonDown(Fire2) || Input.GetButtonDown(Fire3)
 			
 
+			// SBO : IsDead a déjà été vérifié, this.gameObject.GetComponent<fight>().hp > 0 ne semble pas nécessaire
+			// + éviter GetComponent à chaque update
 			if(!isAction && this.gameObject.GetComponent<fight>().hp > 0) {
 				// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
 				// Chaque valeur du Vector3 est exprimée en unité par seconde par seconde
@@ -123,7 +130,7 @@ public class movePlayer : MonoBehaviour {
 				this.transform.position = new Vector3(
 				transform.position.x,
 				transform.position.y,
-				transform.position.y
+				transform.position.y // SBO: super idée ! En 2D cependant la position Z peut être écrasée par la valeur du SpriteRenderer.orderInLayer. Regarder de ce côté là si vous avez des problèmes d'ordre d'affichage.
 				);
 
 				// Utilise l'entrée utilisateur pour décider quelle animation afficher.
