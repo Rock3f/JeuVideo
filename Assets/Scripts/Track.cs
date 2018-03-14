@@ -34,6 +34,8 @@ public class Track : MonoBehaviour {
 		actualScreenName = "screen" + idCurrentScreen;
 		ScreenEnnemy screen = allScreen.FirstOrDefault(x => x.name == actualScreenName);
 		
+		// SBO: En une ligne :
+		// isCameraFix = screen.ennemies != null && screen.ennemies.Length > 0 && screen.ennemies[0] != null
 		if(screen.ennemies != null)
 		{
 			foreach(GameObject ennemy in screen.ennemies)

@@ -38,6 +38,9 @@ public class Ultim : MonoBehaviour {
 		UltPlayer = "Ult" + Player;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		PlayerList = GameObject.FindGameObjectsWithTag("Player");
+		// SBO: idée: ne récupérer que UltBarVar.GetComponent<UltBar>() de côté, venir lire ultBar.maxHit au lieu de la valeur MaxHit de côté
+		// => En l'état impossible de tester MaxHit en modifiant les valeurs dans l'éditeur au runtime
+		// => Duplication de la valeur, le principe du single source principle (une donnée = une source unique) vous aidera à éviter les problèmes de cache qui surviennent en effet de bords de ce genre de situation !
 		MaxHit = UltBarVar.GetComponent<UltBar>().maxHit;
 		if(cameraMain != null)
 		{
@@ -47,6 +50,7 @@ public class Ultim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		// SBO : éviter GetComponent à chaque update (peut devenir couteux en perfs). Garder l'instance de côté dans le start puis utiliser la même instance.
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 
@@ -102,7 +106,7 @@ public class Ultim : MonoBehaviour {
 
 		if (transform.position == downPosition && playAnimation == true){
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
-			EventManager<float>.TriggerEvent ("Shake", 1);
+			EventManager<float>.TriggerEvent ("Shake", 1); // SBO: Le Shake est trop court ! Mais bon tontexte utilisation =)
 			EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
 			foreach( GameObject enemys in EnemyList) {
 				enemys.GetComponent<fight>().hp -= 5;
@@ -140,6 +144,9 @@ public class Ultim : MonoBehaviour {
 
 		Debug.Log("Ult");
 		
+		// SBO: Utilisez TweenCore ici ! la fonction peut être différente pour la valeur x et y du vecteur afin de simuler une jolie courbe
+		// Pour réussir cette animation : départ rapide dans la montée jusqu'à ralentir à l'apogée
+		// puis descente violente qui part assez vite et continue d'accélérer jusqu'à l'impact
 		if (goingUp == true){
 			spriteRenderer.sprite = GoUp;
 			Debug.Log("GoingUp");
