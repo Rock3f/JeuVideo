@@ -18,6 +18,7 @@ public class Track : MonoBehaviour {
 	public bool isCameraFix = true;
 	public GameObject go;
 	public GameObject ennemies;
+	public GameObject croix;
 	private float accumulateur = 0;
 	public float frameDuration = 0.2f;
 	private int nbClignotement = 0;

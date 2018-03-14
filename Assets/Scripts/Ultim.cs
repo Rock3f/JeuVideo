@@ -14,6 +14,7 @@ public class Ultim : MonoBehaviour {
 	public GameObject UltBarVar;
 	public float DanceTime;
 	public GameObject cameraMain;
+	public ParticleSystem croix;
 	public int Player;
 
 	//Private
@@ -32,9 +33,12 @@ public class Ultim : MonoBehaviour {
 	private SpriteRenderer spriteRenderer;
 	private bool choiceBanousMalus = false;
 
+	private ParticleSystem.EmissionModule croixEmission;
 
 	// Use this for initialization
 	void Start () {
+		croix.Play(true);
+		croixEmission = croix.emission;
 		UltPlayer = "Ult" + Player;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		PlayerList = GameObject.FindGameObjectsWithTag("Player");
@@ -49,15 +53,18 @@ public class Ultim : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
-
+	/* 
 			System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
 			Debug.Log(choiceBanousMalus);
+
+	*/
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
 				
 				gameObject.GetComponent<movePlayer>().enabled = false;
+				
 				playDance = true;
 				sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Pause();
 				sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("dance")).clip);
@@ -65,7 +72,7 @@ public class Ultim : MonoBehaviour {
 
 			else{
 				// Effet BONUS
-
+				croixEmission.enabled = true;
 				gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 				gameObject.GetComponent<movePlayer>().enabled = false;
 				initalPosition = transform.position;
@@ -85,6 +92,7 @@ public class Ultim : MonoBehaviour {
 		if (playAnimation == true){
 			UltAnimation(initalPosition, upPosition, downPosition);
 		}
+		
 		if (playDance == true){
 			UltDance();
 		}
@@ -96,11 +104,13 @@ public class Ultim : MonoBehaviour {
 			foreach( GameObject enemys in PlayerList) {
 				enemys.GetComponent<fight>().hp += 1;
 			}
+			
 			Debug.Log("goingup = false");
 			goingUp = false;
 		}
 
 		if (transform.position == downPosition && playAnimation == true){
+			croixEmission.enabled = false;
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
 			EventManager<float>.TriggerEvent ("Shake", 1);
 			EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
