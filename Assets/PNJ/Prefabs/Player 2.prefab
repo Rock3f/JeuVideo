@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -89,7 +89,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27, y: 0.55}
+  m_Size: {x: 0.27, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &114321780531350344
 MonoBehaviour:
@@ -167,6 +167,7 @@ MonoBehaviour:
   - name: hit
     sprites:
     - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   - name: die
     sprites:
     - {fileID: 21300216, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
@@ -225,7 +226,6 @@ MonoBehaviour:
   croix: {fileID: 0}
   Player: 2
   actualSpeed: 0
-  goingUp: 0
 --- !u!212 &212090333369843548
 SpriteRenderer:
   m_ObjectHideFlags: 1
