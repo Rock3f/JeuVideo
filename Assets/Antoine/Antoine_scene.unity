@@ -3199,6 +3199,7 @@ MonoBehaviour:
   croix: {fileID: 2086326306}
   Player: 1
   actualSpeed: 0
+  goingUp: 0
 --- !u!4 &976640937 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4478515434319588, guid: 523a651967d08a04db589ba58af8e944,

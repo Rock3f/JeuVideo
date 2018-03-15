@@ -217,13 +217,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300102, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   GoDown: {fileID: 21300026, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
-  speed: 25
+  speed: 50
   explosion: {fileID: 0}
   UltBarVar: {fileID: 0}
   DanceTime: 3
   cameraMain: {fileID: 0}
   croix: {fileID: 0}
   Player: 2
+  actualSpeed: 0
+  goingUp: 0
 --- !u!212 &212090333369843548
 SpriteRenderer:
   m_ObjectHideFlags: 1
