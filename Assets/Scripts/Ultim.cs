@@ -55,9 +55,9 @@ public class Ultim : MonoBehaviour {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 	
-			System.Random Rand = new System.Random();
+			/*System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
-			Debug.Log(choiceBanousMalus);
+			Debug.Log(choiceBanousMalus);*/
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
