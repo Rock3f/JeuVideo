@@ -10,7 +10,7 @@ public class movePlayer : MonoBehaviour {
 
 	public string Player;
 	public Vector3 currentSpeed;
-	public GameObject mainCamera;	
+	public GameObject mainCamera;
 
 	public bool IsDead = false;
 
@@ -61,8 +61,12 @@ public class movePlayer : MonoBehaviour {
 			if(Input.GetButtonDown(Fire2)){
 				isAction = true;
 				IsUpdatedNow = true;
-				if(ac.currentAnim.name != "attack2")
-				{
+				if(ac.currentAnim.name != "attack2"){
+					
+					// move += gravity;
+					// move *= moveSpeed;
+					// ac.movePlayer(move * Time.deltaTime);
+  					// ac.maxSpeed = new Vector3(-currentSpeed, 10, currentSpeed);
 					ac.ChangeAnimation("attack2", isAction);
 					mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
 				}			
