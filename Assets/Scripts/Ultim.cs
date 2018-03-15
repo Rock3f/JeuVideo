@@ -22,7 +22,7 @@ public class Ultim : MonoBehaviour {
 	private Vector3 initalPosition;
 	private Vector3 upPosition;
 	private Vector3 downPosition;
-	public bool goingUp;
+	private bool goingUp;
 	private bool playAnimation = false;
 	private bool playDance = false;
 	private float MaxHit;
@@ -55,9 +55,9 @@ public class Ultim : MonoBehaviour {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 	
-			/*System.Random Rand = new System.Random();
+			System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
-			Debug.Log(choiceBanousMalus);*/
+			Debug.Log(choiceBanousMalus);
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
@@ -84,12 +84,9 @@ public class Ultim : MonoBehaviour {
 					downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
 				}
 				playAnimation =true;
+				StartCoroutine(UltAnimation());
 				goingUp = true;
 			}
-		}
-
-		if (playAnimation == true){
-			StartCoroutine(UltAnimation());
 		}
 		
 		if (playDance == true){
@@ -100,8 +97,8 @@ public class Ultim : MonoBehaviour {
 	void LateUpdate() {
 		if (transform.position == upPosition){
 			
-			foreach( GameObject enemys in PlayerList) {
-				enemys.GetComponent<fight>().hp += 1;
+			foreach( GameObject players in PlayerList) {
+				players.GetComponent<fight>().hp += 1;
 			}
 		
 			goingUp = false;
@@ -145,9 +142,7 @@ public class Ultim : MonoBehaviour {
 	}
 	IEnumerator UltAnimation(){
 		for (int i = 0; i < speed; i++) {
-			
-			actualSpeed = CustumEase(i/speed) * 30 * Time.deltaTime ;
-			
+			actualSpeed = CustumEase(i/speed)* speed * 2 * Time.deltaTime ;
 			if (goingUp == true){
 				spriteRenderer.sprite = GoUp;
 				transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
@@ -161,7 +156,8 @@ public class Ultim : MonoBehaviour {
 		}
 	}
 		public static float CustumEase (float rate) {
-		return TweenCore.FloatTools.Zigzag(rate, TweenCore.Easing.SineIn);
+		return TweenCore.Easing.QuartIn(TweenCore.FloatTools.Repeat(TweenCore.FloatTools.Lerp(rate, 0, 2f), 0, 1));
+
 
 	}
 
