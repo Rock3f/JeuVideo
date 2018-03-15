@@ -18,9 +18,9 @@ public class explosion : MonoBehaviour
 
     // état privé
     // indice de la frame actuellement affichée
-    private int currentSpriteIdx = 0;
+    public int currentSpriteIdx = 0;
     // indice de l'animation actuellement affichée    
-    private int currentAnim = 0;
+    public int currentAnim = 0;
     // accumulateur pour mesurer le temps cumulé qui passe
     private float accumulateur = 0;
 
@@ -59,18 +59,19 @@ public class explosion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // durée souhaitée d'une frame
-        float frameDuration = GetFrameDurationInSec();
+        if (spriteRenderer.enabled == true){
+            float frameDuration = GetFrameDurationInSec();
 
-        // durée accumulée depuis le dernier changement de frame
-        accumulateur += Time.deltaTime;
+            // durée accumulée depuis le dernier changement de frame
+            accumulateur += Time.deltaTime;
 
-        // vide l'accumulateur et fait avancer les frames        
-        while (accumulateur > frameDuration && frameDuration > 0)
-        {
-            NextFrame();
-            accumulateur -= frameDuration;
-        }
+            // vide l'accumulateur et fait avancer les frames        
+            while (accumulateur > frameDuration && frameDuration > 0)
+            {
+                NextFrame();
+                accumulateur -= frameDuration;
+            }
+        } 
     }
 
     private int GetAnimIndex(string animName)
@@ -95,10 +96,12 @@ public class explosion : MonoBehaviour
         // grace à la fonction modulo (%).
         currentSpriteIdx = currentSpriteIdx + 1;
         // Affiche dans le sprite renderer la frame en cours de l'animation en cours.
-        spriteRenderer.sprite = anims[currentAnim].sprites[currentSpriteIdx];
-
-        if (currentSpriteIdx == anims[currentAnim].sprites.Length)
+        if (currentSpriteIdx >= anims[currentAnim].sprites.Length)
+        {
+            currentSpriteIdx =0;
             spriteRenderer.enabled = false;
+        } 
+        spriteRenderer.sprite = anims[currentAnim].sprites[currentSpriteIdx];
 
     }
 

@@ -100,6 +100,14 @@ public class fight : MonoBehaviour {
 					if(isBoss)
 					{
 						screenVictory.SetActive(true);
+
+						sounds.FirstOrDefault(x => x.clip.name.Contains("win")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("win")).clip);
+
+						foreach(AudioSource sound in sounds)
+						{
+							if(!sound.clip.name.Contains("win"))
+								sound.mute = true;
+						}
 					}
 				}
 
@@ -120,6 +128,10 @@ public class fight : MonoBehaviour {
 				}
 				
 			}	
+		}
+
+		if (hp > maxHp){
+			hp = maxHp;
 		}
 		
 	}
@@ -191,6 +203,7 @@ public class fight : MonoBehaviour {
 					if (coll.gameObject.GetComponent<fight>().hp > 0){
 						if(coll.gameObject.GetComponent<animationSprite>().currentAnim.name != "hit")
 						{
+							cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").clip);
 							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
 						}
 					}
