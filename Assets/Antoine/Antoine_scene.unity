@@ -3191,13 +3191,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300106, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   GoDown: {fileID: 21300026, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-  speed: 25
+  speed: 50
   explosion: {fileID: 484482773}
   UltBarVar: {fileID: 284973792}
   DanceTime: 3
   cameraMain: {fileID: 1585615048}
   croix: {fileID: 2086326306}
   Player: 1
+  actualSpeed: 0
 --- !u!4 &976640937 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4478515434319588, guid: 523a651967d08a04db589ba58af8e944,
