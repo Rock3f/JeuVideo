@@ -196,6 +196,7 @@ MonoBehaviour:
   - name: hit
     sprites:
     - {fileID: 21300220, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
+    - {fileID: 21300220, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   - name: die
     sprites:
     - {fileID: 21300218, guid: 9795102c525abcb4caad961b16b4f320, type: 3}

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114111889481090878}
   - component: {fileID: 61516641346330780}
   - component: {fileID: 114982171515786242}
+  - component: {fileID: 50287618559132318}
   m_Layer: 0
   m_Name: jaune_0
   m_TagString: Enemy
@@ -44,6 +45,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50287618559132318
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151676770360130}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &61516641346330780
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -67,7 +88,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.66}
+  m_Size: {x: 0.26, y: 0.45}
   m_EdgeRadius: 0
 --- !u!114 &114111889481090878
 MonoBehaviour:
@@ -89,11 +110,11 @@ MonoBehaviour:
     comboValue: 0
   - name: attack 2
     SpriteDamage: {fileID: 21300050, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
-    dammageValue: 1
+    dammageValue: 0.7
     comboValue: 0
   - name: attack 3
     SpriteDamage: {fileID: 21300040, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
-    dammageValue: 1.5
+    dammageValue: 1
     comboValue: 0
   UltBarVar: {fileID: 0}
   screenGameOver: {fileID: 0}
@@ -148,6 +169,7 @@ MonoBehaviour:
     - {fileID: 21300042, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   - name: hit
     sprites:
+    - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
     - {fileID: 21300118, guid: 2ccb9d7bf8e5d9e4e90336b1f25567e9, type: 3}
   - name: die
     sprites:
