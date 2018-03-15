@@ -160,4 +160,5 @@ public class Ultim : MonoBehaviour {
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), speed * Time.deltaTime);
 		}
 	}
+
 }
