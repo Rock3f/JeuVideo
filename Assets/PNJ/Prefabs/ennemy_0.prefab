@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4543416602349602}
   - component: {fileID: 212552598573631090}
-  - component: {fileID: 114825378174656600}
   - component: {fileID: 114851710847092906}
-  - component: {fileID: 114986086751914454}
+  - component: {fileID: 61457756306916062}
+  - component: {fileID: 114016185913418976}
+  - component: {fileID: 114527035680200864}
   m_Layer: 0
   m_Name: ennemy_0
   m_TagString: Untagged
@@ -43,7 +44,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114825378174656600
+--- !u!61 &61457756306916062
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006559296457060}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.39, y: 0.6}
+    newSize: {x: 0.39, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39, y: 0.6}
+  m_EdgeRadius: 0
+--- !u!114 &114016185913418976
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -51,14 +77,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1006559296457060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4eb6680fda59643ae94bf1a0a0cd81, type: 3}
+  m_Script: {fileID: 11500000, guid: 629b11b5565c4144eb5a0ab89ccfd653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 8
-  maxSpeed: 4
-  Player: 
-  currentSpeed: {x: 0, y: 0, z: 0}
-  mainCamera: {fileID: 0}
+  speed: 3
+--- !u!114 &114527035680200864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006559296457060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
+  maxHp: 5
+  Attacks: []
+  UltBarVar: {fileID: 0}
+  screenGameOver: {fileID: 0}
+  cameraMain: {fileID: 0}
+  menuButton: {fileID: 0}
+  isBoss: 0
+  screenVictory: {fileID: 0}
+  CollisonSide: 
+  Angle: 0
 --- !u!114 &114851710847092906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +164,7 @@ MonoBehaviour:
     - {fileID: 21300064, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
     - {fileID: 21300066, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
     - {fileID: 21300070, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
-  - name: fall
+  - name: die
     sprites:
     - {fileID: 21300078, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
     - {fileID: 21300082, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
@@ -135,17 +179,6 @@ MonoBehaviour:
   currentAnim:
     name: 
     sprites: []
---- !u!114 &114986086751914454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006559296457060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dc4e9c8541ae0547ae497da6554a885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212552598573631090
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +215,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: da3dcdf5c7372d4409cbb9f919d0ab94, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.39, y: 0.6}
