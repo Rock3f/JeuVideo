@@ -106,6 +106,8 @@ MonoBehaviour:
   maxSpeed: 4
   Player: 
   currentSpeed: {x: 0, y: 0, z: 0}
+  mainCamera: {fileID: 0}
+  IsDead: 0
 --- !u!114 &114413988930464330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,6 +137,9 @@ MonoBehaviour:
   UltBarVar: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 0}
+  menuButton: {fileID: 0}
+  isBoss: 0
+  screenVictory: {fileID: 0}
   CollisonSide: 
   Angle: 0
 --- !u!114 &114550580230889948
@@ -191,7 +196,6 @@ MonoBehaviour:
   - name: hit
     sprites:
     - {fileID: 21300220, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 21300220, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   - name: die
     sprites:
     - {fileID: 21300218, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
@@ -199,8 +203,8 @@ MonoBehaviour:
     - {fileID: 21300250, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
     - {fileID: 21300232, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
     - {fileID: 21300230, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-    - {fileID: 0}
   imagesParSecondes: 12
+  currentSpriteIdx: 0
   currentAnim:
     name: normal
     sprites:
