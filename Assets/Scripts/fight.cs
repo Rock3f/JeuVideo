@@ -28,6 +28,7 @@ public class fight : MonoBehaviour {
 	public GameObject cameraMain;
 	public GameObject menuButton;
 	public bool isBoss = false;
+	public bool isStory = false;
 	public GameObject screenVictory;
 
 	// Private 
@@ -97,7 +98,7 @@ public class fight : MonoBehaviour {
 				if (EnemyType == "Player"){
 					DestroyImmediate(this.gameObject);
 
-					if(isBoss)
+					if(isBoss && !isStory)
 					{
 						screenVictory.SetActive(true);
 
@@ -113,17 +114,20 @@ public class fight : MonoBehaviour {
 
 				if (EnemyType == "Enemy"){
 					
-					Time.timeScale = 0f;
-					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
-					screenGameOver.SetActive(true);
-					EventSystem.current.firstSelectedGameObject = menuButton;
-
-					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
-
-					foreach(AudioSource sound in sounds)
+					if(!isStory)
 					{
-						if(!sound.clip.name.Contains("gameOver"))
-							sound.mute = true;
+						Time.timeScale = 0f;
+						sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
+						screenGameOver.SetActive(true);
+						EventSystem.current.firstSelectedGameObject = menuButton;
+
+						sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
+
+						foreach(AudioSource sound in sounds)
+						{
+							if(!sound.clip.name.Contains("gameOver"))
+								sound.mute = true;
+						}
 					}
 				}
 				
@@ -172,23 +176,25 @@ public class fight : MonoBehaviour {
 				{	
 					// Inflige des dégats en fonction de l'attaque
 					coll.gameObject.GetComponent<fight>().hp -= att.dammageValue;
-
-					if(att.name == "coup de poing")
+					if(!isStory)
 					{
-						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("punch"));
-						source.PlayOneShot(source.clip);
-					}
+						if(att.name == "coup de poing")
+						{
+							AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("punch"));
+							source.PlayOneShot(source.clip);
+						}
 
-					if(att.name == "air kick")
-					{
-						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("airKick"));
-						source.PlayOneShot(source.clip);
-					}
+						if(att.name == "air kick")
+						{
+							AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("airKick"));
+							source.PlayOneShot(source.clip);
+						}
 
-					if(att.name == "high kick")
-					{
-						AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("HighKick"));
-						source.PlayOneShot(source.clip);
+						if(att.name == "high kick")
+						{
+							AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("HighKick"));
+							source.PlayOneShot(source.clip);
+						}
 					}
 
 					// Déclenche l'animation hit

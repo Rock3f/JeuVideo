@@ -36,7 +36,6 @@ public class movePlayer : MonoBehaviour {
 		Fire1 = "Fire1" + Player;
 		Fire2 = "Fire2" + Player;
 		Fire3 = "Fire3" + Player;
-		acceleration = isStory ? 1 : 0;
 		isAction = false;
 	}
 
@@ -87,7 +86,7 @@ public class movePlayer : MonoBehaviour {
 					}
 					
 				}
-				
+			}	
 				if(Input.GetButtonDown(Fire3)) {
 					isAction = true;
 					IsUpdatedNow = true;
@@ -106,9 +105,8 @@ public class movePlayer : MonoBehaviour {
 				}
 			
 			}
-			setMovementForFight();
 		}
-	}
+		setMovementForFight();
 
 	}
 	private void setMovementForFight() 
@@ -118,6 +116,7 @@ public class movePlayer : MonoBehaviour {
 			// Chaque valeur du Vector3 est exprimée en unité par seconde par seconde
 			// celà veut dire que chaque seconde, la vitesse augmente de cette valeur configurée.
 			// Ex: Chaque seconde, la vitesse augmente de 8 unités par seconde.
+			
 			Vector3 currentAcceleration = isStory ? 
 				new Vector3 (directionStory,0,0) : 
 				new Vector3 (
@@ -125,6 +124,10 @@ public class movePlayer : MonoBehaviour {
 				Input.GetAxis (Vertical) * acceleration,
 				0
 			);
+
+			Debug.Log(Input.GetAxis("Horizontal"));
+				if(currentAcceleration.x != 0)
+					currentAcceleration.ToString();
 
 			// Calcule la nouvelle vitesse à partir de l'accélération
 			// currentAcceleration retourne un changement de vitesse par seconde mais lors d'un update 
