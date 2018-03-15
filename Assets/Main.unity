@@ -1531,7 +1531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4457785923057962, guid: 51a915b4d2db98340a012b5705a0befe, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1665358441587364, guid: 51a915b4d2db98340a012b5705a0befe, type: 2}
       propertyPath: m_Name
@@ -4609,7 +4609,7 @@ RectTransform:
   m_Children:
   - {fileID: 1666908902}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
