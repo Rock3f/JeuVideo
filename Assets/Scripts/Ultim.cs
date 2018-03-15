@@ -53,12 +53,10 @@ public class Ultim : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
-	/* 
+	
 			System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
 			Debug.Log(choiceBanousMalus);
-
-	*/
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
@@ -162,4 +160,5 @@ public class Ultim : MonoBehaviour {
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), speed * Time.deltaTime);
 		}
 	}
+
 }
