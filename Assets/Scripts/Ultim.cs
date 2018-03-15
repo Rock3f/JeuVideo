@@ -16,12 +16,13 @@ public class Ultim : MonoBehaviour {
 	public GameObject cameraMain;
 	public ParticleSystem croix;
 	public int Player;
+	public float actualSpeed;
 
 	//Private
 	private Vector3 initalPosition;
 	private Vector3 upPosition;
 	private Vector3 downPosition;
-	private bool goingUp;
+	public bool goingUp;
 	private bool playAnimation = false;
 	private bool playDance = false;
 	private float MaxHit;
@@ -88,7 +89,7 @@ public class Ultim : MonoBehaviour {
 		}
 
 		if (playAnimation == true){
-			UltAnimation(initalPosition, upPosition, downPosition);
+			StartCoroutine(UltAnimation());
 		}
 		
 		if (playDance == true){
@@ -102,8 +103,7 @@ public class Ultim : MonoBehaviour {
 			foreach( GameObject enemys in PlayerList) {
 				enemys.GetComponent<fight>().hp += 1;
 			}
-			
-			Debug.Log("goingup = false");
+		
 			goingUp = false;
 		}
 
@@ -115,7 +115,7 @@ public class Ultim : MonoBehaviour {
 			foreach( GameObject enemys in EnemyList) {
 				enemys.GetComponent<fight>().hp -= 5;
 			}
-			Debug.Log("playanimation = false");
+			
 			explosion.GetComponent<Transform>().position = new Vector3(downPosition.x, downPosition.y + 2, downPosition.z);
 			explosion.GetComponent<SpriteRenderer>().enabled = true;
 			playAnimation = false;
@@ -143,22 +143,26 @@ public class Ultim : MonoBehaviour {
 				gameObject.GetComponent<movePlayer>().enabled = true;
 			}
 	}
-
-	void UltAnimation(Vector3 initalPosition, Vector3 upPosition, Vector3 downPosition) {
-
-		Debug.Log("Ult");
-		
-		if (goingUp == true){
-			spriteRenderer.sprite = GoUp;
-			Debug.Log("GoingUp");
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), speed * Time.deltaTime);
+	IEnumerator UltAnimation(){
+		for (int i = 0; i < speed; i++) {
+			
+			actualSpeed = CustumEase(i/speed) * 30 * Time.deltaTime ;
+			
+			if (goingUp == true){
+				spriteRenderer.sprite = GoUp;
+				transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
+			}
+			else if (goingUp == false)
+			{
+				spriteRenderer.sprite = GoDown;
+				transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z),  actualSpeed);
+			}
+			yield return null;
 		}
+	}
+		public static float CustumEase (float rate) {
+		return TweenCore.FloatTools.Zigzag(rate, TweenCore.Easing.SineIn);
 
-		else if(goingUp == false){
-			spriteRenderer.sprite = GoDown;
-			Debug.Log("GoingDown");
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), speed * Time.deltaTime);
-		}
 	}
 
 }
