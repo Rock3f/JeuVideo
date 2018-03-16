@@ -215,6 +215,7 @@ public class fight : MonoBehaviour {
 						if(coll.gameObject.GetComponent<animationSprite>().currentAnim.name != "hit")
 						{
 							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+							coll.gameObject.GetComponent<SpriteRenderer>().color = new Color(255,0,0,255);
 							if (sounds != null){
 								sounds.FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(sounds.FirstOrDefault(x => x.clip.name == "hurt").clip);
 							}
