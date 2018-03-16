@@ -12,13 +12,13 @@ public class NavigationMenu : MonoBehaviour {
     void Update() {
         if(Input.GetAxisRaw("Horizontal") != 0 && buttonSelected == false)
         {
-            eventSystem.SetSelectedGameObject(selectedGameObject);
+            //eventSystem.SetSelectedGameObject(selectedGameObject);
             buttonSelected = true;
         }
 
         if(Input.GetButtonDown("Fire1"))
         {
-            eventSystem.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+            //eventSystem.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
 

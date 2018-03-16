@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
 
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
-    public GameObject menuButton;
+    public UnityEngine.EventSystems.EventSystem eventSystem;
+    public GameObject selectedGameObject;
+    public GameObject GameOverScreen;
+
+
 
     // Update is called once per frame
     void Update()
@@ -22,7 +28,26 @@ public class PauseMenu : MonoBehaviour
             else
             {
                 Pause();
-                EventSystem.current.firstSelectedGameObject = menuButton;
+            }
+        }
+
+        if(GameIsPaused || GameOverScreen.activeSelf)
+        {
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+            {
+                eventSystem.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+            }
+
+            if(eventSystem.currentSelectedGameObject != selectedGameObject)
+            {
+                if(eventSystem.currentSelectedGameObject == null)
+                {
+                    eventSystem.SetSelectedGameObject(selectedGameObject);
+                }
+                else
+                {
+                    selectedGameObject = eventSystem.currentSelectedGameObject;
+                }
             }
         }
     }
@@ -37,5 +62,25 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        StartCoroutine("highlightBtn");
     }
+
+    public void StartMenu()
+    {
+        SceneManager.LoadScene("MenuStart");
+        Resume();
+    }
+
+    public void replay()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Resume();
+    }
+
+    IEnumerator highlightBtn()
+     {
+         eventSystem.SetSelectedGameObject(null);
+         yield return null;
+         eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
+     }
 }

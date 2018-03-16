@@ -24,6 +24,7 @@ public class fight : MonoBehaviour {
 	public Attack[] Attacks;
 
 	public GameObject UltBarVar;
+	public UnityEngine.EventSystems.EventSystem eventSystem;
 	public GameObject screenGameOver;
 	public GameObject cameraMain;
 	public GameObject menuButton;
@@ -119,7 +120,7 @@ public class fight : MonoBehaviour {
 						Time.timeScale = 0f;
 						sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 						screenGameOver.SetActive(true);
-						EventSystem.current.firstSelectedGameObject = menuButton;
+						eventSystem.SetSelectedGameObject(menuButton);
 
 						sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
 
