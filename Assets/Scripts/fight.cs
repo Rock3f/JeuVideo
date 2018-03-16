@@ -65,7 +65,7 @@ public class fight : MonoBehaviour {
 		Vector2 size = GetComponent<BoxCollider2D>().size;
          size = Vector2.Scale (size, (Vector2)transform.localScale);
          topAngle = Mathf.Atan (size.x / size.y) * Mathf.Rad2Deg;
-         sideAngle = 90.0f - topAngle;
+         sideAngle = 100.0f - topAngle;
 	}
 
 	void LateUpdate() {
@@ -80,7 +80,7 @@ public class fight : MonoBehaviour {
 			{
 				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);		
 
-				if(cameraMain != null)
+				if(sounds != null)
 				{
 					sounds.FirstOrDefault(x => x.clip.name.Contains("deathPlayer")).Play();
 				}				
@@ -135,7 +135,19 @@ public class fight : MonoBehaviour {
 		}
 		
 	}
+	public void OnCollisionEnter2D(Collision2D coll) {
 
+		// Detecte de quel cote viens la collison
+		Vector2 v = coll.contacts[1].point - (Vector2)transform.position;
+		if (Vector2.Angle(v, transform.right) <= sideAngle)  {
+			CollisonSide = "R";
+			Angle = Vector2.Angle(v, transform.right);
+		}
+		else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+			CollisonSide = "L";
+			Angle = Vector2.Angle(v, transform.right);
+		}
+	}
     public void OnCollisionStay2D (Collision2D coll)
     {
 		// Detecte de quel cote viens la collison
@@ -170,6 +182,7 @@ public class fight : MonoBehaviour {
 				)
 
 				{	
+					accumulateur = 0;
 					// Inflige des dégats en fonction de l'attaque
 					coll.gameObject.GetComponent<fight>().hp -= att.dammageValue;
 
@@ -195,8 +208,10 @@ public class fight : MonoBehaviour {
 					if (coll.gameObject.GetComponent<fight>().hp > 0){
 						if(coll.gameObject.GetComponent<animationSprite>().currentAnim.name != "hit")
 						{
-							cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").clip);
 							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+							if (sounds != null){
+								sounds.FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(sounds.FirstOrDefault(x => x.clip.name == "hurt").clip);
+							}
 						}
 					}
 
@@ -204,7 +219,6 @@ public class fight : MonoBehaviour {
 					if (UltBarVar != null){
 						AddHit(att.comboValue);
 					}
-					accumulateur = 0;
 				}
 			}
 		}

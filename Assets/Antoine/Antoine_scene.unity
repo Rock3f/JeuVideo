@@ -2949,6 +2949,7 @@ GameObject:
   - component: {fileID: 924531633}
   - component: {fileID: 924531632}
   - component: {fileID: 924531639}
+  - component: {fileID: 924531640}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -3191,7 +3192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300106, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   GoDown: {fileID: 21300026, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-  speed: 50
+  speed: 100
   explosion: {fileID: 484482773}
   UltBarVar: {fileID: 284973792}
   DanceTime: 3
@@ -3199,6 +3200,17 @@ MonoBehaviour:
   croix: {fileID: 2086326306}
   Player: 1
   actualSpeed: 0
+--- !u!114 &924531640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924531631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95073c56e87fac9408ae534fe8b65981, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &976640937 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4478515434319588, guid: 523a651967d08a04db589ba58af8e944,
@@ -4007,12 +4019,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96

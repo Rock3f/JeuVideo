@@ -157,8 +157,6 @@ public class Ultim : MonoBehaviour {
 	}
 		public static float CustumEase (float rate) {
 		return TweenCore.Easing.QuartIn(TweenCore.FloatTools.Repeat(TweenCore.FloatTools.Lerp(rate, 0, 2f), 0, 1));
-
-
 	}
 
 }
