@@ -35,7 +35,7 @@ public class Ultim : MonoBehaviour {
 	private bool choiceBanousMalus = false;
 
 	private ParticleSystem.EmissionModule croixEmission;
-	private float easingValue;
+
 
 	// Use this for initialization
 	void Start () {
@@ -56,9 +56,8 @@ public class Ultim : MonoBehaviour {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 	
-			/*System.Random Rand = new System.Random();
+			System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
-			Debug.Log(choiceBanousMalus);*/
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
@@ -109,10 +108,6 @@ public class Ultim : MonoBehaviour {
 			goingUp = false;
 		}
 
-		if(transform.position == downPosition){
-			Debug.Log("Is down");
-		}
-
 		if (transform.position == downPosition && playAnimation == true){
 			croixEmission.enabled = false;
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
@@ -153,9 +148,6 @@ public class Ultim : MonoBehaviour {
 		for (int i = 0; i < (speed); i++) {
 
 			actualSpeed = CustumEase(i/speed) * speed * 2 * Time.deltaTime ;
-			Debug.Log(i);
-			Debug.Log(goingUp);
-			Debug.Log(actualSpeed);
 			
 			if (goingUp == true){
 				spriteRenderer.sprite = GoUp;
