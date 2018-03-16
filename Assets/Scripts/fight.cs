@@ -143,7 +143,7 @@ public class fight : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D coll) {
 
 		// Detecte de quel cote viens la collison
-		Vector2 v = coll.contacts[1].point - (Vector2)transform.position;
+		Vector2 v = coll.contacts[0].point - (Vector2)transform.position;
 		if (Vector2.Angle(v, transform.right) <= sideAngle)  {
 			CollisonSide = "R";
 			Angle = Vector2.Angle(v, transform.right);

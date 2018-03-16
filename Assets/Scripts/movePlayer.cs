@@ -24,7 +24,6 @@ public class movePlayer : MonoBehaviour {
     public Vector3 upPosition;
     public Vector3 downPosition;
 	private bool playAnimation = false;
-	public bool goingUp;
 	public float speed = 20.0f;
 	public float speedJump = 20.0f;
 	public float actualSpeed;
@@ -36,6 +35,7 @@ public class movePlayer : MonoBehaviour {
 
 	private bool isAction = false;
 	private bool IsUpdatedNow; 
+	public int numberofButtonDown = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -63,6 +63,7 @@ public class movePlayer : MonoBehaviour {
 					IsUpdatedNow = true;
 					if(ac.currentAnim.name != "attack1")
 					{
+						numberofButtonDown++;
 						ac.ChangeAnimation("attack1", isAction);
 					}			
 				}
@@ -74,53 +75,50 @@ public class movePlayer : MonoBehaviour {
 					}
 				}
 
-			if(Input.GetButtonDown(Fire2)){
-				isAction = true;
-				IsUpdatedNow = true;
+				if(Input.GetButtonDown(Fire2)){
+					isAction = true;
+					IsUpdatedNow = true;
 
-				if(ac.currentAnim.name != "attack2"){
+					if(ac.currentAnim.name != "attack2" && isAction && numberofButtonDown >= 2){
+						numberofButtonDown = 0;
+						ac.ChangeAnimation("attack2", isAction);
+						gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+						
+						initalPosition = transform.position;
+						
+						if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
 
-					gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-					gameObject.GetComponent<movePlayer>().enabled = false;
-					
-					initalPosition = transform.position;
+							upPosition = new Vector3(initalPosition.x + 2 , initalPosition.y + 1.5f, initalPosition.z );
+							downPosition = new Vector3(initalPosition.x + 3 , initalPosition.y, initalPosition.z);
+						}
+						else{
 
-                if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
+							upPosition = new Vector3(initalPosition.x - 2 , initalPosition.y + 1.5f, initalPosition.z );
+							downPosition = new Vector3(initalPosition.x - 3 , initalPosition.y, initalPosition.z);
+						}
 
-                    upPosition = new Vector3(initalPosition.x + 3 , initalPosition.y + 4, initalPosition.z );
-                    downPosition = new Vector3(initalPosition.x + 5 , initalPosition.y, initalPosition.z);
+						playAnimation = true;
+						StartCoroutine(UltAnimation());			
+						mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
+					}				
 				}
-                else{
-
-                    upPosition = new Vector3(initalPosition.x - 3 , initalPosition.y + 4, initalPosition.z );
-                    downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
-                }
-
-					playAnimation = true;
-					StartCoroutine(UltAnimation());
-					goingUp = true;
-					
-					ac.ChangeAnimation("attack2", isAction);
-					mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
-				}				
-			}
-			else
-			{
-				if(!IsUpdatedNow)
+				else
 				{
 					if(!IsUpdatedNow)
-					{
-						isAction = false;
+					{						
+						isAction = false;					
+						
 					}
 					
-				}
-			}	
+				}	
+
 				if(Input.GetButtonDown(Fire3)) {
 					isAction = true;
 					IsUpdatedNow = true;
 
 					if(ac.currentAnim.name != "attack3")
 					{
+						numberofButtonDown++;
 						ac.ChangeAnimation("attack3", isAction);
 					}			
 				}
@@ -203,7 +201,7 @@ public class movePlayer : MonoBehaviour {
 			{
 				transform.position = Vector3.Lerp(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), 1-actualSpeed);
 			}
-			gameObject.GetComponent<movePlayer>().enabled = true;
+			gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
 			yield return null;
 		}
 	}

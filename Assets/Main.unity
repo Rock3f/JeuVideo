@@ -3082,6 +3082,16 @@ Prefab:
       propertyPath: croix
       value: 
       objectReference: {fileID: 2086326306}
+    - target: {fileID: 114614687408028512, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: speed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771625570755028, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: speedJump
+      value: 65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d568662c564b81478e1395491fa8fd4, type: 2}
   m_IsPrefabParent: 0
