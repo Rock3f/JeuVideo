@@ -207,6 +207,12 @@ MonoBehaviour:
   IsDead: 0
   isStory: 0
   directionStory: 0
+  upPosition: {x: 0, y: 0, z: 0}
+  downPosition: {x: 0, y: 0, z: 0}
+  goingUp: 0
+  speed: 20
+  speedJump: 10
+  actualSpeed: 0
 --- !u!114 &114955338138763164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  hp: 4
+  maxHp: 4
   Attacks:
   - name: coup de poing
     SpriteDamage: {fileID: 21300070, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
@@ -234,6 +240,7 @@ MonoBehaviour:
     dammageValue: 3
     comboValue: 1
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 0}
   menuButton: {fileID: 0}

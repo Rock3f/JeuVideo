@@ -20,6 +20,16 @@ public class movePlayer : MonoBehaviour {
 	private string Horizontal;
 	private string Vertical;
 
+	private Vector3 initalPosition;
+    public Vector3 upPosition;
+    public Vector3 downPosition;
+	private bool playAnimation = false;
+	public bool goingUp;
+	public float speed = 20.0f;
+	public float speedJump = 20.0f;
+	public float actualSpeed;
+	private SpriteRenderer spriteRenderer;
+
 	private string Fire1;
 	private string Fire2;
 	private string Fire3;
@@ -31,6 +41,7 @@ public class movePlayer : MonoBehaviour {
 	void Start () {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<animationSprite> ();
+		spriteRenderer = GetComponent<SpriteRenderer> ();
 		Horizontal = "Horizontal" + Player;
 		Vertical = "Vertical" + Player;
 		Fire1 = "Fire1" + Player;
@@ -66,15 +77,32 @@ public class movePlayer : MonoBehaviour {
 			if(Input.GetButtonDown(Fire2)){
 				isAction = true;
 				IsUpdatedNow = true;
+
 				if(ac.currentAnim.name != "attack2"){
+
+					gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+					gameObject.GetComponent<movePlayer>().enabled = false;
 					
-					// move += gravity;
-					// move *= moveSpeed;
-					// ac.movePlayer(move * Time.deltaTime);
-  					// ac.maxSpeed = new Vector3(-currentSpeed, 10, currentSpeed);
+					initalPosition = transform.position;
+
+                if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
+
+                    upPosition = new Vector3(initalPosition.x + 3 , initalPosition.y + 4, initalPosition.z );
+                    downPosition = new Vector3(initalPosition.x + 5 , initalPosition.y, initalPosition.z);
+				}
+                else{
+
+                    upPosition = new Vector3(initalPosition.x - 3 , initalPosition.y + 4, initalPosition.z );
+                    downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
+                }
+
+					playAnimation = true;
+					StartCoroutine(UltAnimation());
+					goingUp = true;
+					
 					ac.ChangeAnimation("attack2", isAction);
 					mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
-				}			
+				}				
 			}
 			else
 			{
@@ -161,6 +189,27 @@ public class movePlayer : MonoBehaviour {
 		}
 	}
 
+	IEnumerator UltAnimation(){
 
+		for (int i = 0; i < speedJump; i++) {
+			
+			actualSpeed = CustumEase(i/speedJump);
+			
+			if (i < speedJump/2){ 
+				
+				transform.position = Vector3.Lerp(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
+			}
+			else
+			{
+				transform.position = Vector3.Lerp(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), 1-actualSpeed);
+			}
+			gameObject.GetComponent<movePlayer>().enabled = true;
+			yield return null;
+		}
+	}
+
+	public static float CustumEase (float rate) {
+        return TweenCore.FloatTools.Zigzag(rate, TweenCore.Easing.SineIn);
+	}
 	
 }

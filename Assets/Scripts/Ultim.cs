@@ -145,18 +145,18 @@ public class Ultim : MonoBehaviour {
 			}
 	}
 	IEnumerator UltAnimation(){
-		for (int i = 0; i < (speed); i++) {
+		for (int i = 0; i < speed; i++) {
 
-			actualSpeed = CustumEase(i/speed) * speed * 2 * Time.deltaTime ;
+			actualSpeed = CustumEase(i/speed);
 			
-			if (goingUp == true){
+			if (i < speed/2){
 				spriteRenderer.sprite = GoUp;
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
+				transform.position = Vector3.Lerp(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
 			}
-			else if (goingUp == false)
+			else
 			{
 				spriteRenderer.sprite = GoDown;
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z),  actualSpeed);
+				transform.position = Vector3.Lerp(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z),  1-actualSpeed);
 			}
 			yield return null;
 		}

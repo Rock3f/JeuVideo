@@ -418,7 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5da66a8afb44a149a5b5f7313ee772f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 1094698162}
   eventSystem: {fileID: 0}
   selectedGameObject: {fileID: 691250601}
 --- !u!1 &67638795
@@ -3101,6 +3100,16 @@ Prefab:
       propertyPath: menuButton
       value: 
       objectReference: {fileID: 412084830}
+    - target: {fileID: 114614687408028512, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771625570755028, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: speedJump
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d568662c564b81478e1395491fa8fd4, type: 2}
   m_IsPrefabParent: 0
@@ -3404,7 +3413,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 2131962833}
+  eventSystem: {fileID: 0}
   menuButton: {fileID: 368191857}
+  selectedGameObject: {fileID: 0}
+  GameOverScreen: {fileID: 0}
+  restartButton: {fileID: 0}
+  Pausetext: {fileID: 0}
 --- !u!114 &1094698160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4585,6 +4599,7 @@ MonoBehaviour:
     dammageValue: 0
     comboValue: 0
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 1585615048}
   menuButton: {fileID: 0}
@@ -11475,6 +11490,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5da66a8afb44a149a5b5f7313ee772f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 1094698162}
   eventSystem: {fileID: 0}
   selectedGameObject: {fileID: 0}
