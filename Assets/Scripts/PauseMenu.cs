@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,6 +11,15 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuUI;
     public GameObject menuButton;
 
+    public GameObject restartButton;
+    public Text Pausetext;
+    void Start() {
+        Pause();
+
+        restartButton.SetActive(false);
+        menuButton.SetActive(false);
+        Pausetext.text = "P l a y";
+    }
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +41,10 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+
+        restartButton.SetActive(true);
+        menuButton.SetActive(true);
+        Pausetext.text = "P a u s e";
     }
     public void Pause()
     {
