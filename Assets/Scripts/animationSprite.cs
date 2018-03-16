@@ -30,6 +30,7 @@ public class animationSprite : MonoBehaviour {
     private float accumulateur = 0;
     private bool isAction = false;
     private bool isRunning = false;
+    private Color standard = new Color(255,255,255,255);
 
     // Use this for initialization
     void Start () {
@@ -67,6 +68,11 @@ public class animationSprite : MonoBehaviour {
         // Lors d'une nouvelle animation, repartir à la première image de cette animation
         this.currentSpriteIdx = 0;
         this.isAction = isAction;
+
+        if(spriteRenderer.color !=  standard)
+        {
+            spriteRenderer.color = standard;
+        }
 
         if(isAction)
         {

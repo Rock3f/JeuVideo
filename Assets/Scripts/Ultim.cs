@@ -35,6 +35,7 @@ public class Ultim : MonoBehaviour {
 	private bool choiceBanousMalus = false;
 
 	private ParticleSystem.EmissionModule croixEmission;
+	private float easingValue;
 
 	// Use this for initialization
 	void Start () {
@@ -55,9 +56,9 @@ public class Ultim : MonoBehaviour {
 		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 	
-			System.Random Rand = new System.Random();
+			/*System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
-			Debug.Log(choiceBanousMalus);
+			Debug.Log(choiceBanousMalus);*/
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
@@ -84,14 +85,18 @@ public class Ultim : MonoBehaviour {
 					downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
 				}
 				playAnimation =true;
-				StartCoroutine(UltAnimation());
 				goingUp = true;
+				if (playAnimation == true){
+					StartCoroutine(UltAnimation());
+				}
 			}
 		}
 		
 		if (playDance == true){
 			UltDance();
 		}
+
+		
 
 	}
 	void LateUpdate() {
@@ -102,6 +107,10 @@ public class Ultim : MonoBehaviour {
 			}
 		
 			goingUp = false;
+		}
+
+		if(transform.position == downPosition){
+			Debug.Log("Is down");
 		}
 
 		if (transform.position == downPosition && playAnimation == true){
@@ -141,8 +150,13 @@ public class Ultim : MonoBehaviour {
 			}
 	}
 	IEnumerator UltAnimation(){
-		for (int i = 0; i < speed; i++) {
-			actualSpeed = CustumEase(i/speed)* speed * 2 * Time.deltaTime ;
+		for (int i = 0; i < (speed); i++) {
+
+			actualSpeed = CustumEase(i/speed) * speed * 2 * Time.deltaTime ;
+			Debug.Log(i);
+			Debug.Log(goingUp);
+			Debug.Log(actualSpeed);
+			
 			if (goingUp == true){
 				spriteRenderer.sprite = GoUp;
 				transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
@@ -156,7 +170,6 @@ public class Ultim : MonoBehaviour {
 		}
 	}
 		public static float CustumEase (float rate) {
-		return TweenCore.Easing.QuartIn(TweenCore.FloatTools.Repeat(TweenCore.FloatTools.Lerp(rate, 0, 2f), 0, 1));
+			return TweenCore.Easing.QuartIn(TweenCore.FloatTools.Repeat(TweenCore.FloatTools.Lerp(rate, 0, 2f), 0, 1));
 	}
-
 }

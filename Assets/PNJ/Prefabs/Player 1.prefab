@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300106, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
   GoDown: {fileID: 21300026, guid: 9795102c525abcb4caad961b16b4f320, type: 3}
-  speed: 50
+  speed: 100
   explosion: {fileID: 0}
   UltBarVar: {fileID: 0}
   DanceTime: 3
@@ -205,6 +205,8 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 0}
   IsDead: 0
+  isStory: 0
+  directionStory: 0
 --- !u!114 &114955338138763164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +238,7 @@ MonoBehaviour:
   cameraMain: {fileID: 0}
   menuButton: {fileID: 0}
   isBoss: 0
+  isStory: 0
   screenVictory: {fileID: 0}
   CollisonSide: 
   Angle: 0

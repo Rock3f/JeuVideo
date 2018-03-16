@@ -10,25 +10,31 @@ public float acceleration = 8f; // unit per second, per second
 
 	private animationSprite ac;
 
-	public float xmin = 119;
+	public float xmin = -60;
 	public float xmax = 130;
+	public bool isWaiting = false;
 
 	private bool isGoingLeft = false;
+	public float positionZ = -8000;
+	public float positionY = 0;
 
 	// Use this for initialization
 	void Start () {
 		ac = GetComponent<animationSprite> ();
+		positionZ = positionZ == -8000 ? transform.position.y : positionZ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(!isWaiting)
+		{
 			// Calcule une acceleration en fonction de l'entrée utilisateur et de l'accelération configurée pour l'objet
 			// Chaque valeur du Vector3 est exprimée en unité par seconde par seconde
 			// celà veut dire que chaque seconde, la vitesse augmente de cette valeur configurée.
 			// Ex: Chaque seconde, la vitesse augmente de 8 unités par seconde.
 			Vector3 currentAcceleration = new Vector3 (
 				1 * acceleration,
-				0,
+				positionY * acceleration,
 				0
 			);
 
@@ -70,13 +76,15 @@ public float acceleration = 8f; // unit per second, per second
 			this.transform.position = new Vector3(
 			transform.position.x,
 			transform.position.y,
-			transform.position.y
+			positionZ
 			);
 
 			// Utilise l'entrée utilisateur pour décider quelle animation afficher.
 			// celà permet d'avoir un feedback (retour visuel) immédiat qui lui indique que son
 			// action (bouger, ne plus bouger, changer de direction) est prise en compte.
 			
-			ac.SetAnimationPNJ (1 + 0.001f * currentAcceleration.magnitude, isGoingLeft);
+			if(ac != null)
+				ac.SetAnimationPNJ (1 + 0.001f * currentAcceleration.magnitude, isGoingLeft);
+		}
 	}
 }

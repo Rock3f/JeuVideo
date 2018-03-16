@@ -4,9 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
+public struct Target{
+	public Transform target;
+
+	public bool WasHit;
+
+}
+
 public class EnemyFollow : MonoBehaviour {
 
 	public float speed;
+	public Target[] targets;
+	public bool isStory = false;
+
 	private GameObject[] PlayerList;
 	private Transform Player1;
 
@@ -37,12 +48,26 @@ public class EnemyFollow : MonoBehaviour {
 		
 		if(IsAlive)
 		{
-			if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
-				target = Player2.GetComponent<Transform>();
+			if(isStory)
+			{
+				foreach(Target targetIA in targets)
+				{
+					if(!targetIA.WasHit)
+					{
+						target = targetIA.target;
+					}
+				}
 			}
-			else{
-				target = Player1.GetComponent<Transform>();
+			else
+			{
+				if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
+					target = Player2.GetComponent<Transform>();
+				}
+				else{
+					target = Player1.GetComponent<Transform>();
+				}
 			}
+
 			transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x +1, target.position.y, target.position.z), speed * Time.deltaTime);
 
 			gameObject.GetComponent<animationSprite>().SetAnimationFromSpeed(speed, true);

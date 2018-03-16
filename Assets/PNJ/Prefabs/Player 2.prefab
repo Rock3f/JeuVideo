@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  hp: 4
+  maxHp: 4
   Attacks:
   - name: coup de poing
     SpriteDamage: {fileID: 21300076, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
@@ -122,6 +122,7 @@ MonoBehaviour:
   cameraMain: {fileID: 0}
   menuButton: {fileID: 0}
   isBoss: 0
+  isStory: 0
   screenVictory: {fileID: 0}
   CollisonSide: 
   Angle: 0
@@ -205,6 +206,8 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 0}
   IsDead: 0
+  isStory: 0
+  directionStory: 0
 --- !u!114 &114702897676558006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300102, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   GoDown: {fileID: 21300026, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
-  speed: 50
+  speed: 100
   explosion: {fileID: 0}
   UltBarVar: {fileID: 0}
   DanceTime: 3
