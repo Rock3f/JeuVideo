@@ -24,11 +24,15 @@ public class fight : MonoBehaviour {
 	public Attack[] Attacks;
 
 	public GameObject UltBarVar;
+	public UnityEngine.EventSystems.EventSystem eventSystem;
 	public GameObject screenGameOver;
 	public GameObject cameraMain;
 	public GameObject menuButton;
 	public bool isBoss = false;
+	public bool isStory = false;
 	public GameObject screenVictory;
+
+	public Sprite parade;
 
 	// Private 
 	private float accumulateur;
@@ -66,7 +70,7 @@ public class fight : MonoBehaviour {
 		Vector2 size = GetComponent<BoxCollider2D>().size;
          size = Vector2.Scale (size, (Vector2)transform.localScale);
          topAngle = Mathf.Atan (size.x / size.y) * Mathf.Rad2Deg;
-         sideAngle = 90.0f - topAngle;
+         sideAngle = 100.0f - topAngle;
 	}
 
 	void LateUpdate() {
@@ -80,7 +84,7 @@ public class fight : MonoBehaviour {
 			{
 				gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);		
 
-				if(cameraMain != null)
+				if(sounds != null)
 				{
 					sounds.FirstOrDefault(x => x.clip.name.Contains("deathPlayer")).Play();
 				}				
@@ -97,7 +101,7 @@ public class fight : MonoBehaviour {
 				if (enemyType[0] == "Player"){
 					DestroyImmediate(this.gameObject);
 
-					if(isBoss)
+					if(isBoss && !isStory)
 					{
 						screenVictory.SetActive(true);
 
@@ -113,17 +117,20 @@ public class fight : MonoBehaviour {
 
 				if (enemyType[0] == "Enemy" || enemyType[1] == "Shooter"){
 					
-					Time.timeScale = 0f;
-					sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
-					screenGameOver.SetActive(true);
-					EventSystem.current.firstSelectedGameObject = menuButton;
-
-					sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
-
-					foreach(AudioSource sound in sounds)
+					if(!isStory)
 					{
-						if(!sound.clip.name.Contains("gameOver"))
-							sound.mute = true;
+						Time.timeScale = 0f;
+						sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
+						screenGameOver.SetActive(true);
+						eventSystem.SetSelectedGameObject(menuButton);
+
+						sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("gameOver")).clip);
+
+						foreach(AudioSource sound in sounds)
+						{
+							if(!sound.clip.name.Contains("gameOver"))
+								sound.mute = true;
+						}
 					}
 				}
 				
@@ -135,7 +142,19 @@ public class fight : MonoBehaviour {
 		}
 		
 	}
+	public void OnCollisionEnter2D(Collision2D coll) {
 
+		// Detecte de quel cote viens la collison
+		Vector2 v = coll.contacts[0].point - (Vector2)transform.position;
+		if (Vector2.Angle(v, transform.right) <= sideAngle)  {
+			CollisonSide = "R";
+			Angle = Vector2.Angle(v, transform.right);
+		}
+		else if (Vector2.Angle(v, -transform.right) <= sideAngle) {
+			CollisonSide = "L";
+			Angle = Vector2.Angle(v, transform.right);
+		}
+	}
     public void OnCollisionStay2D (Collision2D coll)
     {
 		// Detecte de quel cote viens la collison
@@ -159,22 +178,27 @@ public class fight : MonoBehaviour {
 			// Lorsqu'une collison à lieu avec un ennemie
 			if(coll.gameObject.tag == enemyType){
 			
-				string OtherCollSide = coll.gameObject.GetComponent<fight>().CollisonSide;
-				bool OtherflipX = GetComponent<SpriteRenderer>().flipX;
+			string OtherCollSide = coll.gameObject.GetComponent<fight>().CollisonSide;
+			bool OtherflipX = GetComponent<SpriteRenderer>().flipX;
+			bool EnemyParade = coll.gameObject.GetComponent<fight>().parade == coll.gameObject.GetComponent<SpriteRenderer>().sprite;
 
-				// Pour chaque attack regarde si le sprite correspond au sprite de degat associé
-				foreach (Attack att in Attacks){
-					if(GetComponent<SpriteRenderer>().sprite == att.SpriteDamage 
-					&& accumulateur > 0.2
-					// Vérifie que les ennemies sont bien face a face pour se frapper
-					&& ((CollisonSide == "R" && OtherCollSide == "L" && OtherflipX == false) 
-					|| (CollisonSide == "L" && OtherCollSide == "R" && OtherflipX == true))
-					)
+			// Pour chaque attack regarde si le sprite correspond au sprite de degat associé
+			foreach (Attack att in Attacks){
+				if(
+				EnemyParade == false
+				&& GetComponent<SpriteRenderer>().sprite == att.SpriteDamage 
+				&& accumulateur > 0.2
+				// Vérifie que les ennemies sont bien face a face pour se frapper
+				&& ((CollisonSide == "R" && OtherCollSide == "L" && OtherflipX == false) 
+				|| (CollisonSide == "L" && OtherCollSide == "R" && OtherflipX == true))
+				)
 
-					{	
-						// Inflige des dégats en fonction de l'attaque
-						coll.gameObject.GetComponent<fight>().hp -= att.dammageValue;
-
+				{	
+					accumulateur = 0;
+					// Inflige des dégats en fonction de l'attaque
+					coll.gameObject.GetComponent<fight>().hp -= att.dammageValue;
+					if(!isStory)
+					{
 						if(att.name == "coup de poing")
 						{
 							AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("punch"));
@@ -191,6 +215,16 @@ public class fight : MonoBehaviour {
 						{
 							AudioSource source = sounds.FirstOrDefault(x => x.clip.name.Contains("HighKick"));
 							source.PlayOneShot(source.clip);
+						}
+					}
+
+						if(att.name == "high kick")
+						{
+							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+							coll.gameObject.GetComponent<SpriteRenderer>().color = new Color(255,0,0,255);
+							if (sounds != null){
+								sounds.FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(sounds.FirstOrDefault(x => x.clip.name == "hurt").clip);
+							}
 						}
 
 						// Déclenche l'animation hit

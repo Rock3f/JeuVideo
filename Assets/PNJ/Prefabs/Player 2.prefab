@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -89,7 +89,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27, y: 0.55}
+  m_Size: {x: 0.3, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &114321780531350344
 MonoBehaviour:
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6a33cf1ba2a9e4b9f1c11f2862ccae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHp: 3
+  hp: 4
+  maxHp: 4
   Attacks:
   - name: coup de poing
     SpriteDamage: {fileID: 21300076, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
@@ -118,11 +118,14 @@ MonoBehaviour:
     dammageValue: 3
     comboValue: 1
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 0}
   menuButton: {fileID: 0}
   isBoss: 0
+  isStory: 0
   screenVictory: {fileID: 0}
+  parade: {fileID: 0}
   CollisonSide: 
   Angle: 0
 --- !u!114 &114387703588246680
@@ -167,6 +170,7 @@ MonoBehaviour:
   - name: hit
     sprites:
     - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300218, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   - name: die
     sprites:
     - {fileID: 21300216, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
@@ -181,6 +185,9 @@ MonoBehaviour:
     - {fileID: 21300058, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     - {fileID: 21300060, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
     - {fileID: 21300166, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+  - name: parade
+    sprites:
+    - {fileID: 21300252, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   imagesParSecondes: 12
   currentSpriteIdx: 0
   currentAnim:
@@ -204,6 +211,15 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0, z: 0}
   mainCamera: {fileID: 0}
   IsDead: 0
+  isStory: 0
+  directionStory: 0
+  upPosition: {x: 0, y: 0, z: 0}
+  downPosition: {x: 0, y: 0, z: 0}
+  goingUp: 0
+  speed: 20
+  speedJump: 60
+  actualSpeed: 0
+  timerParade: 0
 --- !u!114 &114702897676558006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,7 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoUp: {fileID: 21300102, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   GoDown: {fileID: 21300026, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
-  speed: 50
+  speed: 100
   explosion: {fileID: 0}
   UltBarVar: {fileID: 0}
   DanceTime: 3
@@ -225,7 +241,6 @@ MonoBehaviour:
   croix: {fileID: 0}
   Player: 2
   actualSpeed: 0
-  goingUp: 0
 --- !u!212 &212090333369843548
 SpriteRenderer:
   m_ObjectHideFlags: 1

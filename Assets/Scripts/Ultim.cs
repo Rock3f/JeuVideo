@@ -22,7 +22,7 @@ public class Ultim : MonoBehaviour {
 	private Vector3 initalPosition;
 	private Vector3 upPosition;
 	private Vector3 downPosition;
-	public bool goingUp;
+	private bool goingUp;
 	private bool playAnimation = false;
 	private bool playDance = false;
 	private float MaxHit;
@@ -35,6 +35,7 @@ public class Ultim : MonoBehaviour {
 	private bool choiceBanousMalus = false;
 
 	private ParticleSystem.EmissionModule croixEmission;
+
 
 	// Use this for initialization
 	void Start () {
@@ -57,7 +58,6 @@ public class Ultim : MonoBehaviour {
 	
 			System.Random Rand = new System.Random();
 			choiceBanousMalus = Rand.Next(2) == 0 ? false :true;
-			Debug.Log(choiceBanousMalus);
 
 			if(choiceBanousMalus == true){
 				// Effet MALUS
@@ -84,29 +84,21 @@ public class Ultim : MonoBehaviour {
 					downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
 				}
 				playAnimation =true;
-				goingUp = true;
+				if (playAnimation == true){
+					StartCoroutine(UltAnimation());
+				}
 			}
-		}
-
-		if (playAnimation == true){
-			StartCoroutine(UltAnimation());
 		}
 		
 		if (playDance == true){
 			UltDance();
 		}
 
+		
+
 	}
 	void LateUpdate() {
-		if (transform.position == upPosition){
-			
-			foreach( GameObject enemys in PlayerList) {
-				enemys.GetComponent<fight>().hp += 1;
-			}
 		
-			goingUp = false;
-		}
-
 		if (transform.position == downPosition && playAnimation == true){
 			croixEmission.enabled = false;
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
@@ -145,24 +137,28 @@ public class Ultim : MonoBehaviour {
 	}
 	IEnumerator UltAnimation(){
 		for (int i = 0; i < speed; i++) {
-			
-			actualSpeed = CustumEase(i/speed) * 30 * Time.deltaTime ;
-			
-			if (goingUp == true){
-				spriteRenderer.sprite = GoUp;
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
+
+			actualSpeed = CustumEase(i/speed);
+
+			if (i == speed/2){
+				foreach( GameObject players in PlayerList) {
+				players.GetComponent<fight>().hp += 1;
 			}
-			else if (goingUp == false)
+
+			}
+			if (i < speed/2){
+				spriteRenderer.sprite = GoUp;
+				transform.position = Vector3.Lerp(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);
+			}
+			else
 			{
 				spriteRenderer.sprite = GoDown;
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z),  actualSpeed);
+				transform.position = Vector3.Lerp(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z),  1-actualSpeed);
 			}
 			yield return null;
 		}
 	}
 		public static float CustumEase (float rate) {
-		return TweenCore.FloatTools.Zigzag(rate, TweenCore.Easing.SineIn);
-
+			return TweenCore.Easing.QuartIn(TweenCore.FloatTools.Repeat(TweenCore.FloatTools.Lerp(rate, 0, 2f), 0, 1));
 	}
-
 }
