@@ -24,7 +24,6 @@ public class movePlayer : MonoBehaviour {
     public Vector3 upPosition;
     public Vector3 downPosition;
 	private bool playAnimation = false;
-	public bool goingUp;
 	public float speed = 20.0f;
 	public float speedJump = 20.0f;
 	public float actualSpeed;
@@ -38,6 +37,8 @@ public class movePlayer : MonoBehaviour {
 
 	private bool isAction = false;
 	private bool IsUpdatedNow; 
+	private int numberofButtonDown = 3;
+	private Rigidbody2D rb2d; 
 
 	public float timerParade;
 
@@ -46,6 +47,7 @@ public class movePlayer : MonoBehaviour {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<animationSprite> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+		rb2d = GetComponent<Rigidbody2D> ();
 		Horizontal = "Horizontal" + Player;
 		Vertical = "Vertical" + Player;
 		Fire1 = "Fire1" + Player;
@@ -68,6 +70,7 @@ public class movePlayer : MonoBehaviour {
 					IsUpdatedNow = true;
 					if(ac.currentAnim.name != "attack1")
 					{
+						numberofButtonDown++;
 						ac.ChangeAnimation("attack1", isAction);
 					}			
 				}
@@ -79,53 +82,50 @@ public class movePlayer : MonoBehaviour {
 					}
 				}
 
-			if(Input.GetButtonDown(Fire2)){
-				isAction = true;
-				IsUpdatedNow = true;
+				if(Input.GetButtonDown(Fire2)){
+					isAction = true;
+					IsUpdatedNow = true;
 
-				if(ac.currentAnim.name != "attack2"){
+					if(ac.currentAnim.name != "attack2" && isAction && numberofButtonDown >= 2){
+						numberofButtonDown = 0;
+						ac.ChangeAnimation("attack2", isAction);
+						gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+						
+						initalPosition = transform.position;
+						
+						if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
 
-					gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-					gameObject.GetComponent<movePlayer>().enabled = false;
-					
-					initalPosition = transform.position;
+							upPosition = new Vector3(initalPosition.x + 2 , initalPosition.y + 1.5f, initalPosition.z );
+							downPosition = new Vector3(initalPosition.x + 3 , initalPosition.y, initalPosition.z);
+						}
+						else{
 
-                if (gameObject.GetComponent<SpriteRenderer>().flipX == false){
+							upPosition = new Vector3(initalPosition.x - 2 , initalPosition.y + 1.5f, initalPosition.z );
+							downPosition = new Vector3(initalPosition.x - 3 , initalPosition.y, initalPosition.z);
+						}
 
-                    upPosition = new Vector3(initalPosition.x + 3 , initalPosition.y + 4, initalPosition.z );
-                    downPosition = new Vector3(initalPosition.x + 5 , initalPosition.y, initalPosition.z);
+						playAnimation = true;
+						StartCoroutine(UltAnimation());			
+						mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
+					}				
 				}
-                else{
-
-                    upPosition = new Vector3(initalPosition.x - 3 , initalPosition.y + 4, initalPosition.z );
-                    downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
-                }
-
-					playAnimation = true;
-					StartCoroutine(UltAnimation());
-					goingUp = true;
-					
-					ac.ChangeAnimation("attack2", isAction);
-					mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).PlayOneShot(mainCamera.GetComponents<AudioSource>().FirstOrDefault( x => x.clip.name.Contains("jumpGrunt")).clip);
-				}				
-			}
-			else
-			{
-				if(!IsUpdatedNow)
+				else
 				{
 					if(!IsUpdatedNow)
-					{
-						isAction = false;
+					{						
+						isAction = false;					
+						
 					}
 					
-				}
-			}	
+				}	
+
 				if(Input.GetButtonDown(Fire3)) {
 					isAction = true;
 					IsUpdatedNow = true;
 
 					if(ac.currentAnim.name != "attack3")
 					{
+						numberofButtonDown++;
 						ac.ChangeAnimation("attack3", isAction);
 					}			
 				}
@@ -184,9 +184,6 @@ public class movePlayer : MonoBehaviour {
 				0
 			);
 
-		
-				if(currentAcceleration.x != 0)
-					currentAcceleration.ToString();
 
 			// Calcule la nouvelle vitesse à partir de l'accélération
 			// currentAcceleration retourne un changement de vitesse par seconde mais lors d'un update 
@@ -234,7 +231,7 @@ public class movePlayer : MonoBehaviour {
 			{
 				transform.position = Vector3.Lerp(transform.position, new Vector3(downPosition.x, downPosition.y, downPosition.z), 1-actualSpeed);
 			}
-			gameObject.GetComponent<movePlayer>().enabled = true;
+			gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
 			yield return null;
 		}
 	}
