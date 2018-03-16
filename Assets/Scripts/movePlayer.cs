@@ -35,7 +35,7 @@ public class movePlayer : MonoBehaviour {
 
 	private bool isAction = false;
 	private bool IsUpdatedNow; 
-	public int numberofButtonDown = 3;
+	private int numberofButtonDown = 3;
 
 	// Use this for initialization
 	void Start () {
