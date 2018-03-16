@@ -203,6 +203,7 @@ public class fight : MonoBehaviour {
 						{
 							cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").PlayOneShot(cameraMain.GetComponents<AudioSource>().FirstOrDefault(x => x.clip.name == "hurt").clip);
 							coll.gameObject.GetComponent<animationSprite>().ChangeAnimation("hit", true);
+							coll.gameObject.GetComponent<SpriteRenderer>().color = new Color(255,0,0,255);
 						}
 					}
 
