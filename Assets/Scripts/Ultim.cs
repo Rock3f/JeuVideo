@@ -84,7 +84,6 @@ public class Ultim : MonoBehaviour {
 					downPosition = new Vector3(initalPosition.x - 5 , initalPosition.y, initalPosition.z);
 				}
 				playAnimation =true;
-				goingUp = true;
 				if (playAnimation == true){
 					StartCoroutine(UltAnimation());
 				}
@@ -99,15 +98,7 @@ public class Ultim : MonoBehaviour {
 
 	}
 	void LateUpdate() {
-		if (transform.position == upPosition){
-			
-			foreach( GameObject players in PlayerList) {
-				players.GetComponent<fight>().hp += 1;
-			}
 		
-			goingUp = false;
-		}
-
 		if (transform.position == downPosition && playAnimation == true){
 			croixEmission.enabled = false;
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
@@ -148,7 +139,13 @@ public class Ultim : MonoBehaviour {
 		for (int i = 0; i < speed; i++) {
 
 			actualSpeed = CustumEase(i/speed);
-			
+
+			if (i == speed/2){
+				foreach( GameObject players in PlayerList) {
+				players.GetComponent<fight>().hp += 1;
+			}
+
+			}
 			if (i < speed/2){
 				spriteRenderer.sprite = GoUp;
 				transform.position = Vector3.Lerp(transform.position, new Vector3(upPosition.x, upPosition.y, upPosition.z), actualSpeed);

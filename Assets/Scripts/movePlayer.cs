@@ -34,8 +34,12 @@ public class movePlayer : MonoBehaviour {
 	private string Fire2;
 	private string Fire3;
 
+	private string Parade;
+
 	private bool isAction = false;
 	private bool IsUpdatedNow; 
+
+	public float timerParade;
 
 	// Use this for initialization
 	void Start () {
@@ -47,6 +51,7 @@ public class movePlayer : MonoBehaviour {
 		Fire1 = "Fire1" + Player;
 		Fire2 = "Fire2" + Player;
 		Fire3 = "Fire3" + Player;
+		Parade = "Parade" +Player;
 		isAction = false;
 	}
 
@@ -126,6 +131,32 @@ public class movePlayer : MonoBehaviour {
 				}
 				else
 				{
+					if(!IsUpdatedNow)
+					{
+						isAction = false;
+					}
+				}
+
+				if(Input.GetButton(Parade)) {
+					
+					if (timerParade < 1){
+						timerParade += Time.deltaTime;
+						Debug.Log("PARADE !!");
+						isAction = true;
+						IsUpdatedNow = true;
+
+						if(ac.currentAnim.name != "parade")
+						{
+							ac.ChangeAnimation("parade", isAction);
+						}
+					}	
+				}
+				else
+				{
+					if (timerParade > 0){
+						timerParade -= 0.01f;
+					} 
+
 					if(!IsUpdatedNow)
 					{
 						isAction = false;

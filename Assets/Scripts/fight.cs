@@ -32,6 +32,8 @@ public class fight : MonoBehaviour {
 	public bool isStory = false;
 	public GameObject screenVictory;
 
+	public Sprite parade;
+
 	// Private 
 	private float accumulateur;
 	private string EnemyType;
@@ -143,7 +145,7 @@ public class fight : MonoBehaviour {
 	public void OnCollisionEnter2D(Collision2D coll) {
 
 		// Detecte de quel cote viens la collison
-		Vector2 v = coll.contacts[1].point - (Vector2)transform.position;
+		Vector2 v = coll.contacts[0].point - (Vector2)transform.position;
 		if (Vector2.Angle(v, transform.right) <= sideAngle)  {
 			CollisonSide = "R";
 			Angle = Vector2.Angle(v, transform.right);
@@ -176,10 +178,13 @@ public class fight : MonoBehaviour {
 			
 			string OtherCollSide = coll.gameObject.GetComponent<fight>().CollisonSide;
 			bool OtherflipX = GetComponent<SpriteRenderer>().flipX;
+			bool EnemyParade = coll.gameObject.GetComponent<fight>().parade == coll.gameObject.GetComponent<SpriteRenderer>().sprite;
 
 			// Pour chaque attack regarde si le sprite correspond au sprite de degat associé
 			foreach (Attack att in Attacks){
-				if(GetComponent<SpriteRenderer>().sprite == att.SpriteDamage 
+				if(
+				EnemyParade == false
+				&& GetComponent<SpriteRenderer>().sprite == att.SpriteDamage 
 				&& accumulateur > 0.2
 				// Vérifie que les ennemies sont bien face a face pour se frapper
 				&& ((CollisonSide == "R" && OtherCollSide == "L" && OtherflipX == false) 
