@@ -36,12 +36,14 @@ public class movePlayer : MonoBehaviour {
 	private bool isAction = false;
 	private bool IsUpdatedNow; 
 	private int numberofButtonDown = 3;
+	private Rigidbody2D rb2d; 
 
 	// Use this for initialization
 	void Start () {
 		// Récupère une référence au script AnimationCourse attaché au même GameObject
 		ac = GetComponent<animationSprite> ();
 		spriteRenderer = GetComponent<SpriteRenderer> ();
+		rb2d = GetComponent<Rigidbody2D> ();
 		Horizontal = "Horizontal" + Player;
 		Vertical = "Vertical" + Player;
 		Fire1 = "Fire1" + Player;
@@ -151,9 +153,6 @@ public class movePlayer : MonoBehaviour {
 				0
 			);
 
-		
-				if(currentAcceleration.x != 0)
-					currentAcceleration.ToString();
 
 			// Calcule la nouvelle vitesse à partir de l'accélération
 			// currentAcceleration retourne un changement de vitesse par seconde mais lors d'un update 
