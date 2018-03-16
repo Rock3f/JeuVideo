@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114417069230130162}
   m_Layer: 0
   m_Name: ennemy_3_0
-  m_TagString: Enemy
+  m_TagString: Shooter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629b11b5565c4144eb5a0ab89ccfd653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
+  attackRange: 6.5
 --- !u!114 &114522566433250694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +150,7 @@ MonoBehaviour:
     SpriteDamage: {fileID: 21300114, guid: 62e5a3370aa4f4048bd2b3fb6ad0e0be, type: 3}
     dammageValue: 1
     comboValue: 0
-  - name: proectile2
+  - name: projectile2
     SpriteDamage: {fileID: 21300138, guid: 62e5a3370aa4f4048bd2b3fb6ad0e0be, type: 3}
     dammageValue: 0.5
     comboValue: 0
