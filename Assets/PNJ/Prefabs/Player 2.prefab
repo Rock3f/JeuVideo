@@ -188,6 +188,7 @@ MonoBehaviour:
   - name: parade
     sprites:
     - {fileID: 21300252, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
+    - {fileID: 21300252, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   imagesParSecondes: 12
   currentSpriteIdx: 0
   currentAnim:
