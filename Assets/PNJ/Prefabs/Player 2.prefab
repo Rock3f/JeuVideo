@@ -125,7 +125,7 @@ MonoBehaviour:
   isBoss: 0
   isStory: 0
   screenVictory: {fileID: 0}
-  parade: {fileID: 0}
+  parade: {fileID: 21300252, guid: 43f0d8081926f5e4aa654d6f3c37af01, type: 3}
   CollisonSide: 
   Angle: 0
 --- !u!114 &114387703588246680
@@ -215,7 +215,6 @@ MonoBehaviour:
   directionStory: 0
   upPosition: {x: 0, y: 0, z: 0}
   downPosition: {x: 0, y: 0, z: 0}
-  goingUp: 0
   speed: 20
   speedJump: 60
   actualSpeed: 0
