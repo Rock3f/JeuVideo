@@ -2058,7 +2058,7 @@ Prefab:
     - target: {fileID: 212193584195052934, guid: 0f16657911cb6084a8346636c8d241af,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f16657911cb6084a8346636c8d241af, type: 2}
@@ -2073,6 +2073,26 @@ GameObject:
   m_PrefabParentObject: {fileID: 1859747299717872, guid: 0f16657911cb6084a8346636c8d241af,
     type: 2}
   m_PrefabInternal: {fileID: 642060239}
+--- !u!50 &642060242
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 642060241}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &691250601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,6 +3417,21 @@ Prefab:
       propertyPath: speedJump
       value: 65
       objectReference: {fileID: 0}
+    - target: {fileID: 114771625570755028, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: isDebug
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114771625570755028, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: tpPosition
+      value: 
+      objectReference: {fileID: 538835169}
+    - target: {fileID: 114771625570755028, guid: 8d568662c564b81478e1395491fa8fd4,
+        type: 2}
+      propertyPath: P2
+      value: 
+      objectReference: {fileID: 779626180}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d568662c564b81478e1395491fa8fd4, type: 2}
   m_IsPrefabParent: 0
@@ -5040,6 +5075,7 @@ MonoBehaviour:
   attackRange: 0
   targets: []
   isStory: 0
+  target: {fileID: 0}
 --- !u!1 &1585615048
 GameObject:
   m_ObjectHideFlags: 0
