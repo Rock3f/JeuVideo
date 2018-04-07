@@ -32,23 +32,13 @@ public class Track : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		
 		actualScreenName = "screen" + idCurrentScreen;
 		ScreenEnnemy screen = allScreen.FirstOrDefault(x => x.name == actualScreenName);
 		
 		if(screen.ennemies != null)
 		{
-			foreach(GameObject ennemy in screen.ennemies)
-			{
-				if(ennemy != null)
-				{
-					isCameraFix = true;
-					break;
-				}
-				else
-				{
-					isCameraFix = false;
-				}
-			}
+			isCameraFix = !screen.ennemies.All(x => x == null);
 		}
 		else
 		{
@@ -56,6 +46,8 @@ public class Track : MonoBehaviour {
 		}
 		
 
+		//Réalisation du tracking de la caméra 
+		//CAMERA
 		if(!isCameraFix)
 		{
 			// Position vers laquelle la caméra doit tendre

@@ -119,6 +119,7 @@ public class fight : MonoBehaviour {
 					
 					if(!isStory)
 					{
+						//Lecture d'une musique et d'un son
 						Time.timeScale = 0f;
 						sounds.FirstOrDefault(x => x.clip.name.Contains("SoundLevel1")).Stop();
 						screenGameOver.SetActive(true);

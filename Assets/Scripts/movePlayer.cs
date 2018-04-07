@@ -64,6 +64,8 @@ public class movePlayer : MonoBehaviour {
 		{
 			if(!isStory)
 			{
+				//Changement des animation en fonction des inputs réalisés par l'utilisateur 
+				//IMAGE
 				IsUpdatedNow = false;
 				if(Input.GetButtonDown(Fire1)){
 					isAction = true;

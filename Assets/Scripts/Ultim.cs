@@ -25,7 +25,7 @@ public class Ultim : MonoBehaviour {
 	private bool goingUp;
 	private bool playAnimation = false;
 	private bool playDance = false;
-	private float MaxHit;
+	private UltBar ultBar;
 	private float accumulateur;
 	private string UltPlayer;
 	private AudioSource[] sounds;
@@ -44,7 +44,7 @@ public class Ultim : MonoBehaviour {
 		UltPlayer = "Ult" + Player;
 		spriteRenderer = GetComponent<SpriteRenderer> ();
 		PlayerList = GameObject.FindGameObjectsWithTag("Player");
-		MaxHit = UltBarVar.GetComponent<UltBar>().maxHit;
+		ultBar = UltBarVar.GetComponent<UltBar>();
 		if(cameraMain != null)
 		{
 			sounds = cameraMain.GetComponents<AudioSource>();
@@ -53,7 +53,7 @@ public class Ultim : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown(UltPlayer) && UltBarVar.GetComponent<UltBar>().hit >= MaxHit){
+		if(Input.GetButtonDown(UltPlayer) && ultBar.hit >= ultBar.maxHit){
 			UltBarVar.GetComponent<UltBar>().hit = 0;
 	
 			System.Random Rand = new System.Random();
@@ -102,7 +102,7 @@ public class Ultim : MonoBehaviour {
 		if (transform.position == downPosition && playAnimation == true){
 			croixEmission.enabled = false;
 			sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).PlayOneShot(sounds.FirstOrDefault(x => x.clip.name.Contains("explosion")).clip);
-			EventManager<float>.TriggerEvent ("Shake", 1);
+			EventManager<float>.TriggerEvent ("Shake", 20);
 			EnemyList = GameObject.FindGameObjectsWithTag("Enemy");
 			foreach( GameObject enemys in EnemyList) {
 				enemys.GetComponent<fight>().hp -= 5;
