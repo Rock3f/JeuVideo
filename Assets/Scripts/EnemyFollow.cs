@@ -4,19 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
-public struct Target{
-	public Transform target;
-
-	public bool WasHit;
-
-}
-
 public class EnemyFollow : MonoBehaviour {
 
 	public float speed;
 	public float attackRange;
-	public Target[] targets;
+	public GameObject[] targets;
 	public bool isStory = false;
 
 	private GameObject[] PlayerList;
@@ -24,7 +16,7 @@ public class EnemyFollow : MonoBehaviour {
 
 	private Transform Player2;
 
-	private Transform target;
+	public Transform target;
 	private float normalspeed;
 
 	private bool IsAlive;
@@ -54,16 +46,21 @@ public class EnemyFollow : MonoBehaviour {
 		{
 			if(isStory)
 			{
-				foreach(Target targetIA in targets)
+				for(int i = targets.Length - 1; i >= 0; i--)
 				{
-					if(!targetIA.WasHit)
+					if(targets[i].activeSelf)
 					{
-						target = targetIA.target;
+						target = targets[i].transform;
 					}
+					else
+					{
+						targets = targets.Where((source, index) => index != i).ToArray();
+					}
+				
 				}
+
 			}	
-			else
-			{
+			
 				switch (this.gameObject.tag)
 				{
 					// Pour le cas où notre objet est un tireur
@@ -102,11 +99,14 @@ public class EnemyFollow : MonoBehaviour {
 
 					// Par défaut, tag = Enemy. Ce qui correspond aux ennemies au corp-à-corp.
 					default:
-						if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
-						target = Player2.GetComponent<Transform>();
-						}
-						else{
-							target = Player1.GetComponent<Transform>();
+						if(!isStory)
+						{
+							if (Vector3.Distance(Player1.GetComponent<Transform>().position, transform.position) > Vector3.Distance(Player2.GetComponent<Transform>().position, transform.position)){
+							target = Player2.GetComponent<Transform>();
+							}
+							else{
+								target = Player1.GetComponent<Transform>();
+							}
 						}
 						transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x +1, target.position.y, target.position.z), speed * Time.deltaTime);
 
@@ -125,13 +125,8 @@ public class EnemyFollow : MonoBehaviour {
 						}
 					break;
 				}
-			}
+			
 		}
-		/*else
-		{
-			// gameObject.GetComponent<animationSprite>().ChangeAnimation("die", true);
-			// DestroyImmediate(this.gameObject);
-		}*/
 	}
 
 

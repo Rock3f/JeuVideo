@@ -1025,6 +1025,12 @@ MonoBehaviour:
   IsDead: 0
   isStory: 1
   directionStory: -1
+  upPosition: {x: 0, y: 0, z: 0}
+  downPosition: {x: 0, y: 0, z: 0}
+  speed: 20
+  speedJump: 20
+  actualSpeed: 0
+  timerParade: 0
 --- !u!114 &272245749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,12 +1046,14 @@ MonoBehaviour:
   maxHp: 5
   Attacks: []
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 1585615048}
   menuButton: {fileID: 0}
   isBoss: 0
   isStory: 1
   screenVictory: {fileID: 0}
+  parade: {fileID: 0}
   CollisonSide: L
   Angle: 0
 --- !u!1 &336307798
@@ -2283,6 +2291,12 @@ MonoBehaviour:
   IsDead: 0
   isStory: 1
   directionStory: -1
+  upPosition: {x: 0, y: 0, z: 0}
+  downPosition: {x: 0, y: 0, z: 0}
+  speed: 20
+  speedJump: 20
+  actualSpeed: 0
+  timerParade: 0
 --- !u!114 &924531633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2359,12 +2373,14 @@ MonoBehaviour:
   maxHp: 5
   Attacks: []
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 1585615048}
   menuButton: {fileID: 0}
   isBoss: 0
   isStory: 1
   screenVictory: {fileID: 0}
+  parade: {fileID: 0}
   CollisonSide: L
   Angle: 0
 --- !u!114 &924531635
@@ -4699,15 +4715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629b11b5565c4144eb5a0ab89ccfd653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 5
+  attackRange: 0
   targets:
-  - target: {fileID: 1687335806}
-    WasHit: 0
-  - target: {fileID: 779626187}
-    WasHit: 0
-  - target: {fileID: 201047197}
-    WasHit: 0
+  - {fileID: 924531631}
+  - {fileID: 272245747}
+  - {fileID: 201047196}
   isStory: 1
+  target: {fileID: 0}
 --- !u!50 &1560449533
 Rigidbody2D:
   serializedVersion: 4
@@ -4780,12 +4795,14 @@ MonoBehaviour:
     dammageValue: 20
     comboValue: 0
   UltBarVar: {fileID: 0}
+  eventSystem: {fileID: 0}
   screenGameOver: {fileID: 0}
   cameraMain: {fileID: 0}
   menuButton: {fileID: 0}
   isBoss: 0
   isStory: 1
   screenVictory: {fileID: 0}
+  parade: {fileID: 0}
   CollisonSide: 
   Angle: 0
 --- !u!1 &1585615048
