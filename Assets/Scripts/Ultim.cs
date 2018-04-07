@@ -71,6 +71,8 @@ public class Ultim : MonoBehaviour {
 
 			else{
 				// Effet BONUS
+
+				/* On active l'émetteur de particule "croixEmission" qui émet des croix symbolisant la récuparation de vie des joueurs*/
 				croixEmission.enabled = true;
 				gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
 				gameObject.GetComponent<movePlayer>().enabled = false;
@@ -135,6 +137,8 @@ public class Ultim : MonoBehaviour {
 				gameObject.GetComponent<movePlayer>().enabled = true;
 			}
 	}
+
+	/** Implémentation de fonction de easing, le but est de varier la vitesse de déplacement lors de l'animation, le joueur monte rapidement ralenti puis accèlere de nouveau pour redescendre */
 	IEnumerator UltAnimation(){
 		for (int i = 0; i < speed; i++) {
 

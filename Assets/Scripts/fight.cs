@@ -143,6 +143,10 @@ public class fight : MonoBehaviour {
 		}
 		
 	}
+	/** Utilisation des RigidBody2D qui entre en collison, lorsqu'il y a une collision on détecte de quel côté a lieu
+	la colision en fonction de son angle. Et on actualise tout au long de la collision si l'angle change.
+	 On prend également en compte l'orientation des personnages pour que les dégats ne soit appliqué
+	uniquement lorsque les coups sont donnée en direction d'un ennemie */
 	public void OnCollisionEnter2D(Collision2D coll) {
 
 		// Detecte de quel cote viens la collison
@@ -156,6 +160,8 @@ public class fight : MonoBehaviour {
 			Angle = Vector2.Angle(v, transform.right);
 		}
 	}
+
+	
     public void OnCollisionStay2D (Collision2D coll)
     {
 		// Detecte de quel cote viens la collison
